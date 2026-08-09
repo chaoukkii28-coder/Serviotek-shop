@@ -28,72 +28,83 @@ const LINKS = [
 export default function Home() {
   return (
     <div>
-      <section className="max-w-6xl mx-auto px-5 pt-14 pb-16">
-        <div className="flex flex-col md:flex-row md:items-center gap-10">
-          {/* Texte */}
-          <div className="flex-1">
-            <p className="font-mono text-volt text-sm mb-3">// petits objets, vrai usage</p>
-            <h1 className="font-display font-bold text-4xl sm:text-6xl uppercase tracking-tight leading-[1.05]">
-              Tous connectés
-            </h1>
+      <section className="relative overflow-hidden">
+        {/* Fond décoratif : dégradé doux + grille de points */}
+        <div
+          className="absolute inset-0 -z-10"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 78% 30%, rgba(200,255,61,0.16), transparent 55%), radial-gradient(circle, #E4E6EB 1px, transparent 1px)",
+            backgroundSize: "auto, 22px 22px",
+          }}
+        />
 
-            <div className="flex flex-wrap gap-2 mt-6">
-              {MESSAGES.map((m) => (
-                <span
-                  key={m.label}
-                  className="inline-flex items-center gap-2 rounded-full border border-wire bg-panel px-3 py-1.5 text-xs font-medium text-mist"
-                >
-                  <span aria-hidden="true">{m.icon}</span>
-                  {m.label}
-                </span>
-              ))}
-            </div>
-          </div>
+        <div className="max-w-6xl mx-auto px-5 pt-14 pb-16">
+          <div className="flex flex-col md:flex-row md:items-center gap-10">
+            {/* Texte */}
+            <div className="flex-1">
+              <p className="font-mono text-volt text-sm mb-3">// petits objets, vrai usage</p>
+              <h1 className="font-display font-bold text-4xl sm:text-6xl uppercase tracking-tight leading-[1.05]">
+                Tous connectés
+              </h1>
 
-          {/* Illustration : réseau de personnes connectées */}
-          <div className="flex-1 flex justify-center md:justify-end">
-            <svg
-              viewBox="0 0 320 260"
-              className="w-full max-w-sm"
-              role="img"
-              aria-label="Illustration de personnes connectées entre elles"
-            >
-              <defs>
-                {/* Silhouette simple : tête + buste, dessinée autour de l'origine (0,0) */}
-                <g id="person">
-                  <circle cx="0" cy="-7" r="4.5" fill="#C8FF3D" />
-                  <path
-                    d="M -7 10 C -7 1, 7 1, 7 10 L 7 12 C 7 13, -7 13, -7 12 Z"
-                    fill="#C8FF3D"
-                  />
-                </g>
-              </defs>
-
-              {/* Lignes de connexion */}
-              <g stroke="#E4E6EB" strokeWidth="1.5" fill="none">
-                {LINKS.map(([a, b], i) => (
-                  <line
-                    key={i}
-                    x1={NODES[a].x}
-                    y1={NODES[a].y}
-                    x2={NODES[b].x}
-                    y2={NODES[b].y}
-                  />
+              <div className="flex flex-wrap gap-2 mt-6">
+                {MESSAGES.map((m) => (
+                  <span
+                    key={m.label}
+                    className="inline-flex items-center gap-2 rounded-full border border-wire bg-panel px-3 py-1.5 text-xs font-medium text-mist shadow-sm"
+                  >
+                    <span aria-hidden="true">{m.icon}</span>
+                    {m.label}
+                  </span>
                 ))}
-              </g>
+              </div>
+            </div>
 
-              {/* Personnes */}
-              {NODES.map((n, i) => (
-                <use
-                  key={i}
-                  href="#person"
-                  x={n.x}
-                  y={n.y}
-                  transform={`translate(${n.x} ${n.y}) scale(${n.scale}) translate(${-n.x} ${-n.y})`}
-                  className={n.pulse ? "origin-center animate-pulse-slow" : ""}
-                />
-              ))}
-            </svg>
+            {/* Illustration : réseau de personnes connectées */}
+            <div className="flex-1 flex justify-center md:justify-end">
+              <svg
+                viewBox="0 0 320 260"
+                className="w-full max-w-sm"
+                role="img"
+                aria-label="Illustration de personnes connectées entre elles"
+              >
+                <defs>
+                  {/* Silhouette : tête + buste, centrée en (0,0), plus grande et nette */}
+                  <g id="person">
+                    <circle cx="0" cy="-10" r="7" fill="#C8FF3D" />
+                    <path
+                      d="M -12 16 C -12 2, 12 2, 12 16 L 12 19 C 12 21, -12 21, -12 19 Z"
+                      fill="#C8FF3D"
+                    />
+                  </g>
+                </defs>
+
+                {/* Lignes de connexion */}
+                <g stroke="#C7CBD3" strokeWidth="1.5" fill="none">
+                  {LINKS.map(([a, b], i) => (
+                    <line
+                      key={i}
+                      x1={NODES[a].x}
+                      y1={NODES[a].y}
+                      x2={NODES[b].x}
+                      y2={NODES[b].y}
+                    />
+                  ))}
+                </g>
+
+                {/* Personnes */}
+                {NODES.map((n, i) => (
+                  <g
+                    key={i}
+                    transform={`translate(${n.x} ${n.y}) scale(${n.scale})`}
+                    className={n.pulse ? "origin-center animate-pulse-slow" : ""}
+                  >
+                    <use href="#person" x="0" y="0" transform="translate(0,0)" />
+                  </g>
+                ))}
+              </svg>
+            </div>
           </div>
         </div>
       </section>
