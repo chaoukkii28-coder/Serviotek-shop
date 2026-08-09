@@ -1,5 +1,6 @@
 import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
+import { User } from "lucide-react";
 
 const MESSAGES = [
   { icon: "🌱", label: "Produits durables" },
@@ -7,17 +8,17 @@ const MESSAGES = [
   { icon: "♻️", label: "Emballages responsables" },
 ];
 
-// Positions des personnes dans le réseau (x, y, échelle, pulse ?)
-const NODES = [
-  { x: 60, y: 60, scale: 1, pulse: false },
-  { x: 160, y: 40, scale: 1.3, pulse: true },
-  { x: 260, y: 70, scale: 0.9, pulse: false },
-  { x: 90, y: 150, scale: 0.9, pulse: false },
-  { x: 150, y: 140, scale: 1.4, pulse: true },
-  { x: 230, y: 160, scale: 0.9, pulse: false },
-  { x: 120, y: 220, scale: 0.8, pulse: false },
-  { x: 170, y: 220, scale: 0.8, pulse: false },
-  { x: 210, y: 220, scale: 0.8, pulse: false },
+// Positions en % dans la zone d'illustration (top, left, taille, pulse ?)
+const PEOPLE = [
+  { top: "10%", left: "20%", size: 34, pulse: false },
+  { top: "5%", left: "55%", size: 46, pulse: true },
+  { top: "20%", left: "85%", size: 30, pulse: false },
+  { top: "45%", left: "10%", size: 30, pulse: false },
+  { top: "48%", left: "50%", size: 50, pulse: true },
+  { top: "50%", left: "80%", size: 30, pulse: false },
+  { top: "82%", left: "30%", size: 26, pulse: false },
+  { top: "85%", left: "58%", size: 26, pulse: false },
+  { top: "80%", left: "78%", size: 26, pulse: false },
 ];
 
 const LINKS = [
@@ -25,20 +26,22 @@ const LINKS = [
   [3, 4], [4, 5], [3, 6], [4, 7], [5, 8],
 ];
 
+// Conversion des % en coordonnées approximatives pour tracer les lignes (sur une grille 300x260)
+const toXY = (p: { top: string; left: string }) => ({
+  x: (parseFloat(p.left) / 100) * 300,
+  y: (parseFloat(p.top) / 100) * 260,
+});
+
 export default function Home() {
   return (
     <div>
-      <section className="relative overflow-hidden">
-        {/* Fond décoratif : dégradé doux + grille de points */}
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 78% 30%, rgba(200,255,61,0.16), transparent 55%), radial-gradient(circle, #E4E6EB 1px, transparent 1px)",
-            backgroundSize: "auto, 22px 22px",
-          }}
-        />
-
+      <section
+        className="relative overflow-hidden"
+        style={{
+          backgroundImage: "radial-gradient(#E4E6EB 1px, transparent 1px)",
+          backgroundSize: "22px 22px",
+        }}
+      >
         <div className="max-w-6xl mx-auto px-5 pt-14 pb-16">
           <div className="flex flex-col md:flex-row md:items-center gap-10">
             {/* Texte */}
@@ -63,47 +66,48 @@ export default function Home() {
 
             {/* Illustration : réseau de personnes connectées */}
             <div className="flex-1 flex justify-center md:justify-end">
-              <svg
-                viewBox="0 0 320 260"
-                className="w-full max-w-sm"
-                role="img"
-                aria-label="Illustration de personnes connectées entre elles"
-              >
-                <defs>
-                  {/* Silhouette : tête + buste, centrée en (0,0), plus grande et nette */}
-                  <g id="person">
-                    <circle cx="0" cy="-10" r="7" fill="#C8FF3D" />
-                    <path
-                      d="M -12 16 C -12 2, 12 2, 12 16 L 12 19 C 12 21, -12 21, -12 19 Z"
-                      fill="#C8FF3D"
-                    />
+              <div className="relative w-full max-w-sm aspect-[300/260]">
+                {/* Lignes de connexion en fond */}
+                <svg
+                  viewBox="0 0 300 260"
+                  className="absolute inset-0 w-full h-full"
+                  aria-hidden="true"
+                >
+                  <g stroke="#D8DBE2" strokeWidth="1.5" fill="none">
+                    {LINKS.map(([a, b], i) => {
+                      const pa = toXY(PEOPLE[a]);
+                      const pb = toXY(PEOPLE[b]);
+                      return (
+                        <line key={i} x1={pa.x} y1={pa.y} x2={pb.x} y2={pb.y} />
+                      );
+                    })}
                   </g>
-                </defs>
-
-                {/* Lignes de connexion */}
-                <g stroke="#C7CBD3" strokeWidth="1.5" fill="none">
-                  {LINKS.map(([a, b], i) => (
-                    <line
-                      key={i}
-                      x1={NODES[a].x}
-                      y1={NODES[a].y}
-                      x2={NODES[b].x}
-                      y2={NODES[b].y}
-                    />
-                  ))}
-                </g>
+                </svg>
 
                 {/* Personnes */}
-                {NODES.map((n, i) => (
-                  <g
+                {PEOPLE.map((p, i) => (
+                  <div
                     key={i}
-                    transform={`translate(${n.x} ${n.y}) scale(${n.scale})`}
-                    className={n.pulse ? "origin-center animate-pulse-slow" : ""}
+                    className={`absolute flex items-center justify-center rounded-full bg-volt/20 ${
+                      p.pulse ? "animate-pulse-slow" : ""
+                    }`}
+                    style={{
+                      top: p.top,
+                      left: p.left,
+                      width: p.size,
+                      height: p.size,
+                      transform: "translate(-50%, -50%)",
+                    }}
                   >
-                    <use href="#person" x="0" y="0" transform="translate(0,0)" />
-                  </g>
+                    <User
+                      size={p.size * 0.6}
+                      className="text-graphite"
+                      strokeWidth={2.2}
+                      fill="#C8FF3D"
+                    />
+                  </div>
                 ))}
-              </svg>
+              </div>
             </div>
           </div>
         </div>
