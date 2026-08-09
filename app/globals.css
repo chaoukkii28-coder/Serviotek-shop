@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background-color: #14151A;
-  color: #F2F3F5;
+  background-color: #F7F8FA;
+  color: #14151A;
 }
 
 ::selection {
@@ -19,8 +19,8 @@ body {
 .spec-strip {
   background-image: repeating-linear-gradient(
     90deg,
-    #3A3D4A 0px,
-    #3A3D4A 4px,
+    #E4E6EB 0px,
+    #E4E6EB 4px,
     transparent 4px,
     transparent 10px
   );
