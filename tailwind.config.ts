@@ -1,15 +1,16 @@
-import type { Config } from "tailwindcss";
 
+import type { Config } from "tailwindcss";
+ 
 const config: Config = {
   content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         graphite: "#14151A",
-        panel: "#1D1F26",
+        panel: "#FFFFFF",
         volt: "#C8FF3D",
-        wire: "#3A3D4A",
-        mist: "#9EA1AE",
+        wire: "#E4E6EB",
+        mist: "#5B6169",
       },
       fontFamily: {
         display: ["var(--font-display)"],
@@ -21,3 +22,4 @@ const config: Config = {
   plugins: [],
 };
 export default config;
+ 
