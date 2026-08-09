@@ -1,18 +1,101 @@
 import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 
+const MESSAGES = [
+  { icon: "🌱", label: "Produits durables" },
+  { icon: "🔧", label: "Réparables" },
+  { icon: "♻️", label: "Emballages responsables" },
+];
+
+// Positions des personnes dans le réseau (x, y, échelle, pulse ?)
+const NODES = [
+  { x: 60, y: 60, scale: 1, pulse: false },
+  { x: 160, y: 40, scale: 1.3, pulse: true },
+  { x: 260, y: 70, scale: 0.9, pulse: false },
+  { x: 90, y: 150, scale: 0.9, pulse: false },
+  { x: 150, y: 140, scale: 1.4, pulse: true },
+  { x: 230, y: 160, scale: 0.9, pulse: false },
+  { x: 120, y: 220, scale: 0.8, pulse: false },
+  { x: 170, y: 220, scale: 0.8, pulse: false },
+  { x: 210, y: 220, scale: 0.8, pulse: false },
+];
+
+const LINKS = [
+  [0, 1], [1, 2], [0, 3], [1, 4], [2, 5],
+  [3, 4], [4, 5], [3, 6], [4, 7], [5, 8],
+];
+
 export default function Home() {
   return (
     <div>
       <section className="max-w-6xl mx-auto px-5 pt-14 pb-16">
-        <p className="font-mono text-volt text-sm mb-3">// petits objets, vrai usage</p>
-        <h1 className="font-display font-bold text-4xl sm:text-5xl max-w-2xl leading-[1.1]">
-          Des gadgets électriques utiles, testés, au juste prix.
-        </h1>
-        <p className="text-mist mt-4 max-w-xl">
-          Chaque fiche produit indique clairement autonomie, puissance et
-          délais de livraison — pas de mauvaise surprise à la caisse.
-        </p>
+        <div className="flex flex-col md:flex-row md:items-center gap-10">
+          {/* Texte */}
+          <div className="flex-1">
+            <p className="font-mono text-volt text-sm mb-3">// petits objets, vrai usage</p>
+            <h1 className="font-display font-bold text-4xl sm:text-6xl uppercase tracking-tight leading-[1.05]">
+              Tous connectés
+            </h1>
+
+            <div className="flex flex-wrap gap-2 mt-6">
+              {MESSAGES.map((m) => (
+                <span
+                  key={m.label}
+                  className="inline-flex items-center gap-2 rounded-full border border-wire bg-panel px-3 py-1.5 text-xs font-medium text-mist"
+                >
+                  <span aria-hidden="true">{m.icon}</span>
+                  {m.label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Illustration : réseau de personnes connectées */}
+          <div className="flex-1 flex justify-center md:justify-end">
+            <svg
+              viewBox="0 0 320 260"
+              className="w-full max-w-sm"
+              role="img"
+              aria-label="Illustration de personnes connectées entre elles"
+            >
+              <defs>
+                {/* Silhouette simple : tête + buste, dessinée autour de l'origine (0,0) */}
+                <g id="person">
+                  <circle cx="0" cy="-7" r="4.5" fill="#C8FF3D" />
+                  <path
+                    d="M -7 10 C -7 1, 7 1, 7 10 L 7 12 C 7 13, -7 13, -7 12 Z"
+                    fill="#C8FF3D"
+                  />
+                </g>
+              </defs>
+
+              {/* Lignes de connexion */}
+              <g stroke="#E4E6EB" strokeWidth="1.5" fill="none">
+                {LINKS.map(([a, b], i) => (
+                  <line
+                    key={i}
+                    x1={NODES[a].x}
+                    y1={NODES[a].y}
+                    x2={NODES[b].x}
+                    y2={NODES[b].y}
+                  />
+                ))}
+              </g>
+
+              {/* Personnes */}
+              {NODES.map((n, i) => (
+                <use
+                  key={i}
+                  href="#person"
+                  x={n.x}
+                  y={n.y}
+                  transform={`translate(${n.x} ${n.y}) scale(${n.scale}) translate(${-n.x} ${-n.y})`}
+                  className={n.pulse ? "origin-center animate-pulse-slow" : ""}
+                />
+              ))}
+            </svg>
+          </div>
+        </div>
       </section>
 
       <section id="catalogue" className="max-w-6xl mx-auto px-5 pb-24">
