@@ -4,12 +4,14 @@ import "./globals.css";
 import { CartProvider } from "@/components/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["500", "700"],
 });
+
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 const mono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -31,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header />
           <main>{children}</main>
           <Footer />
+          <CookieConsent />
         </CartProvider>
       </body>
     </html>
