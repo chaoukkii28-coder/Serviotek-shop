@@ -8,8 +8,9 @@ export default function MentionsLegales() {
         <p><strong className="text-white">Capital social :</strong> 50,00 €</p>
         <p><strong className="text-white">Siège social :</strong> Bureau 326, 59 rue de Ponthieu, 75008 Paris</p>
         <p><strong className="text-white">Président :</strong> Monsieur Mohamed Chaouki Bouhadjera</p>
+        <p><strong className="text-white">Directeur de la publication :</strong> Monsieur Mohamed Chaouki Bouhadjera</p>
         <p><strong className="text-white">Contact :</strong> contact@serviotek.com</p>
-        <p><strong className="text-white">Hébergeur :</strong> [À COMPLÉTER — ex. Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA]</p>
+        <p><strong className="text-white">Hébergeur :</strong> Vercel Inc., 340 South Lemon Avenue #4133, Walnut, CA 91789, USA</p>
       </div>
     </div>
   );
