@@ -1,0 +1,19 @@
+export default function Livraison() {
+  return (
+    <div className="max-w-2xl mx-auto px-5 py-16">
+      <h1 className="font-display font-bold text-2xl mb-6">Livraison &amp; délais</h1>
+      <div className="space-y-4 text-sm text-mist leading-relaxed">
+        <p>
+          Nos produits sont expédiés directement par nos fournisseurs partenaires.
+          Le délai de livraison estimé est de <strong className="text-white">7 à 14 jours ouvrés</strong>,
+          selon le produit et la destination.
+        </p>
+        <p>
+          Un e-mail de confirmation avec numéro de suivi (quand disponible) est envoyé
+          après l&apos;expédition.
+        </p>
+        <p>Livraison actuellement disponible en France, Belgique, Suisse et Luxembourg.</p>
+      </div>
+    </div>
+  );
+}
