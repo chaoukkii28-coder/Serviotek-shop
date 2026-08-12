@@ -13,21 +13,31 @@ export default function ConnectionBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let width = (canvas.width = canvas.offsetWidth);
-    let height = (canvas.height = canvas.offsetHeight);
+    function resize() {
+      const parent = canvas!.parentElement;
+      if (!parent) return;
+      canvas!.width = parent.offsetWidth;
+      canvas!.height = parent.offsetHeight;
+    }
+    resize();
 
-    const NUM_POINTS = 22;
+    let width = canvas.width;
+    let height = canvas.height;
+
+    const NUM_POINTS = 28;
     const points = Array.from({ length: NUM_POINTS }, (_, i) => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      icon: Math.random() < 0.45 ? ICONS[i % ICONS.length] : null,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      icon: Math.random() < 0.5 ? ICONS[i % ICONS.length] : null,
     }));
 
     let frameId: number;
 
     function draw() {
+      width = canvas!.width;
+      height = canvas!.height;
       ctx!.clearRect(0, 0, width, height);
 
       for (const p of points) {
@@ -42,9 +52,9 @@ export default function ConnectionBackground() {
           const a = points[i];
           const b = points[j];
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
-          if (dist < 160) {
-            ctx!.strokeStyle = `rgba(132, 204, 22, ${1 - dist / 160})`;
-            ctx!.lineWidth = 1;
+          if (dist < 200) {
+            ctx!.strokeStyle = `rgba(101, 163, 13, ${0.9 - dist / 200})`;
+            ctx!.lineWidth = 1.3;
             ctx!.beginPath();
             ctx!.moveTo(a.x, a.y);
             ctx!.lineTo(b.x, b.y);
@@ -55,16 +65,14 @@ export default function ConnectionBackground() {
 
       for (const p of points) {
         if (p.icon) {
-          ctx!.font = "18px sans-serif";
+          ctx!.font = "22px sans-serif";
           ctx!.textAlign = "center";
           ctx!.textBaseline = "middle";
-          ctx!.globalAlpha = 0.85;
           ctx!.fillText(p.icon, p.x, p.y);
-          ctx!.globalAlpha = 1;
         } else {
-          ctx!.fillStyle = "rgba(23, 23, 23, 0.55)";
+          ctx!.fillStyle = "rgba(23, 23, 23, 0.7)";
           ctx!.beginPath();
-          ctx!.arc(p.x, p.y, 3, 0, Math.PI * 2);
+          ctx!.arc(p.x, p.y, 3.5, 0, Math.PI * 2);
           ctx!.fill();
         }
       }
@@ -73,24 +81,18 @@ export default function ConnectionBackground() {
     }
 
     draw();
-
-    function handleResize() {
-      if (!canvas) return;
-      width = canvas.width = canvas.offsetWidth;
-      height = canvas.height = canvas.offsetHeight;
-    }
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", resize);
 
     return () => {
       cancelAnimationFrame(frameId);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", resize);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-80"
+      className="pointer-events-none absolute inset-0 h-full w-full"
     />
   );
 }
