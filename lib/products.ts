@@ -83,7 +83,7 @@ export const products: Product[] = [
   {
     slug: "barre-de-son-saiyin-40w",
     name: "Barre de son Saiyin 40W",
-    price: 142.90,
+    price: 94.98,
     tagline: "Un son puissant pour votre salon",
     description:
       "Barre de son 40W offrant un rendu sonore riche, idéale pour améliorer l'audio de votre téléviseur.",
@@ -139,7 +139,7 @@ export const products: Product[] = [
   {
     slug: "poubelle-silverlake-70l",
     name: "Poubelle de cuisine automatique SILVERLAKE 70L",
-    price: 479.94,
+    price: 159.98,
     tagline: "Ouverture automatique, grande capacité",
     description:
       "Poubelle de cuisine automatique 70L en acier Inox avec cerclage, ouverture papillon pour une hygiène optimale.",
