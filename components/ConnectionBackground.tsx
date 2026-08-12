@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
+const ICONS = ["📱", "⌚", "🎧", "💡", "🔌", "👤", "📡", "🏠"];
+
 export default function ConnectionBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -14,12 +16,13 @@ export default function ConnectionBackground() {
     let width = (canvas.width = canvas.offsetWidth);
     let height = (canvas.height = canvas.offsetHeight);
 
-    const NUM_POINTS = 45;
-    const points = Array.from({ length: NUM_POINTS }, () => ({
+    const NUM_POINTS = 22;
+    const points = Array.from({ length: NUM_POINTS }, (_, i) => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
+      icon: Math.random() < 0.45 ? ICONS[i % ICONS.length] : null,
     }));
 
     let frameId: number;
@@ -30,8 +33,8 @@ export default function ConnectionBackground() {
       for (const p of points) {
         p.x += p.vx;
         p.y += p.vy;
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
+        if (p.x < 20 || p.x > width - 20) p.vx *= -1;
+        if (p.y < 20 || p.y > height - 20) p.vy *= -1;
       }
 
       for (let i = 0; i < points.length; i++) {
@@ -39,8 +42,8 @@ export default function ConnectionBackground() {
           const a = points[i];
           const b = points[j];
           const dist = Math.hypot(a.x - b.x, a.y - b.y);
-          if (dist < 140) {
-            ctx!.strokeStyle = `rgba(132, 204, 22, ${1 - dist / 140})`;
+          if (dist < 160) {
+            ctx!.strokeStyle = `rgba(132, 204, 22, ${1 - dist / 160})`;
             ctx!.lineWidth = 1;
             ctx!.beginPath();
             ctx!.moveTo(a.x, a.y);
@@ -51,10 +54,19 @@ export default function ConnectionBackground() {
       }
 
       for (const p of points) {
-        ctx!.fillStyle = "rgba(23, 23, 23, 0.6)";
-        ctx!.beginPath();
-        ctx!.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
-        ctx!.fill();
+        if (p.icon) {
+          ctx!.font = "18px sans-serif";
+          ctx!.textAlign = "center";
+          ctx!.textBaseline = "middle";
+          ctx!.globalAlpha = 0.85;
+          ctx!.fillText(p.icon, p.x, p.y);
+          ctx!.globalAlpha = 1;
+        } else {
+          ctx!.fillStyle = "rgba(23, 23, 23, 0.55)";
+          ctx!.beginPath();
+          ctx!.arc(p.x, p.y, 3, 0, Math.PI * 2);
+          ctx!.fill();
+        }
       }
 
       frameId = requestAnimationFrame(draw);
@@ -78,7 +90,7 @@ export default function ConnectionBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none absolute inset-0 h-full w-full opacity-70"
+      className="pointer-events-none absolute inset-0 h-full w-full opacity-80"
     />
   );
 }
