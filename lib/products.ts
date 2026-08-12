@@ -151,3 +151,6 @@ export const products: Product[] = [
     image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800",
   },
 ];
+export function getProduct(slug: string) {
+  return products.find((p) => p.slug === slug);
+}
