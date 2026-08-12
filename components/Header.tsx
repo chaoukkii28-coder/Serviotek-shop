@@ -6,12 +6,12 @@ import { Search, ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "@/components/CartContext";
 
 const CATEGORIES = [
-  { label: "Audio & Écouteurs", href: "/produit?categorie=audio" },
-  { label: "Maison connectée", href: "/produit?categorie=maison" },
-  { label: "Bricolage & Outils", href: "/produit?categorie=bricolage" },
-  { label: "Détection & Extérieur", href: "/produit?categorie=detection" },
-  { label: "Bien-être & Style", href: "/produit?categorie=bien-etre" },
-  { label: "Chargeurs & Accessoires", href: "/produit?categorie=accessoires" },
+  { label: "Audio & Écouteurs", href: "/produit?categorie=audio", color: "bg-sky-500" },
+  { label: "Maison connectée", href: "/produit?categorie=maison", color: "bg-lime-500" },
+  { label: "Bricolage & Outils", href: "/produit?categorie=bricolage", color: "bg-amber-500" },
+  { label: "Détection & Extérieur", href: "/produit?categorie=detection", color: "bg-rose-500" },
+  { label: "Bien-être & Style", href: "/produit?categorie=bien-etre", color: "bg-violet-500" },
+  { label: "Chargeurs & Accessoires", href: "/produit?categorie=accessoires", color: "bg-orange-500" },
 ];
 
 export default function Header() {
@@ -120,8 +120,9 @@ export default function Header() {
             <li key={cat.href}>
               <Link
                 href={cat.href}
-                className="whitespace-nowrap transition hover:text-neutral-900 hover:underline underline-offset-4"
+                className="flex items-center gap-2 whitespace-nowrap transition hover:text-neutral-900 hover:underline underline-offset-4"
               >
+                <span className={`h-2 w-2 shrink-0 rounded-full ${cat.color}`} />
                 {cat.label}
               </Link>
             </li>
@@ -138,8 +139,9 @@ export default function Header() {
                 <Link
                   href={cat.href}
                   onClick={() => setMenuOuvert(false)}
-                  className="block py-3 text-sm font-medium text-neutral-800"
+                  className="flex items-center gap-2 py-3 text-sm font-medium text-neutral-800"
                 >
+                  <span className={`h-2 w-2 shrink-0 rounded-full ${cat.color}`} />
                   {cat.label}
                 </Link>
               </li>
