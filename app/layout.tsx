@@ -6,7 +6,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 
-import ConnectionBackground from "@/components/ConnectionBackground";
 const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
@@ -30,7 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr">
       <body className={`${display.variable} ${body.variable} ${mono.variable} font-body`}>
-        <ConnectionBackground />
         <CartProvider>
           <Header />
           <main>{children}</main>
