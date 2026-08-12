@@ -5,8 +5,8 @@ import { CartProvider } from "@/components/CartContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
-import ConnectionBackground from "@/components/ConnectionBackground";
 
+import ConnectionBackground from "@/components/ConnectionBackground";
 const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
