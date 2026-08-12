@@ -1,5 +1,7 @@
 import { products } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
+import ProductCard from "@/components/ProductCard";
+import ConnectionBackground from "@/components/ConnectionBackground";
 
 const MESSAGES = [
   { icon: "🌱", label: "Produits durables" },
@@ -16,7 +18,7 @@ export default function Home() {
           backgroundImage: "radial-gradient(#E4E6EB 1px, transparent 1px)",
           backgroundSize: "22px 22px",
         }}
-      >
+      ><ConnectionBackground />
         <div className="max-w-6xl mx-auto px-5 pt-14">
           <p className="font-mono text-volt text-sm mb-3">// petits objets, vrai usage</p>
           <h1 className="font-display font-bold text-4xl sm:text-6xl uppercase tracking-tight leading-[1.05]">
