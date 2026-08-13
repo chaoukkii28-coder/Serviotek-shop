@@ -1,19 +1,26 @@
 import Link from "next/link";
 import { products } from "@/lib/products";
 
+function normaliser(texte: string) {
+  return texte
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
 export default function ProduitListPage({
   searchParams,
 }: {
   searchParams: { recherche?: string; categorie?: string };
 }) {
-  const recherche = searchParams.recherche?.toLowerCase().trim() ?? "";
+  const recherche = normaliser(searchParams.recherche ?? "");
 
   const resultats = recherche
-    ? products.filter(
-        (p) =>
-          p.name.toLowerCase().includes(recherche) ||
-          p.description.toLowerCase().includes(recherche) ||
-          p.tagline.toLowerCase().includes(recherche)
+    ? products.filter((p) =>
+        [p.name, p.description, p.tagline, ...p.specs.map((s) => `${s.label} ${s.value}`)]
+          .map(normaliser)
+          .some((champ) => champ.includes(recherche))
       )
     : products;
 
