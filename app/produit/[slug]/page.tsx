@@ -12,7 +12,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const product = getProduct(params.slug);
   if (!product) return {};
 
-  const title = `${product.name} — ${product.price.toFixed(2)} € | Serviotek`;
+  const title = `${product.name} — ${product.price.toFixed(2)} €`;
 
   return {
     title,
