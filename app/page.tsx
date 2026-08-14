@@ -16,6 +16,10 @@ export default function Home() {
           <h1 className="font-display font-bold text-4xl sm:text-6xl uppercase tracking-tight leading-[1.05]">
             Tous connectés
           </h1>
+          <p className="mt-4 max-w-xl text-mist">
+            Serviotek sélectionne des gadgets électriques utiles pour la maison,
+            l'audio, le bricolage et le quotidien — au juste prix, livrés en France.
+          </p>
 
           <div className="flex flex-wrap gap-2 mt-6">
             {MESSAGES.map((m) => (

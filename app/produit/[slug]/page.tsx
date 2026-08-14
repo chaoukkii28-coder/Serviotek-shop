@@ -29,8 +29,27 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProduct(params.slug);
   if (!product) return notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: product.images,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "EUR",
+      price: product.price.toFixed(2),
+      availability: "https://schema.org/InStock",
+      url: `https://serviotek-shop.vercel.app/produit/${product.slug}`,
+    },
+  };
+
   return (
     <div className="max-w-6xl mx-auto px-5 py-10 grid sm:grid-cols-2 gap-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="relative">
         <ProductGallery images={product.images} alt={product.name} />
         {product.badge && (

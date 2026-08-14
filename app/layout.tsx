@@ -37,9 +37,24 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "OnlineStore",
+  name: "Serviotek",
+  url: "https://serviotek-shop.vercel.app",
+  description:
+    "Serviotek vend des petits gadgets électriques du quotidien, au juste prix.",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className={`${display.variable} ${body.variable} ${mono.variable} font-body`}>
         <CartProvider>
           <Header />
