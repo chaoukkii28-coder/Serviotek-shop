@@ -1,3 +1,11 @@
+export type Categorie =
+  | "audio"
+  | "maison"
+  | "bricolage"
+  | "detection"
+  | "bien-etre"
+  | "accessoires";
+
 export type Product = {
   slug: string;
   name: string;
@@ -7,6 +15,7 @@ export type Product = {
   specs: { label: string; value: string }[];
   image: string;
   badge?: string;
+  categorie: Categorie;
 };
 
 export const products: Product[] = [
@@ -23,6 +32,7 @@ export const products: Product[] = [
       { label: "Usage", value: "Suivi d'activité" },
     ],
     image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800",
+    categorie: "bien-etre",
   },
   {
     slug: "montre-connectee-cillso",
@@ -37,6 +47,7 @@ export const products: Product[] = [
       { label: "Usage", value: "Suivi d'activité" },
     ],
     image: "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800",
+    categorie: "bien-etre",
   },
   {
     slug: "support-telephone-voiture-induction",
@@ -51,6 +62,7 @@ export const products: Product[] = [
       { label: "Compatibilité", value: "Smartphones compatibles charge sans fil" },
     ],
     image: "https://images.unsplash.com/photo-1601972602288-3be527b4f18a?w=800",
+    categorie: "accessoires",
   },
   {
     slug: "ecouteurs-xulinse",
@@ -65,6 +77,7 @@ export const products: Product[] = [
       { label: "Livré avec", value: "Boîtier de charge" },
     ],
     image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800",
+    categorie: "audio",
   },
   {
     slug: "collier-chat-airtag",
@@ -79,6 +92,7 @@ export const products: Product[] = [
       { label: "Usage", value: "Localisation animal" },
     ],
     image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800",
+    categorie: "detection",
   },
   {
     slug: "barre-de-son-saiyin-40w",
@@ -92,6 +106,7 @@ export const products: Product[] = [
       { label: "Usage", value: "Home cinéma / TV" },
     ],
     image: "https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800",
+    categorie: "audio",
   },
   {
     slug: "chargeur-induction-iniu-15w",
@@ -106,6 +121,7 @@ export const products: Product[] = [
       { label: "Fonction", value: "Lumière nocturne adaptative" },
     ],
     image: "https://images.unsplash.com/photo-1591290619762-c6c9998ee5da?w=800",
+    categorie: "accessoires",
   },
   {
     slug: "imprimante-epson-xp-2200",
@@ -120,6 +136,7 @@ export const products: Product[] = [
       { label: "Format", value: "Ultra-compacte, A4" },
     ],
     image: "https://images.unsplash.com/photo-1612815154858-60aa4c59eabd?w=800",
+    categorie: "maison",
   },
   {
     slug: "xiaomi-redmi-buds-8-active",
@@ -134,6 +151,7 @@ export const products: Product[] = [
       { label: "Connexion", value: "Bluetooth 5.4" },
       { label: "Étanchéité", value: "IP54" },
     ],
+    categorie: "audio",
     image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800",
   },
   {
@@ -149,6 +167,7 @@ export const products: Product[] = [
       { label: "Ouverture", value: "Automatique, papillon" },
     ],
     image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800",
+    categorie: "maison",
   },
   {
     slug: "ecouteurs-anc-reduction-bruit",
@@ -165,6 +184,7 @@ export const products: Product[] = [
     ],
     image:
       "https://cf.cjdropshipping.com/20200811/400602831133748.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200",
+    categorie: "audio",
   },
   {
     slug: "prise-connectee-wifi-eu",
@@ -180,6 +200,7 @@ export const products: Product[] = [
     ],
     image:
       "https://oss-cf.cjdropshipping.com/product/2025/02/28/05/0e41b5e8-b350-4d53-bd99-29ea818d1f7e_trans.jpeg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
+    categorie: "maison",
   },
   {
     slug: "camera-solaire-exterieure-wifi",
@@ -197,6 +218,7 @@ export const products: Product[] = [
     ],
     image:
       "https://cf.cjdropshipping.com/d1401982-0ff4-45dd-9707-a8d57df310fc.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
+    categorie: "detection",
   },
   {
     slug: "sac-a-dos-usb-scolaire",
@@ -213,6 +235,7 @@ export const products: Product[] = [
     ],
     image:
       "https://cf.cjdropshipping.com/20200301/1339906006201.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
+    categorie: "accessoires",
   },
   {
     slug: "visseuse-sans-fil-usb",
@@ -229,6 +252,7 @@ export const products: Product[] = [
     ],
     image:
       "https://cf.cjdropshipping.com/18a05faa-8af6-49f9-8679-4ac28dc027e8.jpg?x-oss-process=image%2Fformat%2Cwebp",
+    categorie: "bricolage",
   },
 ];
 export function getProduct(slug: string) {
