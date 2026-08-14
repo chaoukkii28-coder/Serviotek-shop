@@ -57,7 +57,7 @@ export default function PanierPage() {
             className="flex gap-4 border border-wire rounded-xl p-4 items-center"
           >
             <div className="relative w-20 h-20 rounded-lg overflow-hidden bg-panel shrink-0">
-              <Image src={product.image} alt={product.name} fill className="object-cover" />
+              <Image src={product.images[0]} alt={product.name} fill className="object-cover" />
             </div>
             <div className="flex-1">
               <p className="font-medium">{product.name}</p>

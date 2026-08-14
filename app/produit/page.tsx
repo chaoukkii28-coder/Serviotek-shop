@@ -63,7 +63,7 @@ export default function ProduitListPage({
               className="block rounded-lg border border-neutral-200 p-3 transition hover:shadow-md"
             >
               <img
-                src={p.image}
+                src={p.images[0]}
                 alt={p.name}
                 className="mb-2 aspect-square w-full rounded-md object-cover"
               />

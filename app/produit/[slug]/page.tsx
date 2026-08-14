@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProduct, products } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
+import ProductGallery from "@/components/ProductGallery";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -20,7 +20,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     openGraph: {
       title,
       description: product.tagline,
-      images: [{ url: product.image }],
+      images: [{ url: product.images[0] }],
     },
   };
 }
@@ -31,8 +31,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="max-w-6xl mx-auto px-5 py-10 grid sm:grid-cols-2 gap-10">
-      <div className="relative aspect-square bg-panel border border-wire rounded-2xl overflow-hidden">
-        <Image src={product.image} alt={product.name} fill className="object-cover" />
+      <div className="relative">
+        <ProductGallery images={product.images} alt={product.name} />
         {product.badge && (
           <span className="absolute top-4 left-4 bg-volt text-graphite text-xs font-bold px-2 py-1 rounded-full">
             {product.badge}

@@ -10,7 +10,7 @@ export default function ProductCard({ product }: { product: Product }) {
     >
       <div className="relative aspect-square bg-black/20">
         <Image
-          src={product.image}
+          src={product.images[0]}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 50vw, 220px"
