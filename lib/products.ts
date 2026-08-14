@@ -272,6 +272,23 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/1d8f5985-ac42-49df-b393-b7dc09223cef.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200",
     categorie: "bien-etre",
   },
+  {
+    slug: "calculatrice-tablette-ecriture-2en1",
+    name: "Calculatrice scientifique 2-en-1 avec tablette d'écriture",
+    price: 29.90,
+    tagline: "Calculez et notez sur le même appareil",
+    description:
+      "Calculatrice scientifique pliable avec tablette d'écriture LCD intégrée, écran mat bleu anti-fatigue oculaire, réutilisable à volonté. Idéale pour la rentrée.",
+    specs: [
+      { label: "Fonctions", value: "Calculatrice scientifique + ardoise LCD effaçable" },
+      { label: "Écran", value: "LCD mat bleu, anti-fatigue oculaire" },
+      { label: "Format", value: "Pliable, pocket-size" },
+      { label: "Matière", value: "ABS" },
+    ],
+    image:
+      "https://cf.cjdropshipping.com/operation-center/file_202408151000181824023303292198912.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200",
+    categorie: "accessoires",
+  },
 ];
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
