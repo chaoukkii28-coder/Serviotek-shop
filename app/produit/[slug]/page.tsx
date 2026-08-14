@@ -1,10 +1,28 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getProduct, products } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+  const product = getProduct(params.slug);
+  if (!product) return {};
+
+  const title = `${product.name} — ${product.price.toFixed(2)} € | Serviotek`;
+
+  return {
+    title,
+    description: product.tagline,
+    openGraph: {
+      title,
+      description: product.tagline,
+      images: [{ url: product.image }],
+    },
+  };
 }
 
 export default function ProductPage({ params }: { params: { slug: string } }) {

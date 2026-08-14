@@ -20,9 +20,21 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Serviotek — Petits gadgets, grande utilité",
+  metadataBase: new URL("https://serviotek-shop.vercel.app"),
+  title: {
+    default: "Serviotek — Petits gadgets, grande utilité",
+    template: "%s | Serviotek",
+  },
   description:
     "Serviotek vend des petits gadgets électriques du quotidien, au juste prix.",
+  openGraph: {
+    title: "Serviotek — Petits gadgets, grande utilité",
+    description:
+      "Serviotek vend des petits gadgets électriques du quotidien, au juste prix.",
+    siteName: "Serviotek",
+    locale: "fr_FR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
