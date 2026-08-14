@@ -214,6 +214,22 @@ export const products: Product[] = [
     image:
       "https://cf.cjdropshipping.com/20200301/1339906006201.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
   },
+  {
+    slug: "visseuse-sans-fil-usb",
+    name: "Perceuse-visseuse sans fil rechargeable USB",
+    price: 44.90,
+    tagline: "Compacte, puissante, toujours prête",
+    description:
+      "Perceuse-visseuse sans fil compacte, batterie lithium rechargeable par USB, rotation bidirectionnelle, LED intégrée pour travailler dans le noir.",
+    specs: [
+      { label: "Recharge", value: "USB" },
+      { label: "Rotation", value: "Bidirectionnelle" },
+      { label: "Éclairage", value: "LED intégrée" },
+      { label: "Couple max", value: "4 Nm" },
+    ],
+    image:
+      "https://cf.cjdropshipping.com/18a05faa-8af6-49f9-8679-4ac28dc027e8.jpg?x-oss-process=image%2Fformat%2Cwebp",
+  },
 ];
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
