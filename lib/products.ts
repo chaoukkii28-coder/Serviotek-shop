@@ -254,6 +254,24 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/18a05faa-8af6-49f9-8679-4ac28dc027e8.jpg?x-oss-process=image%2Fformat%2Cwebp",
     categorie: "bricolage",
   },
+  {
+    slug: "masseur-nuque-ems-chauffant",
+    name: "Masseur de nuque EMS chauffant",
+    price: 24.90,
+    tagline: "Détente instantanée après une longue journée",
+    description:
+      "Masseur de nuque EMS à micro-courants avec chaleur, 4 modes de massage et 12 niveaux d'intensité, design ergonomique en U, arrêt automatique après 15 minutes.",
+    specs: [
+      { label: "Technologie", value: "EMS micro-courants" },
+      { label: "Modes", value: "4 modes, 12 niveaux d'intensité" },
+      { label: "Chauffe", value: "3 secondes" },
+      { label: "Alimentation", value: "USB rechargeable" },
+      { label: "Sécurité", value: "Arrêt automatique après 15 min" },
+    ],
+    image:
+      "https://cf.cjdropshipping.com/1d8f5985-ac42-49df-b393-b7dc09223cef.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200",
+    categorie: "bien-etre",
+  },
 ];
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
