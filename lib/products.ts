@@ -150,6 +150,70 @@ export const products: Product[] = [
     ],
     image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800",
   },
+  {
+    slug: "ecouteurs-anc-reduction-bruit",
+    name: "Casque à réduction de bruit active ANC",
+    price: 54.90,
+    tagline: "Immersion totale, silence à la demande",
+    description:
+      "Casque sans fil Bluetooth 5.0 avec réduction de bruit active (ANC), fonction appel et lecture musicale, portée 20 mètres.",
+    specs: [
+      { label: "Bluetooth", value: "5.0" },
+      { label: "Réduction de bruit", value: "Active (ANC)" },
+      { label: "Portée", value: "20 mètres" },
+      { label: "Coloris disponibles", value: "Noir, Blanc, Rose, Vert, Bleu" },
+    ],
+    image:
+      "https://cf.cjdropshipping.com/20200811/400602831133748.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200",
+  },
+  {
+    slug: "prise-connectee-wifi-eu",
+    name: "Prise connectée Wi-Fi standard européen 16A",
+    price: 24.90,
+    tagline: "Pilotez vos appareils à distance",
+    description:
+      "Prise connectée Wi-Fi au format européen 16A, contrôle à distance via application, coque en PC ignifugé.",
+    specs: [
+      { label: "Format", value: "Prise EU, 2 trous" },
+      { label: "Matière", value: "PC ignifugé" },
+      { label: "Connexion", value: "Wi-Fi" },
+    ],
+    image:
+      "https://oss-cf.cjdropshipping.com/product/2025/02/28/05/0e41b5e8-b350-4d53-bd99-29ea818d1f7e_trans.jpeg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
+  },
+  {
+    slug: "camera-solaire-exterieure-wifi",
+    name: "Caméra de surveillance solaire Wi-Fi 360°",
+    price: 59.90,
+    tagline: "Toujours alimentée, jamais hors service",
+    description:
+      "Caméra de surveillance extérieure alimentée par panneau solaire, détection de mouvement PIR, rotation 360°, vision nocturne infrarouge et couleur, audio bidirectionnel, étanche.",
+    specs: [
+      { label: "Alimentation", value: "Panneau solaire + batterie intégrée" },
+      { label: "Détection", value: "Mouvement PIR" },
+      { label: "Rotation", value: "360° horizontal / 120° vertical" },
+      { label: "Vision nocturne", value: "Infrarouge + couleur" },
+      { label: "Connexion", value: "Wi-Fi 2.4G" },
+    ],
+    image:
+      "https://cf.cjdropshipping.com/d1401982-0ff4-45dd-9707-a8d57df310fc.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
+  },
+  {
+    slug: "sac-a-dos-usb-scolaire",
+    name: "Sac à dos étudiant avec port de charge USB",
+    price: 34.90,
+    tagline: "Prêt pour la rentrée, toujours chargé",
+    description:
+      "Sac à dos grande capacité en toile, port de charge USB extérieur avec câble intégré, poches latérales pour bouteille et parapluie. Idéal pour la rentrée scolaire.",
+    specs: [
+      { label: "Matière", value: "Toile" },
+      { label: "Port USB", value: "Externe, câble intégré (batterie non incluse)" },
+      { label: "Dimensions", value: "43 x 30 x 15 cm" },
+      { label: "Coloris disponibles", value: "Noir, Gris, Bleu, Rose, Rouge, Crème" },
+    ],
+    image:
+      "https://cf.cjdropshipping.com/20200301/1339906006201.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
+  },
 ];
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
