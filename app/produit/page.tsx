@@ -8,6 +8,7 @@ const NOMS_CATEGORIES: Record<Categorie, string> = {
   detection: "Détection & Extérieur",
   "bien-etre": "Bien-être & Style",
   accessoires: "Chargeurs & Accessoires",
+  scolaire: "Rentrée scolaire",
 };
 
 function normaliser(texte: string) {
