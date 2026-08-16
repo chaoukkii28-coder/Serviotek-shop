@@ -12,6 +12,7 @@ const CATEGORIES = [
   { label: "Détection & Extérieur", href: "/produit?categorie=detection", color: "bg-rose-500" },
   { label: "Bien-être & Style", href: "/produit?categorie=bien-etre", color: "bg-violet-500" },
   { label: "Chargeurs & Accessoires", href: "/produit?categorie=accessoires", color: "bg-orange-500" },
+  { label: "Rentrée scolaire", href: "/produit?categorie=scolaire", color: "bg-red-600" },
 ];
 
 export default function Header() {
