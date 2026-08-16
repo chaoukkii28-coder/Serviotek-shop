@@ -12,11 +12,11 @@ export default function Home() {
     <div>
       <section className="relative overflow-hidden bg-white">
         <div className="max-w-6xl mx-auto px-5 pt-14">
-          <p className="font-mono text-volt text-sm mb-3">// petits objets, vrai usage</p>
+          <p className="font-mono text-green-800 text-sm mb-3">// petits objets, vrai usage</p>
           <h1 className="font-display font-bold text-4xl sm:text-6xl uppercase tracking-tight leading-[1.05]">
             Tous connectés
           </h1>
-          <p className="mt-4 max-w-xl text-mist">
+          <p className="mt-4 max-w-xl font-bold text-green-800">
             Serviotek sélectionne des gadgets électriques utiles pour la maison,
             l'audio, le bricolage et le quotidien — au juste prix, livrés en France.
           </p>
