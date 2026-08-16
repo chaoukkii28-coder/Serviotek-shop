@@ -53,13 +53,22 @@ export const products: Product[] = [
     price: 47.90,
     tagline: "Style sobre, fonctions complètes",
     description:
-      "Montre connectée coloris Noir, alliant design épuré et fonctions de suivi santé.",
+      "Montre connectée coloris Noir avec appels Bluetooth 5.3, micro intégré et son Hi-Fi. Plus de 110 modes sportifs, contrôle musique, commande appareil photo à distance et réveil intelligent.",
     specs: [
       { label: "Couleur", value: "Noir" },
-      { label: "Connexion", value: "Bluetooth" },
+      { label: "Connexion", value: "Bluetooth 5.3" },
+      { label: "Appels", value: "Micro intégré, historique, 100 contacts favoris" },
+      { label: "Sport", value: "Plus de 110 modes sportifs" },
+      { label: "Fonctions", value: "Contrôle musique, commande appareil photo, réveil intelligent" },
+      { label: "Étanchéité", value: "Résistante à l'eau" },
       { label: "Usage", value: "Suivi d'activité" },
     ],
-    images: ["https://images.unsplash.com/photo-1544117519-31a4b719223d?w=800"],
+    images: [
+      "/images/montre-connectee-cillso/1-produit-hero.jpg",
+      "/images/montre-connectee-cillso/2-appels-bluetooth.jpg",
+      "/images/montre-connectee-cillso/3-modes-sportifs.jpg",
+      "/images/montre-connectee-cillso/4-multifonctions.jpg",
+    ],
     categorie: "bien-etre",
   },
   {
