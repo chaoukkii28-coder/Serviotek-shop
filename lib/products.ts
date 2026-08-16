@@ -72,21 +72,6 @@ export const products: Product[] = [
     categorie: "bien-etre",
   },
   {
-    slug: "support-telephone-voiture-induction",
-    name: "Support téléphone voiture à induction 15W",
-    price: 62.90,
-    tagline: "Chargez votre téléphone en conduisant",
-    description:
-      "Support de voiture avec charge par induction rapide 15W, fixation stable pour une utilisation en toute sécurité.",
-    specs: [
-      { label: "Puissance de charge", value: "15W max" },
-      { label: "Fixation", value: "Voiture, grille d'aération / pare-brise" },
-      { label: "Compatibilité", value: "Smartphones compatibles charge sans fil" },
-    ],
-    images: ["https://images.unsplash.com/photo-1601972602288-3be527b4f18a?w=800"],
-    categorie: "accessoires",
-  },
-  {
     slug: "ecouteurs-xulinse",
     name: "Écouteurs sans fil BUGANI",
     price: 26.90,
