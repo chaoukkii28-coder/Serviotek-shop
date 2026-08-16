@@ -72,9 +72,9 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </p>
           <dl className="border border-wire rounded-xl divide-y divide-wire">
             {product.specs.map((s) => (
-              <div key={s.label} className="flex justify-between px-4 py-3 text-sm">
-                <dt className="text-mist">{s.label}</dt>
-                <dd className="font-mono">{s.value}</dd>
+              <div key={s.label} className="flex justify-between gap-4 px-4 py-3 text-sm">
+                <dt className="text-mist shrink-0">{s.label}</dt>
+                <dd className="font-mono text-right">{s.value}</dd>
               </div>
             ))}
           </dl>
