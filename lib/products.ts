@@ -120,23 +120,13 @@ export const products: Product[] = [
       { label: "Puissance de charge", value: "15W max" },
       { label: "Fonction", value: "Lumière nocturne adaptative" },
     ],
-    images: ["https://images.unsplash.com/photo-1591290619762-c6c9998ee5da?w=800"],
-    categorie: "accessoires",
-  },
-  {
-    slug: "imprimante-epson-xp-2200",
-    name: "Imprimante Epson Expression Home XP-2200",
-    price: 146.97,
-    tagline: "Impression, numérisation et copie, tout-en-un",
-    description:
-      "Imprimante 3-en-1 : impression, numérisation, copie. WiFi Direct, ultra-compacte, cartouches d'encre séparées.",
-    specs: [
-      { label: "Fonctions", value: "Impression, numérisation, copie" },
-      { label: "Connexion", value: "WiFi Direct" },
-      { label: "Format", value: "Ultra-compacte, A4" },
+    images: [
+      "/images/chargeur-induction-iniu-15w/2-charge-telephone.png",
+      "/images/chargeur-induction-iniu-15w/1-vitesse-15w.png",
+      "/images/chargeur-induction-iniu-15w/3-led-adaptatif.png",
+      "/images/chargeur-induction-iniu-15w/4-photo-reelle.jpeg",
     ],
-    images: ["https://images.unsplash.com/photo-1612815154858-60aa4c59eabd?w=800"],
-    categorie: "maison",
+    categorie: "accessoires",
   },
   {
     slug: "xiaomi-redmi-buds-8-active",
@@ -153,21 +143,6 @@ export const products: Product[] = [
     ],
     categorie: "audio",
     images: ["https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800"],
-  },
-  {
-    slug: "poubelle-silverlake-70l",
-    name: "Poubelle de cuisine automatique SILVERLAKE 70L",
-    price: 159.98,
-    tagline: "Ouverture automatique, grande capacité",
-    description:
-      "Poubelle de cuisine automatique 70L en acier Inox avec cerclage, ouverture papillon pour une hygiène optimale.",
-    specs: [
-      { label: "Capacité", value: "70L" },
-      { label: "Matière", value: "Acier Inox" },
-      { label: "Ouverture", value: "Automatique, papillon" },
-    ],
-    images: ["https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800"],
-    categorie: "maison",
   },
   {
     slug: "ecouteurs-anc-reduction-bruit",
