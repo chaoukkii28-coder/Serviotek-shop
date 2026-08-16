@@ -22,7 +22,7 @@ export const products: Product[] = [
   {
     slug: "montre-connectee-hosgubo",
     name: "Montre connectée Hosgubo",
-    price: 143.70,
+    price: 95.80,
     tagline: "Élégance et suivi santé au poignet",
     description:
       "Montre connectée coloris Rose pêche avec grand écran tactile HD 1,91 pouces. Suivi de la fréquence cardiaque et du sommeil 24h/24, plus de 110 modes sportifs, réponse aux appels Bluetooth et notifications intelligentes (SMS, réseaux sociaux).",
@@ -50,7 +50,7 @@ export const products: Product[] = [
   {
     slug: "montre-connectee-cillso",
     name: "Montre connectée Cillso",
-    price: 143.70,
+    price: 95.80,
     tagline: "Style sobre, fonctions complètes",
     description:
       "Montre connectée coloris Noir avec appels Bluetooth 5.3, micro intégré et son Hi-Fi. Plus de 110 modes sportifs, contrôle musique, commande appareil photo à distance et réveil intelligent.",
@@ -74,7 +74,7 @@ export const products: Product[] = [
   {
     slug: "ecouteurs-xulinse",
     name: "Écouteurs sans fil BUGANI",
-    price: 80.70,
+    price: 53.80,
     tagline: "Le son sans les fils, à petit prix",
     description:
       "Écouteurs Bluetooth sans fil BUGANI avec son sans distorsion, double microphone pour des appels cristallins, étanchéité IPX6 résistante à la transpiration et jusqu'à 24h d'autonomie avec le boîtier de charge.",
@@ -98,7 +98,7 @@ export const products: Product[] = [
   {
     slug: "collier-chat-airtag",
     name: "Collier chat avec emplacement AirTag",
-    price: 107.70,
+    price: 71.80,
     tagline: "Gardez un œil sur votre compagnon",
     description:
       "Collier pour chat avec emplacement intégré pour AirTag, permettant de suivre sa position en temps réel. Bande réfléchissante visible jusqu'à 150m de nuit, boucle de sécurité qui se détache sous traction (max 3kg), taille ajustable de 19 à 32cm.",
@@ -126,7 +126,7 @@ export const products: Product[] = [
   {
     slug: "barre-de-son-saiyin-40w",
     name: "Barre de son Saiyin 40W",
-    price: 284.94,
+    price: 189.96,
     tagline: "Un son puissant pour votre salon",
     description:
       "Barre de son 40W avec 2 haut-parleurs à pavillon carré, offrant un rendu sonore riche jusqu'à 98dB. Murale et facile à installer, connexions multiples (Bluetooth, optique, subwoofer, AUX), livrée avec télécommande.",
@@ -152,7 +152,7 @@ export const products: Product[] = [
   {
     slug: "chargeur-induction-iniu-15w",
     name: "Chargeur à induction INIU 15W",
-    price: 145.26,
+    price: 96.84,
     tagline: "Charge rapide, lumière nocturne adaptative",
     description:
       "Chargeur à induction 15W à charge rapide avec lumière nocturne adaptative, idéal pour le bureau ou le voyage.",
@@ -172,7 +172,7 @@ export const products: Product[] = [
   {
     slug: "xiaomi-redmi-buds-8-active",
     name: "Xiaomi Redmi Buds 8 Active",
-    price: 152.91,
+    price: 101.94,
     tagline: "Jusqu'à 37h d'autonomie",
     description:
       "Écouteurs sans fil Semi-Intra avec transducteur titane 14,2mm, basses puissantes et réduction de bruit IA lors des appels.",
@@ -188,7 +188,7 @@ export const products: Product[] = [
   {
     slug: "ecouteurs-anc-reduction-bruit",
     name: "Casque à réduction de bruit active ANC",
-    price: 164.70,
+    price: 109.80,
     tagline: "Immersion totale, silence à la demande",
     description:
       "Écouteurs sans fil Bluetooth 5.4 avec son stéréo Hi-Fi (transducteurs 13mm), micro haute définition à finition acier premium pour des appels clairs, étanchéité IPX7 et jusqu'à 40h d'autonomie avec le boîtier de charge USB-C.",
@@ -214,7 +214,7 @@ export const products: Product[] = [
   {
     slug: "prise-connectee-wifi-eu",
     name: "Prise connectée Wi-Fi standard européen 16A",
-    price: 74.70,
+    price: 49.80,
     tagline: "Pilotez vos appareils à distance",
     description:
       "Prise connectée Wi-Fi au format européen 16A, contrôle à distance via application, coque en PC ignifugé.",
@@ -235,7 +235,7 @@ export const products: Product[] = [
   {
     slug: "camera-solaire-exterieure-wifi",
     name: "Caméra de surveillance solaire Wi-Fi 360°",
-    price: 179.70,
+    price: 119.80,
     tagline: "Toujours alimentée, jamais hors service",
     description:
       "Caméra de surveillance extérieure alimentée par panneau solaire, détection de mouvement PIR, rotation 360°, vision nocturne infrarouge et couleur, audio bidirectionnel, étanche.",
@@ -258,7 +258,7 @@ export const products: Product[] = [
   {
     slug: "sac-a-dos-usb-scolaire",
     name: "Sac à dos étudiant avec port de charge USB",
-    price: 104.70,
+    price: 69.80,
     tagline: "Prêt pour la rentrée, toujours chargé",
     description:
       "Sac à dos grande capacité en toile, port de charge USB extérieur avec câble intégré, poches latérales pour bouteille et parapluie. Idéal pour la rentrée scolaire.",
@@ -280,7 +280,7 @@ export const products: Product[] = [
   {
     slug: "visseuse-sans-fil-usb",
     name: "Perceuse-visseuse sans fil rechargeable USB",
-    price: 134.70,
+    price: 89.80,
     tagline: "Compacte, puissante, toujours prête",
     description:
       "Perceuse-visseuse sans fil compacte, batterie lithium rechargeable par USB, rotation bidirectionnelle, LED intégrée pour travailler dans le noir.",
@@ -301,7 +301,7 @@ export const products: Product[] = [
   {
     slug: "masseur-nuque-ems-chauffant",
     name: "Masseur de nuque EMS chauffant",
-    price: 74.70,
+    price: 49.80,
     tagline: "Détente instantanée après une longue journée",
     description:
       "Masseur de nuque EMS à micro-courants avec chaleur, 4 modes de massage et 12 niveaux d'intensité, design ergonomique en U, arrêt automatique après 15 minutes.",
@@ -324,7 +324,7 @@ export const products: Product[] = [
   {
     slug: "calculatrice-tablette-ecriture-2en1",
     name: "Calculatrice scientifique 2-en-1 avec tablette d'écriture",
-    price: 89.70,
+    price: 59.80,
     tagline: "Calculez et notez sur le même appareil",
     description:
       "Calculatrice scientifique pliable avec tablette d'écriture LCD intégrée, écran mat bleu anti-fatigue oculaire, réutilisable à volonté. Idéale pour la rentrée.",
