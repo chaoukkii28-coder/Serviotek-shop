@@ -84,7 +84,7 @@ export const products: Product[] = [
       { label: "Matière", value: "Tissu résistant, fermeture éclair renforcée" },
       { label: "Usage", value: "Collège, lycée, université, bureau" },
     ],
-    images: ["https://images.unsplash.com/photo-1594642061302-4a0d4a1e0a1e?w=800"],
+    images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
     badge: "Rentrée",
   },
