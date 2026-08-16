@@ -18,7 +18,7 @@ export default function Home() {
           </h1>
           <p className="mt-4 max-w-xl font-bold text-green-800">
             Serviotek sélectionne des gadgets électriques utiles pour la maison,
-            l'audio, le bricolage et le quotidien — au juste prix, livrés en France.
+            l'audio, le bricolage et le quotidien — au juste prix, expédiés de France.
           </p>
 
           <div className="flex flex-wrap gap-2 mt-6">
