@@ -100,12 +100,24 @@ export const products: Product[] = [
     price: 94.98,
     tagline: "Un son puissant pour votre salon",
     description:
-      "Barre de son 40W offrant un rendu sonore riche, idéale pour améliorer l'audio de votre téléviseur.",
+      "Barre de son 40W avec 2 haut-parleurs à pavillon carré, offrant un rendu sonore riche jusqu'à 98dB. Murale et facile à installer, connexions multiples (Bluetooth, optique, subwoofer, AUX), livrée avec télécommande.",
     specs: [
       { label: "Puissance", value: "40W" },
-      { label: "Usage", value: "Home cinéma / TV" },
+      { label: "Volume maximum", value: "98dB" },
+      { label: "Haut-parleurs", value: "2 pavillons carrés" },
+      { label: "Dimensions", value: "43 x 6,5 x 9 cm (17 x 2,5 x 3,5 pouces)" },
+      { label: "Connexions", value: "Bluetooth, Optique, Subwoofer, AUX" },
+      { label: "Installation", value: "Murale ou pose libre, télécommande incluse" },
+      { label: "Usage", value: "Home cinéma / TV / gaming" },
     ],
-    images: ["https://images.unsplash.com/photo-1545454675-3531b543be5d?w=800"],
+    images: [
+      "/images/barre-de-son-saiyin-40w/1-produit-telecommande.jpg",
+      "/images/barre-de-son-saiyin-40w/5-gaming-station.jpg",
+      "/images/barre-de-son-saiyin-40w/4-mur-montable.jpg",
+      "/images/barre-de-son-saiyin-40w/2-specs-40w-98db.jpg",
+      "/images/barre-de-son-saiyin-40w/3-connexions-multiples.jpg",
+      "/images/barre-de-son-saiyin-40w/6-package-contents.jpg",
+    ],
     categorie: "audio",
   },
   {
