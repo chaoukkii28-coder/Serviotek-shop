@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { NOMS_CATEGORIES } from "@/lib/categories";
 import {
   NOMS_FAMILLES,
@@ -25,6 +26,12 @@ function estFamilleValide(valeur: string | undefined): valeur is Famille {
 
 /** Produits par page : au-delà, le mobile charge trop d'images d'un coup. */
 const PAR_PAGE = 24;
+
+export const metadata: Metadata = {
+  title: "Catalogue",
+  description:
+    "Fournitures de rentrée et gadgets utiles : écriture, cahiers, classement, géométrie, arts plastiques, sacs, audio, maison et bricolage.",
+};
 
 export default function ProduitListPage({
   searchParams,

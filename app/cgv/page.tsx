@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conditions générales de vente",
+  description:
+    "Identité du vendeur, prix, livraison, droit de rétractation de 14 jours et garantie légale de conformité de 2 ans.",
+};
+
 export default function CGV() {
   return (
     <div className="max-w-2xl mx-auto px-5 py-16">
