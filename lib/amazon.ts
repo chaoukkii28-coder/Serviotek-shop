@@ -330,6 +330,11 @@ export function controler(product: Product, options: OptionsFlux = {}): Controle
   } else {
     const urls = product.images.map((src) => urlImageAbsolue(src, baseUrl));
 
+    if (urls.some((u) => u.includes("/api/vignette"))) {
+      avertissements.push(
+        "Vignette générée, pas une photo : Amazon exige le visuel du produit réellement vendu"
+      );
+    }
     if (urls.some((u) => u.includes("images.unsplash.com"))) {
       avertissements.push(
         "Photo d'illustration Unsplash : Amazon exige la photo du produit réellement vendu"
