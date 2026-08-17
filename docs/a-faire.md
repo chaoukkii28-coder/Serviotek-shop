@@ -72,13 +72,39 @@ confidentiel) et je les intègre au site.
 
 ---
 
-## 3. Les codes EAN pour Amazon — compte plusieurs semaines
+## 3. Amazon — état réel du compte
+
+Compte vendeur unique **« Xonto »**, avec plusieurs pays rattachés (un seul
+compte, plusieurs places de marché : aucun risque de suspension pour comptes
+multiples).
+
+| Région | État |
+| --- | --- |
+| **Europe** — dont **Amazon.fr**, de, es, it, nl, be, pl, se, ie, co.uk | inscription **passée** |
+| États-Unis, Canada, Mexique | actifs |
+| Australie | actif, mais **aucun mode de versement** (bloquant sur cette région) |
+| Égypte, Japon | en attente d'inscription |
+
+Amazon.fr est la seule place de marché qui compte ici : catalogue en français,
+prix en euros, SASU française, livraison France / Belgique / Suisse /
+Luxembourg.
+
+### Ce qui reste à régler sur le compte
+
+1. **Vérifier la carte de crédit** — Amazon demande une validation auprès de la
+   banque pour l'ensemble des sites européens, avec une empreinte temporaire de
+   1 € qui n'est pas débitée. Bouton « Vérifier » dans *Modes de règlement*.
+2. **Mode de versement (compte bancaire)** — obligatoire pour encaisser. Il
+   manquait côté Australie ; à contrôler côté Europe.
+3. **Adresse de retour** — signalée à mettre à jour côté États-Unis.
+
+## 4. Les codes EAN pour Amazon — compte plusieurs semaines
 
 Amazon exige un code-barres unique par produit. Tu as deux voies.
 
 ### Voie A — Demander une exemption (gratuit, à essayer en premier)
 
-1. Connecte-toi à **Seller Central**.
+1. Connecte-toi à **Seller Central**, place de marché **France**.
 2. Menu **Catalogue** → **Demander une exemption GTIN**.
 3. Choisis la catégorie du produit et la marque **Serviotek**.
 4. Amazon te demandera des **photos du produit avec ta marque visible** dessus

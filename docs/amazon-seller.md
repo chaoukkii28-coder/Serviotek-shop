@@ -107,6 +107,11 @@ rapport au lieu d'être rejetée par Amazon après coup.
 
 ## Charger dans Seller Central
 
+Place de marché à sélectionner : **Amazon.fr**. Le compte « Xonto » couvre
+aussi l'Allemagne, l'Espagne, l'Italie, les Pays-Bas, la Belgique, la Pologne,
+la Suède, l'Irlande et le Royaume-Uni — mais un catalogue rédigé en français
+avec des prix en euros n'a de sens que sur Amazon.fr.
+
 1. Seller Central › **Catalogue › Ajouter des produits en masse**.
 2. Télécharger le **modèle de votre catégorie** (les colonnes exactes varient
    d'une catégorie à l'autre — c'est pour ça qu'on ne peut pas envoyer notre
