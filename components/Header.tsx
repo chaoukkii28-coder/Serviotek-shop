@@ -4,16 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Search, ShoppingCart, Menu, X } from "lucide-react";
 import { useCart } from "@/components/CartContext";
-
-const CATEGORIES = [
-  { label: "Audio & Écouteurs", href: "/produit?categorie=audio", color: "bg-sky-500" },
-  { label: "Maison connectée", href: "/produit?categorie=maison", color: "bg-lime-500" },
-  { label: "Bricolage & Outils", href: "/produit?categorie=bricolage", color: "bg-amber-500" },
-  { label: "Détection & Extérieur", href: "/produit?categorie=detection", color: "bg-rose-500" },
-  { label: "Bien-être & Style", href: "/produit?categorie=bien-etre", color: "bg-violet-500" },
-  { label: "Chargeurs & Accessoires", href: "/produit?categorie=accessoires", color: "bg-orange-500" },
-  { label: "Rentrée scolaire", href: "/produit?categorie=scolaire", color: "bg-red-600" },
-];
+import { CATEGORIES, lienCategorie } from "@/lib/categories";
 
 export default function Header() {
   const [query, setQuery] = useState("");
@@ -118,12 +109,12 @@ export default function Header() {
       <nav className="hidden border-t border-neutral-100 bg-neutral-50 sm:block">
         <ul className="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-4 py-2 text-sm font-medium text-neutral-700 sm:px-6">
           {CATEGORIES.map((cat) => (
-            <li key={cat.href}>
+            <li key={cat.id}>
               <Link
-                href={cat.href}
+                href={lienCategorie(cat.id)}
                 className="flex items-center gap-2 whitespace-nowrap transition hover:text-neutral-900 hover:underline underline-offset-4"
               >
-                <span className={`h-2 w-2 shrink-0 rounded-full ${cat.color}`} />
+                <span className={`h-2 w-2 shrink-0 rounded-full ${cat.couleur}`} />
                 {cat.label}
               </Link>
             </li>
@@ -136,13 +127,13 @@ export default function Header() {
         <nav className="border-t border-neutral-100 bg-neutral-50 sm:hidden">
           <ul className="flex flex-col divide-y divide-neutral-200 px-4">
             {CATEGORIES.map((cat) => (
-              <li key={cat.href}>
+              <li key={cat.id}>
                 <Link
-                  href={cat.href}
+                  href={lienCategorie(cat.id)}
                   onClick={() => setMenuOuvert(false)}
                   className="flex items-center gap-2 py-3 text-sm font-medium text-neutral-800"
                 >
-                  <span className={`h-2 w-2 shrink-0 rounded-full ${cat.color}`} />
+                  <span className={`h-2 w-2 shrink-0 rounded-full ${cat.couleur}`} />
                   {cat.label}
                 </Link>
               </li>

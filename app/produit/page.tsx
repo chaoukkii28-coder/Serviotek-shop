@@ -1,20 +1,11 @@
 import Link from "next/link";
+import { NOMS_CATEGORIES } from "@/lib/categories";
 import {
   NOMS_FAMILLES,
   products,
   type Categorie,
   type Famille,
 } from "@/lib/products";
-
-const NOMS_CATEGORIES: Record<Categorie, string> = {
-  audio: "Audio & Écouteurs",
-  maison: "Maison connectée",
-  bricolage: "Bricolage & Outils",
-  detection: "Détection & Extérieur",
-  "bien-etre": "Bien-être & Style",
-  accessoires: "Chargeurs & Accessoires",
-  scolaire: "Rentrée scolaire",
-};
 
 function normaliser(texte: string) {
   return texte
