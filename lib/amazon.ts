@@ -108,6 +108,17 @@ function tronquer(valeur: string, max: number): string {
   return propre.length <= max ? propre : `${propre.slice(0, max - 1).trimEnd()}…`;
 }
 
+/**
+ * Les photos du site sont livrées telles que le fournisseur les a fournies :
+ * format panoramique, bandes noires sur les côtés. Une version carrée 1600 px
+ * sur fond blanc, conforme aux exigences Amazon, est générée dans
+ * public/images-amazon — c'est elle qu'il faut envoyer.
+ */
+export function versionAmazon(source: string): string {
+  if (!source.startsWith("/images/")) return source;
+  return source.replace("/images/", "/images-amazon/").replace(/\.(png|jpeg)$/i, ".jpg");
+}
+
 /** Amazon télécharge les images : les chemins locaux doivent devenir absolus. */
 export function urlImageAbsolue(source: string, baseUrl: string = SITE_URL): string {
   if (/^https?:\/\//i.test(source)) return source;
@@ -211,7 +222,7 @@ export function ligneAmazon(product: Product, options: OptionsFlux = {}): Amazon
   const { baseUrl = SITE_URL, quantiteParDefaut = 0 } = options;
   const amazon = product.amazon ?? {};
 
-  const images = product.images.map((src) => urlImageAbsolue(src, baseUrl));
+  const images = product.images.map((src) => urlImageAbsolue(versionAmazon(src), baseUrl));
   const bullets = pointsCles(product);
   const ean = amazon.ean?.replace(/\s/g, "") ?? "";
 
@@ -345,6 +356,11 @@ export function controler(product: Product, options: OptionsFlux = {}): Controle
     if (urls.some((u) => u.includes("x-oss-process="))) {
       avertissements.push(
         "URL d'image avec paramètres de redimensionnement : Amazon exige au moins 1000 px sur le plus grand côté"
+      );
+    }
+    if (urls.some((u) => u.includes("/images-amazon/"))) {
+      avertissements.push(
+        "Photos recadrées au format Amazon (1600 px, fond blanc) — vérifier que la principale montre bien le produit seul"
       );
     }
     if (product.images.length < 3) {
