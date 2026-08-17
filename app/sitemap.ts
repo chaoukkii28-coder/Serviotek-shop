@@ -10,7 +10,7 @@ const PAGES_FIXES = [
   "/retractation",
   "/cgv",
   "/mentions-legales",
-  "/confidentialité",
+  "/confidentialite",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const fixes: MetadataRoute.Sitemap = PAGES_FIXES.map((chemin) => ({
-    url: `${SITE_URL}${encodeURI(chemin)}`,
+    url: `${SITE_URL}${chemin}`,
     lastModified: new Date(),
     changeFrequency: "yearly",
     priority: 0.3,
