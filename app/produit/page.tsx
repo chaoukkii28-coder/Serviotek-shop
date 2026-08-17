@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import ProductCard from "@/components/ProductCard";
 import { NOMS_CATEGORIES } from "@/lib/categories";
 import {
   NOMS_FAMILLES,
@@ -142,22 +143,7 @@ export default function ProduitListPage({
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {affiches.map((p) => (
-            <Link
-              key={p.slug}
-              href={`/produit/${p.slug}`}
-              className="block rounded-lg border border-neutral-200 p-3 transition hover:shadow-md"
-            >
-              <img
-                src={p.images[0]}
-                alt={p.name}
-                loading="lazy"
-                decoding="async"
-                className="mb-2 aspect-square w-full rounded-md object-cover"
-              />
-              <h2 className="text-sm font-semibold text-neutral-900">{p.name}</h2>
-              <p className="text-xs text-neutral-500">{p.tagline}</p>
-              <p className="mt-1 font-bold text-lime-600">{p.price.toFixed(2)} €</p>
-            </Link>
+            <ProductCard key={p.slug} product={p} />
           ))}
         </div>
       )}
