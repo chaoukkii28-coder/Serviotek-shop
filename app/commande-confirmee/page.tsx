@@ -17,8 +17,8 @@ export default function ConfirmationPage() {
       <p className="font-mono text-volt text-sm mb-3">// paiement confirmé</p>
       <h1 className="font-display font-bold text-3xl mb-4">Merci pour ta commande !</h1>
       <p className="text-mist mb-8">
-        Tu vas recevoir un e-mail de confirmation. Compte tenu du fonctionnement en
-        dropshipping, la livraison peut prendre 7 à 14 jours ouvrés.
+        Tu vas recevoir un e-mail de confirmation. La livraison intervient sous
+        5 jours ouvrés maximum.
       </p>
       <Link href="/#catalogue" className="underline hover:text-volt">
         Continuer mes achats

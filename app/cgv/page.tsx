@@ -21,7 +21,7 @@ export default function CGV() {
         </section>
         <section>
           <h2 className="text-white font-medium mb-1">4. Livraison</h2>
-          <p>Délai estimé : 7 à 14 jours ouvrés selon le produit et le fournisseur. En cas de retard important, le client peut contacter le service client pour connaître l&apos;état de sa commande.</p>
+          <p>Délai de livraison : 5 jours ouvrés maximum selon le produit et le fournisseur. En cas de retard important, le client peut contacter le service client pour connaître l&apos;état de sa commande.</p>
         </section>
         <section>
           <h2 className="text-white font-medium mb-1">5. Droit de rétractation</h2>
