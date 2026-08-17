@@ -180,6 +180,29 @@ function motsCles(product: Product): string {
   return retenus.join(" ");
 }
 
+/**
+ * Sélection de lancement : les 10 références par lesquelles commencer sur
+ * Amazon, plutôt que d'ouvrir les 120 d'un coup.
+ *
+ * Critères retenus : prix unitaire au-dessus de 10 € (en dessous, la
+ * commission Amazon et le port mangent la marge), produit différenciant
+ * plutôt que consommable de masse — inutile d'aller au contact frontal de
+ * Bic, Oxford ou Amazon Basics sur les stylos et les cahiers — et colis
+ * léger, peu fragile, peu sujet aux retours.
+ */
+export const SELECTION_LANCEMENT: readonly string[] = [
+  "plumier-garni-scolaire",
+  "gourde-inox-750ml",
+  "trieur-12-compartiments",
+  "sous-main-bureau-transparent",
+  "tablier-peinture-enfant",
+  "boite-a-gouter-compartiments",
+  "porte-documents-zippe-a4",
+  "carnet-croquis-a4-100p",
+  "ardoise-blanche-effacable-a4",
+  "kit-geometrie-4-pieces",
+];
+
 export type OptionsFlux = {
   /** Domaine public du site, utilisé pour rendre les images absolues. */
   baseUrl?: string;

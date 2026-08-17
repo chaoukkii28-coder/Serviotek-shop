@@ -10,6 +10,25 @@ Lancer le site (`npm run dev`), puis :
 | `/api/amazon-feed?format=csv&stock=25` | Le même en **CSV**, ouvrable dans Excel |
 | `/api/amazon-feed?rapport=1` | **Ce qu'il manque**, produit par produit (JSON) |
 | `/api/amazon-feed?categorie=scolaire&stock=25` | Uniquement les 100 références scolaires |
+| `/api/amazon-feed?lancement=1&stock=25` | **Les 10 références par lesquelles démarrer** |
+
+## Par où commencer : 10 références, pas 120
+
+Ouvrir 120 offres d'un coup multiplie par 120 le coût des EAN, des photos et
+du risque de suspension, avant d'avoir vendu quoi que ce soit. La liste
+`SELECTION_LANCEMENT` (`lib/amazon.ts`) retient 10 références sur trois
+critères :
+
+- **prix unitaire au-dessus de 10 €** — en dessous, la commission Amazon et le
+  port absorbent la marge ;
+- **produit différenciant** — trieur, plumier garni, tablier de peinture : pas
+  de duel frontal avec Bic, Oxford ou Amazon Basics sur les stylos et cahiers,
+  qui se vendent au prix coûtant ;
+- **colis léger et peu fragile** — moins de casse, moins de retours.
+
+Validez un cycle complet sur ces 10 (mise en ligne, première vente, un retour
+client) avant d'élargir. Le reste du catalogue est prêt à partir quand vous
+voulez.
 
 `stock=25` fixe la quantité pour tous les produits sans stock défini. Sans ce
 paramètre le stock vaut 0 et **les offres ne sont pas visibles à l'achat**.

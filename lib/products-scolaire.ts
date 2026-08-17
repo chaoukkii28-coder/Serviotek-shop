@@ -16,7 +16,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "stylos-bille-bleu-lot-20",
     name: "Stylos bille bleus (lot de 20)",
-    price: 12.02,
+    price: 12.90,
     tagline: "La réserve de l'année en une seule commande",
     description:
       "Lot de 20 stylos bille à encre bleue, pointe moyenne 1 mm. Encre fluide qui ne bave pas et capuchon ventilé conforme aux normes de sécurité scolaires.",
@@ -34,7 +34,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "stylos-bille-4-couleurs-lot-3",
     name: "Stylos 4 couleurs (lot de 3)",
-    price: 16.07,
+    price: 16.90,
     tagline: "Quatre encres, un seul stylo",
     description:
       "Stylo bille rétractable à 4 couleurs (bleu, noir, rouge, vert), corps caoutchouté antidérapant. L'indispensable de la prise de notes en couleur.",
@@ -52,7 +52,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "stylo-plume-scolaire-cartouches",
     name: "Stylo plume scolaire + 6 cartouches",
-    price: 17.42,
+    price: 17.90,
     tagline: "L'apprentissage de l'écriture, sans accroc",
     description:
       "Stylo plume à plume iridium pour droitiers et gauchers, grip ergonomique guidant les doigts. Livré avec 6 cartouches d'encre bleue effaçable.",
@@ -70,7 +70,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cartouches-encre-bleue-lot-50",
     name: "Cartouches d'encre bleue effaçable (lot de 50)",
-    price: 10.67,
+    price: 10.90,
     tagline: "De quoi tenir toute l'année",
     description:
       "Boîte de 50 cartouches courtes standard, encre bleue effaçable compatible avec la majorité des stylos plume scolaires.",
@@ -88,7 +88,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "effaceurs-reecriveurs-lot-4",
     name: "Effaceurs réécriveurs (lot de 4)",
-    price: 7.97,
+    price: 8.90,
     tagline: "Efface d'un côté, réécrit de l'autre",
     description:
       "Effaceurs double embout : une pointe pour effacer l'encre bleue effaçable, une pointe fine bleue pour réécrire immédiatement par-dessus.",
@@ -105,7 +105,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "stylos-roller-effacables-lot-6",
     name: "Stylos roller effaçables (lot de 6)",
-    price: 18.77,
+    price: 18.90,
     tagline: "Une erreur ? Un coup de gomme et c'est réglé",
     description:
       "Rollers à encre thermosensible effaçable par friction : la gomme en bout de stylo fait disparaître le trait sans laisser de trace ni abîmer le papier.",
@@ -123,7 +123,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "recharges-roller-effacable-lot-12",
     name: "Recharges pour roller effaçable (lot de 12)",
-    price: 12.02,
+    price: 12.90,
     tagline: "On garde le stylo, on change la cartouche",
     description:
       "Lot de 12 recharges 0,7 mm pour rollers effaçables : moins cher et moins de plastique que de racheter des stylos entiers.",
@@ -140,7 +140,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "crayons-papier-hb-lot-12",
     name: "Crayons à papier HB (lot de 12)",
-    price: 9.32,
+    price: 9.90,
     tagline: "Mine tendre qui ne casse pas",
     description:
       "Douze crayons graphite HB en bois certifié, mine collée sur toute la longueur pour résister aux chutes et au taille-crayon.",
@@ -158,7 +158,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "portemines-05mm-lot-3",
     name: "Porte-mines 0,5 mm (lot de 3)",
-    price: 12.02,
+    price: 12.90,
     tagline: "Un trait toujours net, sans taille-crayon",
     description:
       "Porte-mines à poussoir avec grip caoutchouté et gomme intégrée sous le capuchon. Trait constant de 0,5 mm, idéal pour la géométrie et les schémas.",
@@ -176,7 +176,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "mines-05mm-hb-3-etuis",
     name: "Mines 0,5 mm HB (3 étuis)",
-    price: 6.62,
+    price: 6.90,
     tagline: "La recharge qui manque toujours",
     description:
       "Trois étuis de mines HB 0,5 mm, 12 mines par étui, résistantes à la pression pour limiter la casse en cours d'écriture.",
@@ -193,7 +193,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "gommes-blanches-lot-4",
     name: "Gommes blanches sans PVC (lot de 4)",
-    price: 6.08,
+    price: 6.90,
     tagline: "Efface net, sans trace grise",
     description:
       "Gommes en matière synthétique sans PVC ni phtalates, qui effacent le graphite sans laisser de résidu gras ni abîmer la feuille.",
@@ -210,7 +210,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "taille-crayon-reservoir-2-trous",
     name: "Taille-crayon à réservoir 2 trous",
-    price: 5.27,
+    price: 5.90,
     tagline: "Zéro copeau sur la table",
     description:
       "Taille-crayon deux diamètres (crayons standard et crayons de couleur épais) avec réservoir transparent à couvercle verrouillable.",
@@ -227,7 +227,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "stylos-bille-pointe-fine-lot-10",
     name: "Stylos bille pointe fine 0,7 mm (lot de 10)",
-    price: 10.67,
+    price: 10.90,
     tagline: "Pour les écritures serrées",
     description:
       "Dix stylos bille à pointe fine 0,7 mm : trait précis pour les annotations, les marges et les cahiers à petits carreaux.",
@@ -244,7 +244,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "feutres-pointe-fine-lot-12",
     name: "Feutres pointe fine 0,4 mm (lot de 12)",
-    price: 17.42,
+    price: 17.90,
     tagline: "Douze couleurs pour des fiches lisibles",
     description:
       "Feutres à pointe fine 0,4 mm sous protection métal, encre à base d'eau qui ne traverse pas le papier. Parfaits pour les fiches de révision et le bullet journal.",
@@ -262,7 +262,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "marqueurs-permanents-lot-4",
     name: "Marqueurs permanents (lot de 4)",
-    price: 12.02,
+    price: 12.90,
     tagline: "Écrit sur presque tout, résiste à l'eau",
     description:
       "Quatre marqueurs indélébiles à pointe ogive, encre à séchage rapide résistante à l'eau, qui marque le carton, le plastique, le métal et le verre.",
@@ -280,7 +280,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "marqueurs-ardoise-lot-4",
     name: "Marqueurs pour ardoise blanche (lot de 4)",
-    price: 10.67,
+    price: 10.90,
     tagline: "S'efface d'un simple coup de chiffon",
     description:
       "Marqueurs effaçables à sec pour ardoise et tableau blanc, encre sans solvant agressif et faiblement odorante.",
@@ -298,7 +298,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "correcteurs-souris-lot-2",
     name: "Correcteurs souris 5 m (lot de 2)",
-    price: 9.32,
+    price: 9.90,
     tagline: "Correction sèche, réécriture immédiate",
     description:
       "Deux souris correctrices à ruban 5 m x 5 mm : la correction est sèche, on peut réécrire par-dessus sans attendre et sans pâte qui craquelle.",
@@ -315,7 +315,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "blanc-correcteur-flacon-lot-2",
     name: "Blanc correcteur flacon (lot de 2)",
-    price: 7.43,
+    price: 7.90,
     tagline: "Le classique, avec pinceau de précision",
     description:
       "Deux flacons de 20 ml de correcteur liquide à pinceau, formule à séchage rapide et bonne opacité en une seule couche.",
@@ -332,7 +332,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "stylos-gel-noirs-lot-12",
     name: "Stylos gel noirs 0,5 mm (lot de 12)",
-    price: 16.07,
+    price: 16.90,
     tagline: "Le noir profond des copies au propre",
     description:
       "Douze stylos à encre gel noire 0,5 mm, écriture fluide sans à-coups et rendu très contrasté pour les copies rendues.",
@@ -349,7 +349,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "parure-stylo-bille-roller",
     name: "Parure stylo bille + roller",
-    price: 33.62,
+    price: 33.90,
     tagline: "Le cadeau de rentrée qui fait sérieux",
     description:
       "Coffret deux pièces, stylo bille et roller en métal laqué avec attache clip, livré dans un écrin. Recharges standard faciles à trouver.",
@@ -367,7 +367,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cahier-seyes-96p-24x32",
     name: "Cahier grands carreaux Seyès 96 pages 24x32",
-    price: 5.27,
+    price: 5.90,
     tagline: "Le format demandé partout au collège",
     description:
       "Cahier piqué 24x32 cm, 96 pages de papier 90 g réglure Seyès, couverture polypropylène qui ne corne pas au fond du sac.",
@@ -385,7 +385,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cahiers-seyes-96p-lot-5",
     name: "Cahiers Seyès 96 pages 24x32 (lot de 5)",
-    price: 22.82,
+    price: 22.90,
     tagline: "Cinq matières, cinq couleurs de couverture",
     description:
       "Lot de 5 cahiers 24x32 cm, 96 pages, papier 90 g réglure Seyès, couvertures de couleurs différentes pour repérer chaque matière d'un coup d'œil.",
@@ -403,7 +403,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cahier-petits-carreaux-96p-24x32",
     name: "Cahier petits carreaux 5x5 96 pages 24x32",
-    price: 5.27,
+    price: 5.90,
     tagline: "Pour les maths et les schémas",
     description:
       "Cahier piqué 24x32 cm, 96 pages 90 g à petits carreaux 5x5 mm, réglure privilégiée en mathématiques, physique et technologie.",
@@ -421,7 +421,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cahier-17x22-seyes-96p",
     name: "Cahier Seyès 96 pages 17x22",
-    price: 3.92,
+    price: 4.90,
     tagline: "Le petit format des langues",
     description:
       "Cahier piqué 17x22 cm, 96 pages 90 g réglure Seyès. Format compact souvent demandé pour les langues vivantes et les leçons.",
@@ -439,7 +439,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cahier-travaux-pratiques-96p",
     name: "Cahier de travaux pratiques 96 pages",
-    price: 6.08,
+    price: 6.90,
     tagline: "Une page unie, une page réglée",
     description:
       "Cahier TP 24x32 cm alternant page blanche pour les schémas et page Seyès pour la rédaction. Indispensable en SVT et physique-chimie.",
@@ -457,7 +457,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cahiers-brouillon-96p-lot-3",
     name: "Cahiers de brouillon 96 pages (lot de 3)",
-    price: 9.32,
+    price: 9.90,
     tagline: "Pour chercher sans se soucier des ratures",
     description:
       "Trois cahiers de brouillon 17x22 cm, 96 pages de papier recyclé, à prix serré pour les calculs et les essais.",
@@ -475,7 +475,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "copies-doubles-perforees-200p",
     name: "Copies doubles perforées grands carreaux (200 pages)",
-    price: 13.37,
+    price: 13.90,
     tagline: "Le paquet qui dure un trimestre",
     description:
       "Deux cents pages de copies doubles A4 perforées, papier 90 g réglure Seyès : le format exigé pour les devoirs surveillés.",
@@ -493,7 +493,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "copies-simples-perforees-200p",
     name: "Copies simples perforées grands carreaux (200 pages)",
-    price: 12.02,
+    price: 12.90,
     tagline: "À glisser directement dans le classeur",
     description:
       "Deux cents pages simples A4 perforées 2 trous, papier 90 g réglure Seyès, prêtes à classer sans pochette.",
@@ -511,7 +511,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "feuillets-mobiles-a4-seyes-400p",
     name: "Feuillets mobiles A4 Seyès (400 pages)",
-    price: 17.42,
+    price: 17.90,
     tagline: "La recharge économique du classeur",
     description:
       "Sachet de 400 pages A4 perforées, papier 90 g réglure Seyès, conditionnées en paquets de 100 pour rester bien à plat.",
@@ -529,7 +529,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "bloc-notes-a4-perfore-160p",
     name: "Bloc-notes A4 perforé 160 pages",
-    price: 9.32,
+    price: 9.90,
     tagline: "On détache, on classe, on avance",
     description:
       "Bloc-notes A4 à reliure agrafée, 160 pages microperforées et prédécoupées pour se détacher sans bavure, papier 80 g.",
@@ -547,7 +547,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "blocs-stenos-lot-3",
     name: "Blocs sténo (lot de 3)",
-    price: 7.97,
+    price: 8.90,
     tagline: "Le carnet qui tient dans la poche",
     description:
       "Trois blocs sténo à spirale en tête, 80 pages lignées chacun, couverture rigide pour écrire debout.",
@@ -565,7 +565,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "repertoire-alphabetique-96p",
     name: "Répertoire alphabétique 96 pages",
-    price: 6.62,
+    price: 6.90,
     tagline: "Le vocabulaire, classé d'office",
     description:
       "Répertoire 11x17 cm à onglets alphabétiques découpés, 96 pages réglure Seyès. Le compagnon des cours de langues.",
@@ -583,7 +583,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "carnets-a5-lignes-lot-2",
     name: "Carnets A5 lignés (lot de 2)",
-    price: 10.67,
+    price: 10.90,
     tagline: "Deux carnets souples pour tout noter",
     description:
       "Deux carnets A5 à couverture souple, 96 pages lignées, élastique de fermeture et marque-page ruban.",
@@ -601,7 +601,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "agenda-scolaire-2026-2027",
     name: "Agenda scolaire 2026-2027",
-    price: 17.42,
+    price: 17.90,
     tagline: "Une semaine sur deux pages, d'août à juillet",
     description:
       "Agenda scolaire couvrant l'année complète, une semaine sur deux pages, avec calendrier des vacances par zone et pages de notes en fin de volume.",
@@ -619,7 +619,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cahier-de-textes",
     name: "Cahier de textes",
-    price: 13.37,
+    price: 13.90,
     tagline: "Les devoirs, jour par jour",
     description:
       "Cahier de textes à reliure spirale, une page par jour de classe, couverture rigide plastifiée et porte-crayon élastique.",
@@ -636,7 +636,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "protege-cahiers-24x32-lot-6",
     name: "Protège-cahiers 24x32 (lot de 6)",
-    price: 12.02,
+    price: 12.90,
     tagline: "Six couleurs, six matières",
     description:
       "Six protège-cahiers 24x32 cm en polypropylène opaque avec porte-étiquette et rabats intérieurs, lavables d'un coup d'éponge.",
@@ -654,7 +654,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "protege-documents-60-vues",
     name: "Protège-documents 60 vues",
-    price: 12.02,
+    price: 12.90,
     tagline: "Trente pochettes, zéro feuille perdue",
     description:
       "Protège-documents A4 à 30 pochettes soudées (60 vues), couverture polypropylène souple et dos porte-étiquette.",
@@ -672,7 +672,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "porte-vues-100-vues",
     name: "Porte-vues 100 vues",
-    price: 17.42,
+    price: 17.90,
     tagline: "Pour les gros dossiers de l'année",
     description:
       "Porte-vues A4 à 50 pochettes soudées (100 vues), couverture rigide et pochette de personnalisation en première de couverture.",
@@ -689,7 +689,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "papier-millimetre-a4-50f",
     name: "Papier millimétré A4 (50 feuilles)",
-    price: 7.97,
+    price: 8.90,
     tagline: "Des courbes précises au millimètre",
     description:
       "Pochette de 50 feuilles A4 de papier millimétré orange sur fond blanc, papier 90 g qui supporte le crayon et l'encre.",
@@ -707,7 +707,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "papier-calque-a4-50f",
     name: "Papier calque A4 (50 feuilles)",
-    price: 9.32,
+    price: 9.90,
     tagline: "Pour décalquer et superposer",
     description:
       "Cinquante feuilles A4 de papier calque 90 g, translucide et suffisamment épais pour être manipulé sans se déchirer.",
@@ -725,7 +725,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "papier-dessin-blanc-a4-160g",
     name: "Papier dessin blanc A4 160 g (50 feuilles)",
-    price: 12.02,
+    price: 12.90,
     tagline: "Assez épais pour la peinture",
     description:
       "Pochette de 50 feuilles A4 de papier à dessin blanc 160 g, grain fin adapté au crayon, au feutre et à la gouache légère.",
@@ -743,7 +743,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "pochette-papier-dessin-couleur-a3",
     name: "Pochette papier dessin couleur A3",
-    price: 13.37,
+    price: 13.90,
     tagline: "Douze teintes en grand format",
     description:
       "Pochette A3 de 12 feuilles de papier à dessin 160 g en couleurs vives assorties, pour les affiches et les exposés.",
@@ -761,7 +761,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "classeur-a4-souple-dos-40",
     name: "Classeur A4 souple dos 40 mm",
-    price: 6.62,
+    price: 6.90,
     tagline: "Léger, il ne plombe pas le sac",
     description:
       "Classeur A4 en polypropylène souple, dos de 40 mm, mécanisme 4 anneaux en O et porte-étiquette au dos.",
@@ -779,7 +779,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "classeur-a4-rigide-dos-70",
     name: "Classeur A4 rigide dos 70 mm",
-    price: 12.02,
+    price: 12.90,
     tagline: "Le classeur d'archivage de l'année",
     description:
       "Classeur A4 à couverture rigide recouverte de polypropylène, dos de 70 mm, mécanisme 4 anneaux en D pour des pages toujours à plat.",
@@ -797,7 +797,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "classeurs-souples-lot-4",
     name: "Classeurs A4 souples (lot de 4)",
-    price: 21.47,
+    price: 21.90,
     tagline: "Un classeur par matière principale",
     description:
       "Lot de 4 classeurs A4 souples dos 40 mm, coloris assortis, mécanisme 4 anneaux et porte-étiquette.",
@@ -815,7 +815,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "intercalaires-carton-12-positions",
     name: "Intercalaires carton 12 positions",
-    price: 6.62,
+    price: 6.90,
     tagline: "Douze onglets pour s'y retrouver",
     description:
       "Jeu de 12 intercalaires A4 en carte forte 170 g, onglets de couleurs différentes et page de sommaire à remplir.",
@@ -833,7 +833,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "pochettes-perforees-a4-lot-100",
     name: "Pochettes perforées A4 (lot de 100)",
-    price: 10.67,
+    price: 10.90,
     tagline: "Cent pochettes transparentes, ouverture en haut",
     description:
       "Boîte de 100 pochettes A4 perforées 11 trous en polypropylène lisse 5/100, ouverture sur le côté long.",
@@ -851,7 +851,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "chemises-elastique-3-rabats-lot-6",
     name: "Chemises à élastique 3 rabats (lot de 6)",
-    price: 16.07,
+    price: 16.90,
     tagline: "Rien ne dépasse, rien ne s'échappe",
     description:
       "Six chemises A4 à trois rabats et élastiques croisés, en carte lustrée, capacité d'environ 200 feuilles chacune.",
@@ -869,7 +869,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "trieur-8-compartiments",
     name: "Trieur 8 compartiments",
-    price: 13.37,
+    price: 13.90,
     tagline: "Le tri du jour, en une seule main",
     description:
       "Trieur A4 à 8 compartiments à soufflets, fermeture par rabat élastique, onglets repositionnables à personnaliser.",
@@ -887,7 +887,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "trieur-12-compartiments",
     name: "Trieur 12 compartiments",
-    price: 17.42,
+    price: 17.90,
     tagline: "Une case par matière",
     description:
       "Trieur A4 à 12 compartiments à soufflets renforcés, dos extensible et fermeture élastique, pour couvrir toutes les matières de l'emploi du temps.",
@@ -905,7 +905,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "boites-archives-a4-lot-3",
     name: "Boîtes d'archives A4 (lot de 3)",
-    price: 17.42,
+    price: 17.90,
     tagline: "L'année dernière, rangée proprement",
     description:
       "Trois boîtes d'archives A4 en carton recyclé à montage rapide, dos de 100 mm et zone d'inscription sur la tranche.",
@@ -923,7 +923,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "chemises-cartonnees-lot-50",
     name: "Chemises cartonnées (lot de 50)",
-    price: 13.37,
+    price: 13.90,
     tagline: "Le classement en vrac, en mieux",
     description:
       "Cinquante chemises A4 en carte recyclée 220 g, coloris assortis, pour regrouper les documents par thème.",
@@ -941,7 +941,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "porte-documents-zippe-a4",
     name: "Porte-documents zippé A4",
-    price: 16.07,
+    price: 16.90,
     tagline: "Le dossier qui voyage sans se froisser",
     description:
       "Porte-documents A4 en polypropylène rigide à fermeture éclair sur trois côtés, avec poche intérieure et passant.",
@@ -959,7 +959,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "sous-main-bureau-transparent",
     name: "Sous-main de bureau transparent",
-    price: 17.42,
+    price: 17.90,
     tagline: "L'emploi du temps toujours sous les yeux",
     description:
       "Sous-main 40x53 cm à rabat transparent permettant de glisser emploi du temps, photos ou antisèches de conjugaison. Base souple antidérapante.",
@@ -976,7 +976,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "kit-geometrie-4-pieces",
     name: "Kit de géométrie 4 pièces",
-    price: 10.67,
+    price: 10.90,
     tagline: "Règle, équerre, rapporteur : tout y est",
     description:
       "Kit complet en plastique incassable : règle 20 cm, équerre 60°, équerre 45° et rapporteur 180°, livrés dans une pochette.",
@@ -994,7 +994,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "regle-plate-30cm",
     name: "Règle plate 30 cm",
-    price: 3.92,
+    price: 4.90,
     tagline: "Trente centimètres qui ne se voilent pas",
     description:
       "Règle plate de 30 cm en plastique rigide, graduation gravée qui ne s'efface pas au frottement, bord droit sans bavure.",
@@ -1011,7 +1011,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "equerre-60-21cm",
     name: "Équerre 60° 21 cm",
-    price: 4.73,
+    price: 4.90,
     tagline: "L'angle juste, à chaque tracé",
     description:
       "Équerre 60° à hypoténuse de 21 cm, plastique transparent gradué permettant de voir le tracé au travers.",
@@ -1028,7 +1028,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "rapporteur-180",
     name: "Rapporteur 180°",
-    price: 4.73,
+    price: 4.90,
     tagline: "Double graduation, lecture immédiate",
     description:
       "Rapporteur demi-circulaire 180° à double graduation en degrés, plastique transparent avec repère central marqué.",
@@ -1045,7 +1045,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "compas-scolaire-etui",
     name: "Compas scolaire avec étui",
-    price: 13.37,
+    price: 13.90,
     tagline: "Des cercles nets, sans dérapage",
     description:
       "Compas en métal à branches réglables et molette de blocage, livré avec mine de rechange et étui rigide.",
@@ -1062,7 +1062,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "compas-porte-crayon-precision",
     name: "Compas de précision porte-crayon",
-    price: 20.12,
+    price: 20.90,
     tagline: "Il accepte n'importe quel crayon",
     description:
       "Compas à porte-crayon universel et réglage micrométrique par molette centrale, pour des cercles précis jusqu'à 30 cm de diamètre.",
@@ -1079,7 +1079,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "calculatrice-scientifique-college",
     name: "Calculatrice scientifique collège",
-    price: 33.62,
+    price: 33.90,
     tagline: "Le modèle autorisé aux examens",
     description:
       "Calculatrice scientifique avec écran 2 lignes, plus de 250 fonctions, mode fraction, statistiques et trigonométrie. Coque de protection incluse.",
@@ -1097,7 +1097,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "calculatrice-graphique-lycee",
     name: "Calculatrice graphique lycée",
-    price: 107.87,
+    price: 107.90,
     tagline: "Courbes, tableaux et programmes",
     description:
       "Calculatrice graphique à écran haute résolution, tracé de courbes, tableaux de valeurs, statistiques et mode examen conforme aux épreuves du baccalauréat.",
@@ -1115,7 +1115,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "calculatrice-basique-bureau",
     name: "Calculatrice de bureau 12 chiffres",
-    price: 17.42,
+    price: 17.90,
     tagline: "Grandes touches, grand écran",
     description:
       "Calculatrice de bureau à écran incliné 12 chiffres, touches larges, double alimentation solaire et pile, avec calcul de TVA et de pourcentages.",
@@ -1132,7 +1132,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "regle-metallique-50cm",
     name: "Règle métallique 50 cm",
-    price: 12.02,
+    price: 12.90,
     tagline: "Elle survivra à toute la scolarité",
     description:
       "Règle en aluminium anodisé de 50 cm à dos antidérapant, graduation gravée indélébile, également utilisable comme guide de coupe.",
@@ -1150,7 +1150,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "ciseaux-scolaires-bouts-ronds-13cm",
     name: "Ciseaux scolaires bouts ronds 13 cm",
-    price: 6.62,
+    price: 6.90,
     tagline: "Coupe franche, bouts sécurisés",
     description:
       "Ciseaux de 13 cm à lames inox et bouts arrondis, anneaux souples adaptés aux droitiers comme aux gauchers.",
@@ -1167,7 +1167,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "ciseaux-bureau-21cm",
     name: "Ciseaux de bureau 21 cm",
-    price: 10.67,
+    price: 10.90,
     tagline: "Pour le carton et les gros travaux",
     description:
       "Ciseaux de 21 cm à lames inox affûtées et poignées ergonomiques bi-matière, adaptés au papier épais et au carton fin.",
@@ -1184,7 +1184,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "colle-baton-21g-lot-6",
     name: "Colles bâton 21 g (lot de 6)",
-    price: 13.37,
+    price: 13.90,
     tagline: "Colle blanche qui devient invisible",
     description:
       "Six bâtons de colle de 21 g, formule lavable sans solvant, blanche à l'application puis transparente en séchant.",
@@ -1201,7 +1201,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "colle-liquide-blanche-250ml",
     name: "Colle liquide blanche 250 ml",
-    price: 7.97,
+    price: 8.90,
     tagline: "Le flacon des travaux manuels",
     description:
       "Flacon de 250 ml de colle vinylique blanche à embout applicateur, pour le papier, le carton, le bois léger et le tissu.",
@@ -1218,7 +1218,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "ruban-adhesif-invisible-lot-8",
     name: "Ruban adhésif invisible (lot de 8)",
-    price: 12.02,
+    price: 12.90,
     tagline: "Invisible une fois posé, et il s'écrit dessus",
     description:
       "Huit rouleaux de ruban adhésif mat 19 mm x 33 m, invisible après application et inscriptible au stylo.",
@@ -1236,7 +1236,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "devidoir-bureau-ruban",
     name: "Dévidoir de bureau lesté",
-    price: 10.67,
+    price: 10.90,
     tagline: "On tire d'une main, il ne bouge pas",
     description:
       "Dévidoir de bureau lesté à base antidérapante et lame de coupe métal, compatible avec les rouleaux 19 mm x 33 m.",
@@ -1253,7 +1253,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "agrafeuse-metal-24-6",
     name: "Agrafeuse métal 24/6",
-    price: 16.07,
+    price: 16.90,
     tagline: "Vingt feuilles d'un seul geste",
     description:
       "Agrafeuse demi-format à corps métal, capacité 20 feuilles, agrafes 24/6 et 26/6, avec fonction ouverture pour agrafage mural.",
@@ -1271,7 +1271,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "agrafes-24-6-boite-5000",
     name: "Agrafes 24/6 (boîte de 5000)",
-    price: 7.97,
+    price: 8.90,
     tagline: "La recharge qu'on oublie toujours",
     description:
       "Boîte de 5000 agrafes galvanisées 24/6, compatibles avec la grande majorité des agrafeuses de bureau.",
@@ -1288,7 +1288,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "perforateur-2-trous-25f",
     name: "Perforateur 2 trous 25 feuilles",
-    price: 17.42,
+    price: 17.90,
     tagline: "Des trous nets, toujours alignés",
     description:
       "Perforateur métal 2 trous d'une capacité de 25 feuilles, guide de format réglable (A4, A5, US) et récupérateur de confettis.",
@@ -1306,7 +1306,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "trombones-33mm-boite-500",
     name: "Trombones 33 mm (boîte de 500)",
-    price: 6.62,
+    price: 6.90,
     tagline: "Cinq cents, de quoi voir venir",
     description:
       "Boîte de 500 trombones galvanisés de 33 mm, ressort suffisant pour tenir une vingtaine de feuilles sans marquer le papier.",
@@ -1323,7 +1323,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "punaises-couleur-boite-100",
     name: "Punaises de couleur (boîte de 100)",
-    price: 5.27,
+    price: 5.90,
     tagline: "Pour le tableau de liège au-dessus du bureau",
     description:
       "Boîte de 100 punaises à tête plastique de couleurs assorties, pointe acier, adaptées au liège et aux panneaux d'affichage.",
@@ -1340,7 +1340,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "pinces-double-clip-assorties-lot-40",
     name: "Pinces double clip assorties (lot de 40)",
-    price: 12.02,
+    price: 12.90,
     tagline: "Trois tailles pour tous les paquets",
     description:
       "Quarante pinces double clip en acier laqué noir réparties en trois tailles (19, 25 et 32 mm), anses rabattables.",
@@ -1357,7 +1357,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "elastiques-bureau-100g",
     name: "Élastiques de bureau (sachet 100 g)",
-    price: 6.08,
+    price: 6.90,
     tagline: "Le vrac utile",
     description:
       "Sachet de 100 g d'élastiques en caoutchouc naturel de tailles assorties, souples et résistants au vieillissement.",
@@ -1374,7 +1374,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cutter-lame-18mm-securite",
     name: "Cutter à lame 18 mm sécurisé",
-    price: 9.32,
+    price: 9.90,
     tagline: "Lame verrouillable, coupe maîtrisée",
     description:
       "Cutter à lame sécable de 18 mm avec molette de blocage, corps métal renforcé et casse-lame intégré au capuchon arrière.",
@@ -1392,7 +1392,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "feutres-coloriage-lot-24",
     name: "Feutres de coloriage (lot de 24)",
-    price: 17.42,
+    price: 17.90,
     tagline: "Vingt-quatre couleurs lavables",
     description:
       "Vingt-quatre feutres à pointe moyenne bloquée, encre lavable à l'eau sur la peau et sur la plupart des textiles.",
@@ -1410,7 +1410,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "crayons-couleur-aquarellables-24",
     name: "Crayons de couleur aquarellables (lot de 24)",
-    price: 25.52,
+    price: 25.90,
     tagline: "Un coup de pinceau et la couleur se fond",
     description:
       "Vingt-quatre crayons aquarellables à mine tendre 3,3 mm : on colorie à sec puis on estompe à l'eau pour un rendu aquarelle.",
@@ -1427,7 +1427,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "gouache-tubes-12-couleurs",
     name: "Gouache 12 tubes de couleurs",
-    price: 20.12,
+    price: 20.90,
     tagline: "Couleurs franches, bonne couvrance",
     description:
       "Douze tubes de 12 ml de gouache extra-fine, couleurs vives et opaques, miscibles entre elles et nettoyables à l'eau.",
@@ -1444,7 +1444,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "pinceaux-scolaires-lot-10",
     name: "Pinceaux scolaires (lot de 10)",
-    price: 13.37,
+    price: 13.90,
     tagline: "Ronds et plats, du n°2 au n°12",
     description:
       "Assortiment de 10 pinceaux à virole aluminium sertie et manche verni : 5 ronds et 5 plats, du n°2 au n°12.",
@@ -1462,7 +1462,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "pastels-gras-lot-24",
     name: "Pastels gras (lot de 24)",
-    price: 12.02,
+    price: 12.90,
     tagline: "Couleurs franches qui s'estompent au doigt",
     description:
       "Vingt-quatre pastels gras de 11 mm sous étui carton, couleurs mélangeables au doigt et adaptées au papier à dessin comme au papier de couleur.",
@@ -1479,7 +1479,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "ardoise-blanche-effacable-a4",
     name: "Ardoise blanche effaçable A4",
-    price: 13.37,
+    price: 13.90,
     tagline: "On écrit, on efface, on recommence",
     description:
       "Ardoise blanche A4 double face avec cadre de protection, livrée avec un marqueur et un effaceur feutre aimanté.",
@@ -1496,7 +1496,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "palette-godets-peinture",
     name: "Palette à godets 10 alvéoles",
-    price: 7.97,
+    price: 8.90,
     tagline: "Dix couleurs sans mélange involontaire",
     description:
       "Palette en plastique blanc à 10 alvéoles profondes et zone de mélange centrale, lavable à l'eau et empilable.",
@@ -1513,7 +1513,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "tablier-peinture-enfant",
     name: "Tablier de peinture enfant",
-    price: 17.42,
+    price: 17.90,
     tagline: "Les vêtements ressortent intacts",
     description:
       "Tablier à manches longues en nylon enduit imperméable, poignets élastiqués et fermeture arrière par scratch, avec grande poche ventrale.",
@@ -1531,7 +1531,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "pate-a-modeler-lot-8",
     name: "Pâte à modeler (lot de 8 pots)",
-    price: 13.37,
+    price: 13.90,
     tagline: "Elle ne sèche pas entre deux séances",
     description:
       "Huit pots de 100 g de pâte à modeler souple sans gluten, réutilisable et non toxique, conforme à la norme EN 71.",
@@ -1548,7 +1548,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "carnet-croquis-a4-100p",
     name: "Carnet de croquis A4 100 pages",
-    price: 16.07,
+    price: 16.90,
     tagline: "Cent pages pour dessiner en continu",
     description:
       "Carnet de croquis A4 à reliure spirale, 100 pages de papier blanc 120 g au grain léger, couverture rigide.",
@@ -1566,7 +1566,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cartable-primaire-38cm",
     name: "Cartable primaire 38 cm",
-    price: 53.87,
+    price: 53.90,
     tagline: "Dos rembourré, épaules soulagées",
     description:
       "Cartable de 38 cm à deux compartiments, dos matelassé et bretelles rembourrées réglables, fond renforcé et bandes réfléchissantes.",
@@ -1584,7 +1584,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "sac-a-dos-college-30l",
     name: "Sac à dos collège 30 L",
-    price: 60.62,
+    price: 60.90,
     tagline: "Trente litres et un compartiment ordinateur",
     description:
       "Sac à dos de 30 L à trois compartiments dont un rembourré pour ordinateur 15 pouces, dos aéré et bretelles ergonomiques.",
@@ -1602,7 +1602,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "trousse-simple-compartiment",
     name: "Trousse simple compartiment",
-    price: 12.02,
+    price: 12.90,
     tagline: "L'essentiel, sans fioritures",
     description:
       "Trousse rectangulaire à un compartiment et fermeture éclair pleine longueur, tissu polyester résistant et doublure intérieure.",
@@ -1619,7 +1619,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "trousse-double-compartiment",
     name: "Trousse double compartiment",
-    price: 18.77,
+    price: 18.90,
     tagline: "Stylos d'un côté, matériel de l'autre",
     description:
       "Trousse à deux compartiments indépendants avec passants élastiques intérieurs, tissu résistant et double fermeture éclair.",
@@ -1636,7 +1636,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "plumier-garni-scolaire",
     name: "Plumier garni scolaire",
-    price: 33.62,
+    price: 33.90,
     tagline: "La rentrée réglée en un achat",
     description:
       "Trousse garnie prête à l'emploi : stylos bille 4 couleurs, crayon, gomme, taille-crayon, règle, ciseaux, colle et 12 crayons de couleur.",
@@ -1653,7 +1653,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "sac-de-sport-40l",
     name: "Sac de sport 40 L",
-    price: 40.37,
+    price: 40.90,
     tagline: "Le sac du jour d'EPS",
     description:
       "Sac de sport de 40 L avec compartiment chaussures séparé et ventilé, bandoulière rembourrée amovible et fond renforcé.",
@@ -1670,7 +1670,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "boite-a-gouter-compartiments",
     name: "Boîte à goûter à compartiments",
-    price: 17.42,
+    price: 17.90,
     tagline: "Trois cases, aucun mélange",
     description:
       "Boîte à goûter à trois compartiments séparés et couvercle à joint étanche, sans BPA, passant au lave-vaisselle.",
@@ -1688,7 +1688,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "gourde-inox-750ml",
     name: "Gourde inox 750 ml",
-    price: 30.92,
+    price: 31.90,
     tagline: "Trois quarts de litre, gardés au frais",
     description:
       "Gourde en inox double paroi de 750 ml, isolation sous vide conservant le froid 24 h et le chaud 12 h, bouchon vissé étanche.",
@@ -1706,7 +1706,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "etiquettes-scolaires-lot-120",
     name: "Étiquettes scolaires à personnaliser (lot de 120)",
-    price: 13.37,
+    price: 13.90,
     tagline: "Plus d'affaires perdues",
     description:
       "Cent vingt étiquettes autocollantes résistantes à l'eau, à écrire au marqueur permanent, pour marquer cahiers, trousses et gourdes.",
@@ -1723,7 +1723,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "casque-audio-filaire-scolaire",
     name: "Casque audio filaire scolaire",
-    price: 33.62,
+    price: 33.90,
     tagline: "Volume limité, oreilles préservées",
     description:
       "Casque filaire jack 3,5 mm à volume limité à 85 dB, arceau réglable et coussinets souples, adapté aux séances de langues et au travail sur écran.",
@@ -1741,7 +1741,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "cle-usb-64go",
     name: "Clé USB 64 Go",
-    price: 22.82,
+    price: 22.90,
     tagline: "Les exposés dans la poche",
     description:
       "Clé USB 3.2 de 64 Go à connecteur rétractable, compatible Windows, macOS et Linux sans installation.",
@@ -1759,7 +1759,7 @@ export const produitsScolaires: Product[] = [
   {
     slug: "tapis-souris-antiderapant",
     name: "Tapis de souris antidérapant",
-    price: 10.67,
+    price: 10.90,
     tagline: "La souris suit, le tapis reste",
     description:
       "Tapis de souris 26x21 cm à surface textile micro-tissée et base caoutchouc antidérapante, bords surpiqués qui ne s'effilochent pas.",

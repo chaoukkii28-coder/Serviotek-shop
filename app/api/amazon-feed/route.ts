@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { products } from "@/lib/products";
-import { fluxCsv, fluxTsv, rapport, type OptionsFlux } from "@/lib/amazon";
+import {
+  SELECTION_LANCEMENT,
+  fluxCsv,
+  fluxTsv,
+  rapport,
+  type OptionsFlux,
+} from "@/lib/amazon";
 
 /**
  * Fichier d'inventaire Amazon Seller Central.
@@ -9,7 +15,8 @@ import { fluxCsv, fluxTsv, rapport, type OptionsFlux } from "@/lib/amazon";
  *   /api/amazon-feed?format=csv   → même contenu en CSV, ouvrable dans Excel
  *   /api/amazon-feed?rapport=1    → ce qu'il manque produit par produit, en JSON
  *
- * Paramètres : ?stock=25 (stock par défaut), ?categorie=scolaire, ?base=https://…
+ * Paramètres : ?stock=25 (stock par défaut), ?categorie=scolaire,
+ * ?lancement=1 (les 10 références de SELECTION_LANCEMENT), ?base=https://…
  */
 export async function GET(req: NextRequest) {
   const { searchParams } = req.nextUrl;
@@ -24,13 +31,17 @@ export async function GET(req: NextRequest) {
   }
 
   const categorie = searchParams.get("categorie");
-  const liste = categorie
+  let liste = categorie
     ? products.filter((p) => p.categorie === categorie)
     : products;
 
+  if (searchParams.get("lancement")) {
+    liste = liste.filter((p) => SELECTION_LANCEMENT.includes(p.slug));
+  }
+
   if (liste.length === 0) {
     return NextResponse.json(
-      { error: `Aucun produit dans la catégorie « ${categorie} ».` },
+      { error: "Aucun produit ne correspond aux filtres demandés." },
       { status: 404 }
     );
   }
