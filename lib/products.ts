@@ -497,6 +497,9 @@ const produitsBase: Product[] = [
 
 export const products: Product[] = [...produitsBase, ...produitsScolaires];
 
+/** Quantité maximale d'une même référence par commande. */
+export const QUANTITE_MAX = 20;
+
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
 }

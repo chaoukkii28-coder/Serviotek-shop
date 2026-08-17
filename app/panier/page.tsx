@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/components/CartContext";
+import { QUANTITE_MAX } from "@/lib/products";
 import { useState } from "react";
 
 export default function PanierPage() {
@@ -66,6 +67,7 @@ export default function PanierPage() {
             <input
               type="number"
               min={1}
+              max={QUANTITE_MAX}
               value={qty}
               onChange={(e) => setQty(product.slug, parseInt(e.target.value) || 1)}
               className="w-16 bg-panel border border-wire rounded-lg text-center py-1"
