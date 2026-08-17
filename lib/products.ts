@@ -31,6 +31,26 @@ export type AmazonData = {
   quantity?: number;
 };
 
+/** Sous-familles de la collection scolaire, pour filtrer les 100+ références. */
+export type Famille =
+  | "ecriture"
+  | "papier"
+  | "classement"
+  | "geometrie"
+  | "bureau"
+  | "arts"
+  | "sacs";
+
+export const NOMS_FAMILLES: Record<Famille, string> = {
+  ecriture: "Écriture",
+  papier: "Cahiers & papier",
+  classement: "Classement",
+  geometrie: "Géométrie & calcul",
+  bureau: "Coupe & bureau",
+  arts: "Arts plastiques",
+  sacs: "Sacs & vie scolaire",
+};
+
 export type Product = {
   slug: string;
   name: string;
@@ -41,6 +61,8 @@ export type Product = {
   images: string[];
   badge?: string;
   categorie: Categorie;
+  /** Sous-famille, utilisée pour filtrer à l'intérieur d'une catégorie. */
+  famille?: Famille;
   amazon?: AmazonData;
 };
 

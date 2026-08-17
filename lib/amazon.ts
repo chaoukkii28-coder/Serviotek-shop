@@ -12,6 +12,21 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://serviotek-shop.ver
 /** Préfixe des SKU vendeur. Doit rester stable : c'est la clé d'Amazon. */
 const SKU_PREFIX = "SVT-";
 
+/**
+ * Valeurs appliquées aux produits qui ne définissent pas leur propre bloc
+ * `amazon`. Elles évitent d'avoir à répéter la même information 120 fois.
+ *
+ * Restent volontairement vides parce qu'elles ne se devinent pas :
+ * - l'EAN, propre à chaque référence ;
+ * - le feed_product_type, qui se lit dans le modèle téléchargé sur Seller
+ *   Central (voir MODELE_CONSEILLE pour le modèle à prendre par catégorie).
+ */
+export const DEFAUTS_AMAZON = {
+  brand: "Serviotek",
+  manufacturer: "Serviotek",
+  countryOfOrigin: "Chine",
+} as const;
+
 /** Limites imposées par Amazon sur les champs texte. */
 const MAX_ITEM_NAME = 200;
 const MAX_DESCRIPTION = 2000;
@@ -186,9 +201,10 @@ export function ligneAmazon(product: Product, options: OptionsFlux = {}): Amazon
   ligne.item_sku = skuDepuisSlug(product.slug);
   ligne.external_product_id = ean;
   ligne.external_product_id_type = ean ? typeIdentifiant(ean) : "";
-  ligne.brand_name = amazon.brand ?? "";
+  ligne.brand_name = amazon.brand ?? DEFAUTS_AMAZON.brand;
   ligne.item_name = tronquer(product.name, MAX_ITEM_NAME);
-  ligne.manufacturer = amazon.manufacturer ?? amazon.brand ?? "";
+  ligne.manufacturer =
+    amazon.manufacturer ?? amazon.brand ?? DEFAUTS_AMAZON.manufacturer;
   ligne.part_number = product.slug;
   ligne.standard_price = product.price.toFixed(2);
   ligne.currency = "EUR";
@@ -205,7 +221,8 @@ export function ligneAmazon(product: Product, options: OptionsFlux = {}): Amazon
     ligne[`other_image_url${i + 1}` as AmazonColumn] = url;
   });
 
-  ligne.country_of_origin = amazon.countryOfOrigin ?? "";
+  ligne.country_of_origin =
+    amazon.countryOfOrigin ?? DEFAUTS_AMAZON.countryOfOrigin;
   ligne.recommended_browse_nodes = amazon.browseNode ?? "";
   ligne.generic_keywords = motsCles(product);
   ligne.update_delete = "Update";
@@ -268,13 +285,17 @@ export function controler(product: Product, options: OptionsFlux = {}): Controle
     bloquants.push(`Code EAN « ${amazon.ean} » invalide (clé de contrôle incorrecte)`);
   }
 
-  if (!amazon.brand) bloquants.push("Marque (brand_name) manquante");
+  if (!amazon.brand && !DEFAUTS_AMAZON.brand) {
+    bloquants.push("Marque (brand_name) manquante");
+  }
   if (!amazon.productType) {
     bloquants.push(
       `Type de produit (feed_product_type) manquant — modèle conseillé : ${MODELE_CONSEILLE[product.categorie]}`
     );
   }
-  if (!amazon.countryOfOrigin) bloquants.push("Pays d'origine manquant");
+  if (!amazon.countryOfOrigin && !DEFAUTS_AMAZON.countryOfOrigin) {
+    bloquants.push("Pays d'origine manquant");
+  }
 
   const quantite = amazon.quantity ?? quantiteParDefaut;
   if (quantite <= 0) {
@@ -308,8 +329,15 @@ export function controler(product: Product, options: OptionsFlux = {}): Controle
     }
   }
 
-  if (!amazon.manufacturer && !amazon.brand) {
-    avertissements.push("Fabricant (manufacturer) non renseigné");
+  if (!amazon.brand) {
+    avertissements.push(
+      `Marque non définie sur le produit : « ${DEFAUTS_AMAZON.brand} » est appliquée par défaut`
+    );
+  }
+  if (!amazon.countryOfOrigin) {
+    avertissements.push(
+      `Pays d'origine non défini : « ${DEFAUTS_AMAZON.countryOfOrigin} » est appliqué par défaut`
+    );
   }
   if (product.name.length > MAX_ITEM_NAME) {
     avertissements.push(`Titre tronqué à ${MAX_ITEM_NAME} caractères`);

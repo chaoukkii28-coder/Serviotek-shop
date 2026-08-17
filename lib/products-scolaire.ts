@@ -28,6 +28,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -45,6 +46,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -62,6 +64,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -79,6 +82,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -95,6 +99,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -112,6 +117,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -128,6 +134,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -145,6 +152,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -162,6 +170,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -178,6 +187,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -194,6 +204,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -210,6 +221,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -226,6 +238,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -243,6 +256,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -260,6 +274,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -277,6 +292,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -293,6 +309,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -309,6 +326,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -325,6 +343,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -342,6 +361,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
     categorie: "scolaire",
+    famille: "ecriture",
     badge: "Rentrée",
   },
   {
@@ -359,6 +379,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -376,6 +397,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -393,6 +415,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -410,6 +433,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -427,6 +451,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -444,6 +469,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -461,6 +487,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -478,6 +505,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -495,6 +523,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -512,6 +541,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -529,6 +559,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -546,6 +577,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -563,6 +595,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -580,6 +613,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -596,6 +630,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -613,6 +648,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -630,6 +666,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -646,6 +683,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -663,6 +701,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -680,6 +719,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -697,6 +737,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -714,6 +755,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
     categorie: "scolaire",
+    famille: "papier",
     badge: "Rentrée",
   },
   {
@@ -731,6 +773,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -748,6 +791,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -765,6 +809,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -782,6 +827,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -799,6 +845,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -816,6 +863,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -833,6 +881,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -850,6 +899,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -867,6 +917,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -884,6 +935,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -901,6 +953,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -917,6 +970,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "classement",
     badge: "Rentrée",
   },
   {
@@ -934,6 +988,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -950,6 +1005,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -966,6 +1022,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -982,6 +1039,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -998,6 +1056,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -1014,6 +1073,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -1031,6 +1091,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -1048,6 +1109,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -1064,6 +1126,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -1081,6 +1144,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "geometrie",
     badge: "Rentrée",
   },
   {
@@ -1097,6 +1161,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1113,6 +1178,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1129,6 +1195,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1145,6 +1212,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1162,6 +1230,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1178,6 +1247,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1195,6 +1265,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1211,6 +1282,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1228,6 +1300,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1244,6 +1317,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1260,6 +1334,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1276,6 +1351,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1292,6 +1368,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1309,6 +1386,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "bureau",
     badge: "Rentrée",
   },
   {
@@ -1326,6 +1404,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1342,6 +1421,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1358,6 +1438,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1375,6 +1456,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1391,6 +1473,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1407,6 +1490,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1423,6 +1507,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1440,6 +1525,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1456,6 +1542,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1473,6 +1560,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
     categorie: "scolaire",
+    famille: "arts",
     badge: "Rentrée",
   },
   {
@@ -1490,6 +1578,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1507,6 +1596,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1523,6 +1613,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1539,6 +1630,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1555,6 +1647,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1571,6 +1664,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1588,6 +1682,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1605,6 +1700,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1621,6 +1717,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1638,6 +1735,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1655,6 +1753,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
   {
@@ -1672,6 +1771,7 @@ export const produitsScolaires: Product[] = [
     ],
     images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
     categorie: "scolaire",
+    famille: "sacs",
     badge: "Rentrée",
   },
 ];
