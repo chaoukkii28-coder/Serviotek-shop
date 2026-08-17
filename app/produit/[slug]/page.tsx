@@ -81,7 +81,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
 
         <p className="text-xs text-mist mt-6">
-          Livraison estimée sous 7 à 14 jours ouvrés. Voir la page{" "}
+          Livraison sous 5 jours ouvrés maximum. Voir la page{" "}
           <a href="/livraison" className="underline hover:text-white">
             Livraison &amp; délais
           </a>.

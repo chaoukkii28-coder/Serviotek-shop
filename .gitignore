@@ -1,0 +1,18 @@
+# dépendances
+node_modules/
+
+# build Next.js
+.next/
+out/
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# variables d'environnement (clés Stripe : ne jamais versionner)
+.env
+.env.local
+.env*.local
+
+# divers
+.DS_Store
+*.log
+.vercel

@@ -21,7 +21,7 @@ export default function CGV() {
         </section>
         <section>
           <h2 className="text-white font-medium mb-1">4. Livraison</h2>
-          <p>Délai estimé : 7 à 14 jours ouvrés selon le produit et le fournisseur. En cas de retard important, le client peut contacter le service client pour connaître l&apos;état de sa commande.</p>
+          <p>Délai de livraison : 5 jours ouvrés maximum selon le produit et le fournisseur. En cas de retard important, le client peut contacter le service client pour connaître l&apos;état de sa commande.</p>
         </section>
         <section>
           <h2 className="text-white font-medium mb-1">5. Droit de rétractation</h2>
@@ -43,6 +43,14 @@ export default function CGV() {
           <p className="mt-2">
             Le remboursement intervient dans un délai maximal de 14 jours à compter de la réception
             du produit retourné, via le même moyen de paiement que celui utilisé lors de l&apos;achat.
+          </p>
+          <p className="mt-2">
+            Un{" "}
+            <a href="/retractation" className="underline hover:text-white">
+              formulaire type de rétractation
+            </a>{" "}
+            est mis à disposition. Son usage n&apos;est pas obligatoire : toute déclaration dénuée
+            d&apos;ambiguïté exprimant la volonté de se rétracter est recevable.
           </p>
         </section>
         <section>

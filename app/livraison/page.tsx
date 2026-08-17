@@ -5,7 +5,7 @@ export default function Livraison() {
       <div className="space-y-4 text-sm text-mist leading-relaxed">
         <p>
           Nos produits sont expédiés directement par nos fournisseurs partenaires.
-          Le délai de livraison estimé est de <strong className="text-white">7 à 14 jours ouvrés</strong>,
+          Le délai de livraison est de <strong className="text-white">5 jours ouvrés maximum</strong>,
           selon le produit et la destination.
         </p>
         <p>

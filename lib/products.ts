@@ -1,3 +1,5 @@
+import { produitsScolaires } from "@/lib/products-scolaire";
+
 export type Categorie =
   | "audio"
   | "maison"
@@ -6,6 +8,48 @@ export type Categorie =
   | "bien-etre"
   | "accessoires"
   | "scolaire";
+
+/**
+ * Informations exigées par Amazon Seller Central et absentes d'une fiche
+ * boutique classique. Tant qu'elles ne sont pas remplies, le produit sort
+ * dans le rapport de /api/amazon-feed?rapport=1 comme non publiable.
+ */
+export type AmazonData = {
+  /** EAN-13 (GS1 France) ou UPC. Sans lui : exemption GTIN à demander. */
+  ean?: string;
+  /** Marque déposée telle qu'enregistrée chez Amazon. */
+  brand?: string;
+  /** Fabricant, si différent de la marque. */
+  manufacturer?: string;
+  /** Valeur feed_product_type du modèle de la catégorie. */
+  productType?: string;
+  /** ID de rayon Amazon.fr (recommended_browse_nodes). */
+  browseNode?: string;
+  /** Pays d'origine, ex. « Chine ». */
+  countryOfOrigin?: string;
+  /** Stock à publier. */
+  quantity?: number;
+};
+
+/** Sous-familles de la collection scolaire, pour filtrer les 100+ références. */
+export type Famille =
+  | "ecriture"
+  | "papier"
+  | "classement"
+  | "geometrie"
+  | "bureau"
+  | "arts"
+  | "sacs";
+
+export const NOMS_FAMILLES: Record<Famille, string> = {
+  ecriture: "Écriture",
+  papier: "Cahiers & papier",
+  classement: "Classement",
+  geometrie: "Géométrie & calcul",
+  bureau: "Coupe & bureau",
+  arts: "Arts plastiques",
+  sacs: "Sacs & vie scolaire",
+};
 
 export type Product = {
   slug: string;
@@ -17,9 +61,12 @@ export type Product = {
   images: string[];
   badge?: string;
   categorie: Categorie;
+  /** Sous-famille, utilisée pour filtrer à l'intérieur d'une catégorie. */
+  famille?: Famille;
+  amazon?: AmazonData;
 };
 
-export const products: Product[] = [
+const produitsBase: Product[] = [
   {
     slug: "surligneurs-fluo-pastel-6",
     name: "Surligneurs fluo pastel (lot de 6)",
@@ -447,6 +494,9 @@ export const products: Product[] = [
     categorie: "accessoires",
   },
 ];
+
+export const products: Product[] = [...produitsBase, ...produitsScolaires];
+
 export function getProduct(slug: string) {
   return products.find((p) => p.slug === slug);
 }
