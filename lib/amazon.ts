@@ -181,26 +181,23 @@ function motsCles(product: Product): string {
 }
 
 /**
- * Sélection de lancement : les 10 références par lesquelles commencer sur
- * Amazon, plutôt que d'ouvrir les 120 d'un coup.
+ * Sélection de lancement : les seules références réellement publiables
+ * aujourd'hui, parce qu'elles ont de vraies photos produit (4 à 8 chacune,
+ * hébergées dans public/images) et qu'elles correspondent à des articles
+ * effectivement sourcés.
  *
- * Critères retenus : prix unitaire au-dessus de 10 € (en dessous, la
- * commission Amazon et le port mangent la marge), produit différenciant
- * plutôt que consommable de masse — inutile d'aller au contact frontal de
- * Bic, Oxford ou Amazon Basics sur les stylos et les cahiers — et colis
- * léger, peu fragile, peu sujet aux retours.
+ * Le reste du catalogue attend : les 100 références scolaires n'ont que des
+ * vignettes générées, qu'Amazon refuse. Mieux vaut ouvrir sept offres
+ * défendables que cent qui se feront suspendre.
  */
 export const SELECTION_LANCEMENT: readonly string[] = [
-  "plumier-garni-scolaire",
-  "gourde-inox-750ml",
-  "trieur-12-compartiments",
-  "sous-main-bureau-transparent",
-  "tablier-peinture-enfant",
-  "boite-a-gouter-compartiments",
-  "porte-documents-zippe-a4",
-  "carnet-croquis-a4-100p",
-  "ardoise-blanche-effacable-a4",
-  "kit-geometrie-4-pieces",
+  "montre-connectee-hosgubo",
+  "montre-connectee-cillso",
+  "ecouteurs-anc-reduction-bruit",
+  "ecouteurs-xulinse",
+  "barre-de-son-saiyin-40w",
+  "collier-chat-airtag",
+  "chargeur-induction-iniu-15w",
 ];
 
 export type OptionsFlux = {
