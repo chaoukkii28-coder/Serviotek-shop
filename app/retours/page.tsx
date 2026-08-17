@@ -12,6 +12,13 @@ export default function Retours() {
           guide pour la suite (le produit étant expédié par un fournisseur tiers, les
           modalités précises peuvent varier).
         </p>
+        <p>
+          Tu peux aussi utiliser directement notre{" "}
+          <a href="/retractation" className="underline hover:text-white">
+            formulaire de rétractation
+          </a>
+          .
+        </p>
       </div>
     </div>
   );

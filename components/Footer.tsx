@@ -13,6 +13,7 @@ export default function Footer() {
           <ul className="space-y-1">
             <li><Link href="/livraison" className="hover:text-white">Livraison &amp; délais</Link></li>
             <li><Link href="/retours" className="hover:text-white">Retours</Link></li>
+            <li><Link href="/retractation" className="hover:text-white">Formulaire de rétractation</Link></li>
             <li><Link href="/cgv" className="hover:text-white">CGV</Link></li>
             <li><Link href="/mentions-legales" className="hover:text-white">Mentions légales</Link></li>
           </ul>

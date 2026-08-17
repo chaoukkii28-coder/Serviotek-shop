@@ -44,6 +44,14 @@ export default function CGV() {
             Le remboursement intervient dans un délai maximal de 14 jours à compter de la réception
             du produit retourné, via le même moyen de paiement que celui utilisé lors de l&apos;achat.
           </p>
+          <p className="mt-2">
+            Un{" "}
+            <a href="/retractation" className="underline hover:text-white">
+              formulaire type de rétractation
+            </a>{" "}
+            est mis à disposition. Son usage n&apos;est pas obligatoire : toute déclaration dénuée
+            d&apos;ambiguïté exprimant la volonté de se rétracter est recevable.
+          </p>
         </section>
         <section>
           <h2 className="text-white font-medium mb-1">6. Garantie légale de conformité</h2>
