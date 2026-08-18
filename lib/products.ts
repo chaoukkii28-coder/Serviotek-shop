@@ -69,7 +69,7 @@ export const products: Product[] = [
   {
     slug: "surligneurs-fluo-pastel-6",
     name: "Surligneurs fluo pastel (lot de 6)",
-    price: 19.80,
+    price: 9.90,
     tagline: "Six teintes douces pour des notes claires",
     description:
       "Lot de 6 surligneurs aux couleurs pastel, à pointe biseautée pour tracer des traits fins ou larges. Encre à séchage rapide qui ne traverse pas le papier et ne bave pas sur les stylos.",
@@ -86,7 +86,7 @@ export const products: Product[] = [
   {
     slug: "stylos-gel-couleurs-10",
     name: "Stylos gel colorés (lot de 10)",
-    price: 25.80,
+    price: 12.90,
     tagline: "Écriture fluide, dix couleurs vives",
     description:
       "Lot de 10 stylos à encre gel de 0,5 mm, pour une écriture fluide sans accroc. Idéaux pour la prise de notes en couleur, les fiches de révision et le bullet journal.",
@@ -103,7 +103,7 @@ export const products: Product[] = [
   {
     slug: "crayons-couleur-24",
     name: "Crayons de couleur (lot de 24)",
-    price: 29.80,
+    price: 14.90,
     tagline: "Vingt-quatre teintes, mine résistante",
     description:
       "Boîte de 24 crayons de couleur à mine tendre et résistante, qui ne casse pas au taille-crayon. Couleurs vives et bonne couvrance sur papier blanc comme sur papier coloré.",
@@ -120,7 +120,7 @@ export const products: Product[] = [
   {
     slug: "trousse-scolaire-grande-capacite",
     name: "Trousse scolaire grande capacité",
-    price: 31.80,
+    price: 15.90,
     tagline: "Jusqu'à 40 stylos, tout reste à sa place",
     description:
       "Trousse à double compartiment qui sépare les stylos du petit matériel, pour retrouver ce qu'on cherche immédiatement. Tissu résistant et fermeture éclair renforcée, conçue pour tenir une année scolaire complète.",
@@ -137,7 +137,7 @@ export const products: Product[] = [
   {
     slug: "lampe-bureau-led-usb",
     name: "Lampe de bureau LED USB",
-    price: 59.80,
+    price: 29.90,
     tagline: "Trois lumières, zéro fatigue oculaire",
     description:
       "Lampe de bureau LED à 3 températures de couleur et luminosité réglable. Lumière diffuse sans scintillement, pensée pour les longues sessions de révision. Bras pliable et alimentation USB, sans prise secteur nécessaire.",
@@ -154,7 +154,7 @@ export const products: Product[] = [
   {
     slug: "bouteille-isotherme-500ml",
     name: "Bouteille isotherme inox 500 ml",
-    price: 39.80,
+    price: 19.90,
     tagline: "12h chaud, 24h froid, zéro fuite",
     description:
       "Gourde en inox à double paroi isolée sous vide, qui garde les boissons chaudes 12 heures et froides 24 heures. Bouchon vissé totalement hermétique : elle peut être posée à plat dans un cartable sans risque de fuite.",
@@ -275,7 +275,7 @@ export const products: Product[] = [
   {
     slug: "barre-de-son-saiyin-40w",
     name: "Barre de son Saiyin 40W",
-    price: 120.00,
+    price: 80.00,
     tagline: "Un son puissant pour votre salon",
     description:
       "Barre de son 40W avec 2 haut-parleurs à pavillon carré, offrant un rendu sonore riche jusqu'à 98dB. Murale et facile à installer, connexions multiples (Bluetooth, optique, subwoofer, AUX), livrée avec télécommande.",
@@ -363,7 +363,7 @@ export const products: Product[] = [
   {
     slug: "prise-connectee-wifi-eu",
     name: "Prise connectée Wi-Fi standard européen 16A",
-    price: 49.80,
+    price: 24.90,
     tagline: "Pilotez vos appareils à distance",
     description:
       "Prise connectée Wi-Fi au format européen 16A, contrôle à distance via application, coque en PC ignifugé.",
@@ -450,7 +450,7 @@ export const products: Product[] = [
   {
     slug: "masseur-nuque-ems-chauffant",
     name: "Masseur de nuque EMS chauffant",
-    price: 49.80,
+    price: 24.90,
     tagline: "Détente instantanée après une longue journée",
     description:
       "Masseur de nuque EMS à micro-courants avec chaleur, 4 modes de massage et 12 niveaux d'intensité, design ergonomique en U, arrêt automatique après 15 minutes.",
@@ -473,7 +473,7 @@ export const products: Product[] = [
   {
     slug: "calculatrice-tablette-ecriture-2en1",
     name: "Calculatrice scientifique 2-en-1 avec tablette d'écriture",
-    price: 44.00,
+    price: 13.00,
     tagline: "Calculez et notez sur le même appareil",
     description:
       "Calculatrice scientifique pliable avec tablette d'écriture LCD intégrée, écran mat bleu anti-fatigue oculaire, réutilisable à volonté. Idéale pour la rentrée.",
