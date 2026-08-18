@@ -74,26 +74,26 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
       <div>
         <h1 className="font-display font-bold text-3xl">{product.name}</h1>
-        <p className="text-mist mt-2">{product.tagline}</p>
+        <p className="mt-2 text-lg font-bold text-graphite">{product.tagline}</p>
         <p className="font-mono text-volt text-2xl mt-6">{product.price.toFixed(2)} €</p>
 
-        <p className="mt-6 leading-relaxed">{product.description}</p>
+        <p className="mt-6 text-base font-semibold leading-relaxed text-graphite">{product.description}</p>
 
         <div className="mt-8">
-          <p className="font-mono text-xs uppercase tracking-wider text-mist mb-3">
+          <p className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-graphite">
             Fiche technique
           </p>
           <dl className="border border-wire rounded-xl divide-y divide-wire">
             {product.specs.map((s) => (
               <div key={s.label} className="flex justify-between gap-4 px-4 py-3 text-sm">
-                <dt className="text-mist shrink-0">{s.label}</dt>
-                <dd className="font-mono text-right">{s.value}</dd>
+                <dt className="shrink-0 font-bold text-graphite">{s.label}</dt>
+                <dd className="text-right font-mono font-bold text-graphite">{s.value}</dd>
               </div>
             ))}
           </dl>
         </div>
 
-        <p className="text-xs text-mist mt-6">
+        <p className="mt-6 text-sm font-semibold text-graphite">
           Livraison sous 5 jours ouvrés maximum. Voir la page{" "}
           <a href="/livraison" className="underline hover:text-white">
             Livraison &amp; délais

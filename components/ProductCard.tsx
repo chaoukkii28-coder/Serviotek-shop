@@ -24,7 +24,7 @@ export default function ProductCard({ product }: { product: Product }) {
       </div>
       <div className="p-2.5">
         <h3 className="font-display font-bold leading-tight text-sm line-clamp-2">{product.name}</h3>
-        <p className="text-mist text-xs mt-0.5 line-clamp-1">{product.tagline}</p>
+        <p className="mt-0.5 line-clamp-2 text-xs font-bold text-graphite">{product.tagline}</p>
         <div className="spec-strip my-2" />
         <div className="flex items-baseline justify-between">
           <span className="font-mono text-black text-base">{product.price.toFixed(2)} €</span>
