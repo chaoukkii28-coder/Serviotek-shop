@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
           // durable, en reprenant les informations de l'article L221-5 :
           // délai de livraison, droit de rétractation, garanties, contact.
           footer: [
-            "Serviotek — Service, SASU",
+            "Serviotek — Service, SASU au capital de 50 €",
             "Bureau 326, 59 rue de Ponthieu, 75008 Paris — RCS Paris 104 280 516",
             "contact@serviotek.com",
             "",
