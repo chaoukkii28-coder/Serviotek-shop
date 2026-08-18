@@ -429,7 +429,7 @@ export const products: Product[] = [
   {
     slug: "visseuse-sans-fil-usb",
     name: "Perceuse-visseuse sans fil rechargeable USB",
-    price: 80.00,
+    price: 40.00,
     tagline: "Compacte, puissante, toujours prête",
     description:
       "Perceuse-visseuse sans fil compacte, batterie lithium rechargeable par USB, rotation bidirectionnelle, LED intégrée pour travailler dans le noir.",
