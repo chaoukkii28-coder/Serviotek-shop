@@ -28,7 +28,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="spec-strip my-2" />
         <div className="flex items-baseline justify-between">
           <span className="font-mono text-black text-base">{product.price.toFixed(2)} €</span>
-          <span className="text-[10px] text-mist font-mono">→ voir fiche</span>
+          <span className="font-mono text-[10px] font-bold text-graphite">→ voir fiche</span>
         </div>
       </div>
     </Link>

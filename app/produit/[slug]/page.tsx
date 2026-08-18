@@ -96,7 +96,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
 
         <p className="mt-6 text-sm font-semibold text-graphite">
           Livraison sous 5 jours ouvrés maximum. Voir la page{" "}
-          <a href="/livraison" className="underline hover:text-white">
+          <a href="/livraison" className="underline hover:opacity-70">
             Livraison &amp; délais
           </a>.
         </p>

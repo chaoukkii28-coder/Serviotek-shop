@@ -22,7 +22,7 @@ export default function Retours() {
         </p>
         <p>
           Tu peux aussi utiliser directement notre{" "}
-          <a href="/retractation" className="underline hover:text-white">
+          <a href="/retractation" className="underline hover:opacity-70">
             formulaire de rétractation
           </a>
           .

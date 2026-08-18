@@ -74,7 +74,7 @@ export default function PanierPage() {
             />
             <button
               onClick={() => remove(product.slug)}
-              className="text-mist hover:text-white text-sm"
+              className="text-mist hover:opacity-70 text-sm"
             >
               Retirer
             </button>
@@ -97,7 +97,7 @@ export default function PanierPage() {
         {loading ? "Redirection..." : "Passer au paiement"}
       </button>
 
-      <button onClick={clear} className="mt-3 w-full text-mist text-sm hover:text-white">
+      <button onClick={clear} className="mt-3 w-full text-mist text-sm hover:opacity-70">
         Vider le panier
       </button>
     </div>

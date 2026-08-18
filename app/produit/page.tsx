@@ -73,12 +73,12 @@ export default function ProduitListPage({
   return (
     <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       <h1 className="mb-2 text-2xl font-bold text-neutral-900">{titre}</h1>
-      <p className="mb-6 text-sm text-neutral-500">
+      <p className="mb-6 text-sm font-bold text-graphite">
         {resultats.length} produit{resultats.length > 1 ? "s" : ""}
       </p>
 
       {resultats.length === 0 ? (
-        <p className="text-neutral-600">Aucun produit trouvé.</p>
+        <p className="font-bold text-graphite">Aucun produit trouvé.</p>
       ) : (
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {affiches.map((p) => (
@@ -92,7 +92,7 @@ export default function ProduitListPage({
           {page > 1 ? (
             <Link
               href={lienPage(page - 1)}
-              className="rounded-full border border-neutral-200 px-4 py-2 font-medium text-neutral-700 transition hover:border-neutral-400"
+              className="rounded-full border border-neutral-200 px-4 py-2 font-bold text-graphite transition hover:border-neutral-400"
             >
               ← Précédent
             </Link>
@@ -102,14 +102,14 @@ export default function ProduitListPage({
             </span>
           )}
 
-          <span className="text-neutral-500">
+          <span className="font-bold text-graphite">
             Page {page} sur {nombrePages}
           </span>
 
           {page < nombrePages ? (
             <Link
               href={lienPage(page + 1)}
-              className="rounded-full border border-neutral-200 px-4 py-2 font-medium text-neutral-700 transition hover:border-neutral-400"
+              className="rounded-full border border-neutral-200 px-4 py-2 font-bold text-graphite transition hover:border-neutral-400"
             >
               Suivant →
             </Link>
