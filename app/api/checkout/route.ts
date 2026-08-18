@@ -56,6 +56,40 @@ export async function POST(req: NextRequest) {
       success_url: `${origin}/commande-confirmee?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/panier`,
       shipping_address_collection: { allowed_countries: ["FR", "BE", "CH", "LU"] },
+      // Le site n'envoie pas d'e-mail lui-même. Stripe établit la facture et
+      // l'adresse au client : c'est la confirmation sur support durable
+      // qu'impose l'article L221-13 du Code de la consommation.
+      invoice_creation: {
+        enabled: true,
+        invoice_data: {
+          description: "Commande Serviotek",
+          // L'article L221-13 impose de confirmer la commande sur support
+          // durable, en reprenant les informations de l'article L221-5 :
+          // délai de livraison, droit de rétractation, garanties, contact.
+          footer: [
+            "Serviotek — Service, SASU au capital de 50 €",
+            "Bureau 326, 59 rue de Ponthieu, 75008 Paris — RCS Paris 104 280 516",
+            "contact@serviotek.com",
+            "",
+            "Votre commande est confirmée. Le détail des articles, les quantités",
+            "et le montant réglé figurent ci-dessus.",
+            "",
+            "Livraison sous 5 jours ouvrés maximum. Un e-mail contenant votre",
+            "numéro de suivi vous sera adressé dès l'expédition du colis.",
+            "Droit de rétractation : 14 jours à compter de la réception, sans justification.",
+            "Formulaire de rétractation : https://serviotek-shop.vercel.app/retractation",
+            "Garantie légale de conformité de 2 ans et garantie des vices cachés.",
+            "Conditions générales de vente : https://serviotek-shop.vercel.app/cgv",
+          ].join("\n"),
+          custom_fields: [
+            { name: "Livraison", value: "5 jours ouvrés max" },
+            { name: "Retractation", value: "14 jours" },
+          ],
+        },
+      },
+      // Une facture sans adresse de facturation n'est pas conforme.
+      billing_address_collection: "required",
+      locale: "fr",
     });
 
     return NextResponse.json({ url: session.url });
