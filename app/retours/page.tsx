@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Retours & échanges",
+  description:
+    "14 jours après réception pour demander un retour ou un échange, formulaire de rétractation à disposition.",
+};
+
 export default function Retours() {
   return (
     <div className="max-w-2xl mx-auto px-5 py-16">

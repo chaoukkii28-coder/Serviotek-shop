@@ -108,6 +108,17 @@ function tronquer(valeur: string, max: number): string {
   return propre.length <= max ? propre : `${propre.slice(0, max - 1).trimEnd()}…`;
 }
 
+/**
+ * Les photos du site sont livrées telles que le fournisseur les a fournies :
+ * format panoramique, bandes noires sur les côtés. Une version carrée 1600 px
+ * sur fond blanc, conforme aux exigences Amazon, est générée dans
+ * public/images-amazon — c'est elle qu'il faut envoyer.
+ */
+export function versionAmazon(source: string): string {
+  if (!source.startsWith("/images/")) return source;
+  return source.replace("/images/", "/images-amazon/").replace(/\.(png|jpeg)$/i, ".jpg");
+}
+
 /** Amazon télécharge les images : les chemins locaux doivent devenir absolus. */
 export function urlImageAbsolue(source: string, baseUrl: string = SITE_URL): string {
   if (/^https?:\/\//i.test(source)) return source;
@@ -181,26 +192,23 @@ function motsCles(product: Product): string {
 }
 
 /**
- * Sélection de lancement : les 10 références par lesquelles commencer sur
- * Amazon, plutôt que d'ouvrir les 120 d'un coup.
+ * Sélection de lancement : les seules références réellement publiables
+ * aujourd'hui, parce qu'elles ont de vraies photos produit (4 à 8 chacune,
+ * hébergées dans public/images) et qu'elles correspondent à des articles
+ * effectivement sourcés.
  *
- * Critères retenus : prix unitaire au-dessus de 10 € (en dessous, la
- * commission Amazon et le port mangent la marge), produit différenciant
- * plutôt que consommable de masse — inutile d'aller au contact frontal de
- * Bic, Oxford ou Amazon Basics sur les stylos et les cahiers — et colis
- * léger, peu fragile, peu sujet aux retours.
+ * Le reste du catalogue attend : les 100 références scolaires n'ont que des
+ * vignettes générées, qu'Amazon refuse. Mieux vaut ouvrir sept offres
+ * défendables que cent qui se feront suspendre.
  */
 export const SELECTION_LANCEMENT: readonly string[] = [
-  "plumier-garni-scolaire",
-  "gourde-inox-750ml",
-  "trieur-12-compartiments",
-  "sous-main-bureau-transparent",
-  "tablier-peinture-enfant",
-  "boite-a-gouter-compartiments",
-  "porte-documents-zippe-a4",
-  "carnet-croquis-a4-100p",
-  "ardoise-blanche-effacable-a4",
-  "kit-geometrie-4-pieces",
+  "montre-connectee-hosgubo",
+  "montre-connectee-cillso",
+  "ecouteurs-anc-reduction-bruit",
+  "ecouteurs-xulinse",
+  "barre-de-son-saiyin-40w",
+  "collier-chat-airtag",
+  "chargeur-induction-iniu-15w",
 ];
 
 export type OptionsFlux = {
@@ -214,7 +222,7 @@ export function ligneAmazon(product: Product, options: OptionsFlux = {}): Amazon
   const { baseUrl = SITE_URL, quantiteParDefaut = 0 } = options;
   const amazon = product.amazon ?? {};
 
-  const images = product.images.map((src) => urlImageAbsolue(src, baseUrl));
+  const images = product.images.map((src) => urlImageAbsolue(versionAmazon(src), baseUrl));
   const bullets = pointsCles(product);
   const ean = amazon.ean?.replace(/\s/g, "") ?? "";
 
@@ -330,6 +338,11 @@ export function controler(product: Product, options: OptionsFlux = {}): Controle
   } else {
     const urls = product.images.map((src) => urlImageAbsolue(src, baseUrl));
 
+    if (urls.some((u) => u.includes("/api/vignette"))) {
+      avertissements.push(
+        "Vignette générée, pas une photo : Amazon exige le visuel du produit réellement vendu"
+      );
+    }
     if (urls.some((u) => u.includes("images.unsplash.com"))) {
       avertissements.push(
         "Photo d'illustration Unsplash : Amazon exige la photo du produit réellement vendu"
@@ -343,6 +356,11 @@ export function controler(product: Product, options: OptionsFlux = {}): Controle
     if (urls.some((u) => u.includes("x-oss-process="))) {
       avertissements.push(
         "URL d'image avec paramètres de redimensionnement : Amazon exige au moins 1000 px sur le plus grand côté"
+      );
+    }
+    if (urls.some((u) => u.includes("/images-amazon/"))) {
+      avertissements.push(
+        "Photos recadrées au format Amazon (1600 px, fond blanc) — vérifier que la principale montre bien le produit seul"
       );
     }
     if (product.images.length < 3) {

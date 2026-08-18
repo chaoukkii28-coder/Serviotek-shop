@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Livraison & délais",
+  description:
+    "Livraison sous 5 jours ouvrés maximum en France, Belgique, Suisse et Luxembourg, avec numéro de suivi.",
+};
+
 export default function Livraison() {
   return (
     <div className="max-w-2xl mx-auto px-5 py-16">

@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mentions légales",
+  description:
+    "Éditeur du site, RCS, capital social, siège social, directeur de la publication et hébergeur.",
+};
+
 export default function MentionsLegales() {
   return (
     <div className="max-w-2xl mx-auto px-5 py-16 prose-invert">

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
-import { getProduct } from "@/lib/products";
+import { QUANTITE_MAX, getProduct } from "@/lib/products";
 
 export async function POST(req: NextRequest) {
   if (!process.env.STRIPE_SECRET_KEY) {
@@ -17,23 +17,34 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Panier vide." }, { status: 400 });
   }
 
-  const line_items = items
-    .map((i: { slug: string; qty: number }) => {
-      const product = getProduct(i.slug);
-      if (!product) return null;
-      return {
-        quantity: i.qty,
-        price_data: {
-          currency: "eur",
-          unit_amount: Math.round(product.price * 100),
-          product_data: { name: product.name },
-        },
-      };
-    })
-    .filter(Boolean);
+  // La quantité vient du navigateur : elle est revalidée ici, sinon un panier
+  // trafiqué peut demander 10 000 unités ou une quantité nulle.
+  const line_items = [];
+  for (const i of items as { slug?: unknown; qty?: unknown }[]) {
+    const product = typeof i?.slug === "string" ? getProduct(i.slug) : undefined;
+    if (!product) {
+      return NextResponse.json(
+        { error: "Un produit du panier n'existe plus. Rafraîchis la page." },
+        { status: 400 }
+      );
+    }
 
-  if (line_items.length === 0) {
-    return NextResponse.json({ error: "Produits invalides." }, { status: 400 });
+    const qty = Number(i?.qty);
+    if (!Number.isInteger(qty) || qty < 1 || qty > QUANTITE_MAX) {
+      return NextResponse.json(
+        { error: `Quantité invalide pour « ${product.name} » (1 à ${QUANTITE_MAX}).` },
+        { status: 400 }
+      );
+    }
+
+    line_items.push({
+      quantity: qty,
+      price_data: {
+        currency: "eur",
+        unit_amount: Math.round(product.price * 100),
+        product_data: { name: product.name },
+      },
+    });
   }
 
   try {

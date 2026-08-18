@@ -16,6 +16,7 @@ export default function Footer() {
             <li><Link href="/retractation" className="hover:text-white">Formulaire de rétractation</Link></li>
             <li><Link href="/cgv" className="hover:text-white">CGV</Link></li>
             <li><Link href="/mentions-legales" className="hover:text-white">Mentions légales</Link></li>
+            <li><Link href="/confidentialite" className="hover:text-white">Confidentialité</Link></li>
           </ul>
         </div>
         <div>

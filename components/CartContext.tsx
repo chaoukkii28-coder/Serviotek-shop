@@ -1,9 +1,18 @@
 "use client";
 
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { Product } from "@/lib/products";
+import { QUANTITE_MAX, getProduct, type Product } from "@/lib/products";
 
 type CartItem = { product: Product; qty: number };
+
+/**
+ * Seuls le slug et la quantité sont conservés. Stocker la fiche produit
+ * entière figeait le prix au moment de l'ajout : après un changement de
+ * tarif, le panier affichait l'ancien prix alors que Stripe encaissait le
+ * nouveau.
+ */
+type LigneStockee = { slug: string; qty: number };
+
 type CartContextType = {
   items: CartItem[];
   add: (product: Product) => void;
@@ -17,47 +26,79 @@ type CartContextType = {
 const CartContext = createContext<CartContextType | null>(null);
 const STORAGE_KEY = "serviotek_cart";
 
+function borner(qty: number) {
+  if (!Number.isFinite(qty)) return 1;
+  return Math.min(Math.max(Math.trunc(qty), 1), QUANTITE_MAX);
+}
+
+/** Accepte l'ancien format ({ product, qty }) comme le nouveau ({ slug, qty }). */
+function lireStockage(brut: string): LigneStockee[] {
+  const donnees = JSON.parse(brut);
+  if (!Array.isArray(donnees)) return [];
+
+  return donnees
+    .map((ligne): LigneStockee | null => {
+      const slug = ligne?.slug ?? ligne?.product?.slug;
+      if (typeof slug !== "string") return null;
+      return { slug, qty: borner(Number(ligne?.qty)) };
+    })
+    .filter((ligne): ligne is LigneStockee => ligne !== null);
+}
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [lignes, setLignes] = useState<LigneStockee[]>([]);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) setItems(JSON.parse(raw));
+      if (raw) setLignes(lireStockage(raw));
     } catch {}
     setHydrated(true);
   }, []);
 
   useEffect(() => {
     if (!hydrated) return;
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-  }, [items, hydrated]);
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(lignes));
+  }, [lignes, hydrated]);
+
+  // Une référence retirée du catalogue disparaît du panier au lieu d'y rester
+  // fantôme et de faire échouer le paiement.
+  const items = useMemo(
+    () =>
+      lignes
+        .map((ligne) => {
+          const product = getProduct(ligne.slug);
+          return product ? { product, qty: ligne.qty } : null;
+        })
+        .filter((item): item is CartItem => item !== null),
+    [lignes]
+  );
 
   function add(product: Product) {
-    setItems((prev) => {
-      const existing = prev.find((i) => i.product.slug === product.slug);
-      if (existing) {
-        return prev.map((i) =>
-          i.product.slug === product.slug ? { ...i, qty: i.qty + 1 } : i
+    setLignes((prev) => {
+      const existante = prev.find((l) => l.slug === product.slug);
+      if (existante) {
+        return prev.map((l) =>
+          l.slug === product.slug ? { ...l, qty: borner(l.qty + 1) } : l
         );
       }
-      return [...prev, { product, qty: 1 }];
+      return [...prev, { slug: product.slug, qty: 1 }];
     });
   }
 
   function remove(slug: string) {
-    setItems((prev) => prev.filter((i) => i.product.slug !== slug));
+    setLignes((prev) => prev.filter((l) => l.slug !== slug));
   }
 
   function setQty(slug: string, qty: number) {
-    setItems((prev) =>
-      prev.map((i) => (i.product.slug === slug ? { ...i, qty: Math.max(1, qty) } : i))
+    setLignes((prev) =>
+      prev.map((l) => (l.slug === slug ? { ...l, qty: borner(qty) } : l))
     );
   }
 
   function clear() {
-    setItems([]);
+    setLignes([]);
   }
 
   const total = useMemo(

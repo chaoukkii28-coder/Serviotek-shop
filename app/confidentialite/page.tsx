@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Politique de confidentialité",
+  description:
+    "Données collectées, finalités, durée de conservation et exercice de vos droits (RGPD).",
+};
+
 export default function Confidentialite() {
   return (
     <div className="max-w-2xl mx-auto px-5 py-16">

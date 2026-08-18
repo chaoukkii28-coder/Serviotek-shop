@@ -1,5 +1,10 @@
+import Link from "next/link";
 import { products } from "@/lib/products";
+import { CATEGORIES, lienCategorie } from "@/lib/categories";
 import ProductCard from "@/components/ProductCard";
+
+/** Nombre de produits mis en avant sur l'accueil. Le reste est dans le catalogue. */
+const APERCU = 10;
 
 const MESSAGES = [
   { icon: "🌱", label: "Produits durables" },
@@ -32,16 +37,49 @@ export default function Home() {
               </span>
             ))}
           </div>
+
         </div>
       </section>
 
-      <section id="catalogue" className="max-w-6xl mx-auto px-5 pt-10 pb-24">
+      <section className="max-w-6xl mx-auto px-5 pt-12">
         <div className="flex items-center gap-3 mb-6">
           <span className="w-2 h-2 rounded-full bg-volt" />
-          <h2 className="font-display font-bold text-xl">Catalogue</h2>
+          <h2 className="font-display font-bold text-xl">Nos rayons</h2>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          {CATEGORIES.map((cat) => {
+            const total = products.filter((p) => p.categorie === cat.id).length;
+            if (total === 0) return null;
+
+            return (
+              <Link
+                key={cat.id}
+                href={lienCategorie(cat.id)}
+                className="group flex items-center justify-between gap-3 rounded-xl border border-wire px-4 py-3 transition hover:border-neutral-400"
+              >
+                <span className="flex items-center gap-2 text-sm font-medium">
+                  <span className={`h-2 w-2 shrink-0 rounded-full ${cat.couleur}`} />
+                  {cat.label}
+                </span>
+                <span className="font-mono text-xs text-mist">{total}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section id="catalogue" className="max-w-6xl mx-auto px-5 pt-12 pb-24">
+        <div className="flex items-center justify-between gap-3 mb-6">
+          <div className="flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-volt" />
+            <h2 className="font-display font-bold text-xl">Sélection</h2>
+          </div>
+          <Link href="/produit" className="text-sm underline hover:text-volt">
+            Voir les {products.length} produits
+          </Link>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
-          {products.map((p) => (
+          {products.slice(0, APERCU).map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}
         </div>

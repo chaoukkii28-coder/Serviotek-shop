@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getProduct, products } from "@/lib/products";
+import { getProduct, products, type Product } from "@/lib/products";
 import AddToCartButton from "@/components/AddToCartButton";
+import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
 
 export function generateStaticParams() {
@@ -25,9 +26,24 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
+/** Suggestions : même sous-famille en priorité, puis même rayon. */
+function produitsSimilaires(product: Product) {
+  const candidats = products.filter((p) => p.slug !== product.slug);
+  const memeFamille = product.famille
+    ? candidats.filter((p) => p.famille === product.famille)
+    : [];
+  const memeRayon = candidats.filter(
+    (p) => p.categorie === product.categorie && !memeFamille.includes(p)
+  );
+
+  return [...memeFamille, ...memeRayon].slice(0, 5);
+}
+
 export default function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProduct(params.slug);
   if (!product) return notFound();
+
+  const similaires = produitsSimilaires(product);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -45,6 +61,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   };
 
   return (
+    <>
     <div className="max-w-6xl mx-auto px-5 py-10 grid sm:grid-cols-2 gap-10">
       <script
         type="application/ld+json"
@@ -92,5 +109,20 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
     </div>
+
+    {similaires.length > 0 && (
+      <section className="max-w-6xl mx-auto px-5 pb-20">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="w-2 h-2 rounded-full bg-volt" />
+          <h2 className="font-display font-bold text-xl">Dans le même rayon</h2>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
+          {similaires.map((p) => (
+            <ProductCard key={p.slug} product={p} />
+          ))}
+        </div>
+      </section>
+    )}
+    </>
   );
 }
