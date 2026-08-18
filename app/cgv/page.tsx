@@ -13,7 +13,7 @@ export default function CGV() {
       <div className="space-y-5 text-sm text-mist leading-relaxed">
         <section>
           <h2 className="text-white font-medium mb-1">1. Identité du vendeur</h2>
-          <p>Service, SASU au capital de 50 €, RCS Paris 104 280 516, siège social : Bureau 326, 59 rue de Ponthieu, 75008 Paris. Contact : contact@serviotek.com</p>
+          <p>Service, SASU, RCS Paris 104 280 516, siège social : Bureau 326, 59 rue de Ponthieu, 75008 Paris. Contact : contact@serviotek.com</p>
         </section>
         <section>
           <h2 className="text-white font-medium mb-1">2. Produits et origine</h2>
