@@ -247,7 +247,7 @@ export const products: Product[] = [
   {
     slug: "collier-chat-airtag",
     name: "Collier chat avec emplacement AirTag",
-    price: 36.00,
+    price: 18.00,
     tagline: "Gardez un œil sur votre compagnon",
     description:
       "Collier pour chat avec emplacement intégré pour AirTag, permettant de suivre sa position en temps réel. Bande réfléchissante visible jusqu'à 150m de nuit, boucle de sécurité qui se détache sous traction (max 3kg), taille ajustable de 19 à 32cm.",
