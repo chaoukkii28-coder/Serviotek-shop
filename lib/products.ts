@@ -171,7 +171,7 @@ export const products: Product[] = [
   {
     slug: "montre-connectee-hosgubo",
     name: "Montre connectée Hosgubo",
-    price: 95.80,
+    price: 31.98,
     tagline: "Élégance et suivi santé au poignet",
     description:
       "Montre connectée coloris Rose pêche avec grand écran tactile HD 1,91 pouces. Suivi de la fréquence cardiaque et du sommeil 24h/24, plus de 110 modes sportifs, réponse aux appels Bluetooth et notifications intelligentes (SMS, réseaux sociaux).",
@@ -199,7 +199,7 @@ export const products: Product[] = [
   {
     slug: "montre-connectee-cillso",
     name: "Montre connectée Cillso",
-    price: 95.80,
+    price: 31.98,
     tagline: "Style sobre, fonctions complètes",
     description:
       "Montre connectée coloris Noir avec appels Bluetooth 5.3, micro intégré et son Hi-Fi. Plus de 110 modes sportifs, contrôle musique, commande appareil photo à distance et réveil intelligent.",
