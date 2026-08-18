@@ -301,7 +301,7 @@ export const products: Product[] = [
   {
     slug: "chargeur-induction-iniu-15w",
     name: "Chargeur à induction INIU 15W",
-    price: 96.84,
+    price: 27.98,
     tagline: "Charge rapide, lumière nocturne adaptative",
     description:
       "Chargeur à induction 15W à charge rapide avec lumière nocturne adaptative, idéal pour le bureau ou le voyage.",
