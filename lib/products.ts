@@ -247,7 +247,7 @@ export const products: Product[] = [
   {
     slug: "collier-chat-airtag",
     name: "Collier chat avec emplacement AirTag",
-    price: 36.00,
+    price: 18.00,
     tagline: "Gardez un œil sur votre compagnon",
     description:
       "Collier pour chat avec emplacement intégré pour AirTag, permettant de suivre sa position en temps réel. Bande réfléchissante visible jusqu'à 150m de nuit, boucle de sécurité qui se détache sous traction (max 3kg), taille ajustable de 19 à 32cm.",
@@ -429,7 +429,7 @@ export const products: Product[] = [
   {
     slug: "visseuse-sans-fil-usb",
     name: "Perceuse-visseuse sans fil rechargeable USB",
-    price: 80.00,
+    price: 40.00,
     tagline: "Compacte, puissante, toujours prête",
     description:
       "Perceuse-visseuse sans fil compacte, batterie lithium rechargeable par USB, rotation bidirectionnelle, LED intégrée pour travailler dans le noir.",
