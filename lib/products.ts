@@ -247,7 +247,7 @@ export const products: Product[] = [
   {
     slug: "collier-chat-airtag",
     name: "Collier chat avec emplacement AirTag",
-    price: 71.80,
+    price: 36.00,
     tagline: "Gardez un œil sur votre compagnon",
     description:
       "Collier pour chat avec emplacement intégré pour AirTag, permettant de suivre sa position en temps réel. Bande réfléchissante visible jusqu'à 150m de nuit, boucle de sécurité qui se détache sous traction (max 3kg), taille ajustable de 19 à 32cm.",
@@ -384,7 +384,7 @@ export const products: Product[] = [
   {
     slug: "camera-solaire-exterieure-wifi",
     name: "Caméra de surveillance solaire Wi-Fi 360°",
-    price: 119.80,
+    price: 60.00,
     tagline: "Toujours alimentée, jamais hors service",
     description:
       "Caméra de surveillance extérieure alimentée par panneau solaire, détection de mouvement PIR, rotation 360°, vision nocturne infrarouge et couleur, audio bidirectionnel, étanche.",
@@ -407,7 +407,7 @@ export const products: Product[] = [
   {
     slug: "sac-a-dos-usb-scolaire",
     name: "Sac à dos étudiant avec port de charge USB",
-    price: 69.80,
+    price: 54.00,
     tagline: "Prêt pour la rentrée, toujours chargé",
     description:
       "Sac à dos grande capacité en toile, port de charge USB extérieur avec câble intégré, poches latérales pour bouteille et parapluie. Idéal pour la rentrée scolaire.",
@@ -429,7 +429,7 @@ export const products: Product[] = [
   {
     slug: "visseuse-sans-fil-usb",
     name: "Perceuse-visseuse sans fil rechargeable USB",
-    price: 89.80,
+    price: 80.00,
     tagline: "Compacte, puissante, toujours prête",
     description:
       "Perceuse-visseuse sans fil compacte, batterie lithium rechargeable par USB, rotation bidirectionnelle, LED intégrée pour travailler dans le noir.",
