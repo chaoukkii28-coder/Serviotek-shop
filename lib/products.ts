@@ -223,7 +223,7 @@ export const products: Product[] = [
   {
     slug: "ecouteurs-xulinse",
     name: "Écouteurs sans fil BUGANI",
-    price: 53.80,
+    price: 13.32,
     tagline: "Le son sans les fils, à petit prix",
     description:
       "Écouteurs Bluetooth sans fil BUGANI avec son sans distorsion, double microphone pour des appels cristallins, étanchéité IPX6 résistante à la transpiration et jusqu'à 24h d'autonomie avec le boîtier de charge.",
