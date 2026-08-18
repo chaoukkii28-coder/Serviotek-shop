@@ -473,7 +473,7 @@ export const products: Product[] = [
   {
     slug: "calculatrice-tablette-ecriture-2en1",
     name: "Calculatrice scientifique 2-en-1 avec tablette d'écriture",
-    price: 59.80,
+    price: 44.00,
     tagline: "Calculez et notez sur le même appareil",
     description:
       "Calculatrice scientifique pliable avec tablette d'écriture LCD intégrée, écran mat bleu anti-fatigue oculaire, réutilisable à volonté. Idéale pour la rentrée.",
