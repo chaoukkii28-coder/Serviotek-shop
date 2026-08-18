@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Mentions légales",
   description:
-    "Éditeur du site, RCS, capital social, siège social, directeur de la publication et hébergeur.",
+    "Éditeur du site, RCS, siège social, directeur de la publication et hébergeur.",
 };
 
 export default function MentionsLegales() {
@@ -13,7 +13,6 @@ export default function MentionsLegales() {
       <div className="space-y-4 text-sm text-mist leading-relaxed">
         <p><strong className="text-white">Éditeur du site :</strong> Service, Société par actions simplifiée à associé unique (SASU)</p>
         <p><strong className="text-white">RCS :</strong> 104 280 516 R.C.S. Paris</p>
-        <p><strong className="text-white">Capital social :</strong> 50,00 €</p>
         <p><strong className="text-white">Siège social :</strong> Bureau 326, 59 rue de Ponthieu, 75008 Paris</p>
         <p><strong className="text-white">Président :</strong> Monsieur Mohamed Chaouki Bouhadjera</p>
         <p><strong className="text-white">Directeur de la publication :</strong> Monsieur Mohamed Chaouki Bouhadjera</p>
