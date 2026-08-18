@@ -3,9 +3,6 @@ import { products } from "@/lib/products";
 import { CATEGORIES, lienCategorie } from "@/lib/categories";
 import ProductCard from "@/components/ProductCard";
 
-/** Nombre de produits mis en avant sur l'accueil. Le reste est dans le catalogue. */
-const APERCU = 10;
-
 const MESSAGES = [
   { icon: "🌱", label: "Produits durables" },
   { icon: "🔧", label: "Réparables" },
@@ -72,14 +69,12 @@ export default function Home() {
         <div className="flex items-center justify-between gap-3 mb-6">
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-volt" />
-            <h2 className="font-display font-bold text-xl">Sélection</h2>
+            <h2 className="font-display font-bold text-xl">Catalogue</h2>
           </div>
-          <Link href="/produit" className="text-sm underline hover:text-volt">
-            Voir les {products.length} produits
-          </Link>
+          <span className="font-mono text-xs text-mist">{products.length} produits</span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
-          {products.slice(0, APERCU).map((p) => (
+          {products.map((p) => (
             <ProductCard key={p.slug} product={p} />
           ))}
         </div>
