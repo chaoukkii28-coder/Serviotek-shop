@@ -337,7 +337,7 @@ export const products: Product[] = [
   {
     slug: "ecouteurs-anc-reduction-bruit",
     name: "Casque à réduction de bruit active ANC",
-    price: 109.80,
+    price: 17.98,
     tagline: "Immersion totale, silence à la demande",
     description:
       "Écouteurs sans fil Bluetooth 5.4 avec son stéréo Hi-Fi (transducteurs 13mm), micro haute définition à finition acier premium pour des appels clairs, étanchéité IPX7 et jusqu'à 40h d'autonomie avec le boîtier de charge USB-C.",
