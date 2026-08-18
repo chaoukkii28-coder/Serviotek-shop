@@ -2,7 +2,15 @@
 import type { Config } from "tailwindcss";
  
 const config: Config = {
-  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  // lib/ doit être scanné : les couleurs des rayons y sont déclarées sous
+  // forme de chaînes (lib/categories.ts). Sans ce chemin, Tailwind ne voit
+  // pas ces classes et ne génère pas le CSS correspondant — les pastilles de
+  // couleur disparaissent alors du menu et de la page d'accueil.
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./lib/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
