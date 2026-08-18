@@ -5,8 +5,7 @@ export type Categorie =
   | "bricolage"
   | "detection"
   | "bien-etre"
-  | "accessoires"
-  | "scolaire";
+  | "accessoires";
 
 /**
  * Informations exigées par Amazon Seller Central et absentes d'une fiche
@@ -30,26 +29,6 @@ export type AmazonData = {
   quantity?: number;
 };
 
-/** Sous-familles de la collection scolaire, pour filtrer les 100+ références. */
-export type Famille =
-  | "ecriture"
-  | "papier"
-  | "classement"
-  | "geometrie"
-  | "bureau"
-  | "arts"
-  | "sacs";
-
-export const NOMS_FAMILLES: Record<Famille, string> = {
-  ecriture: "Écriture",
-  papier: "Cahiers & papier",
-  classement: "Classement",
-  geometrie: "Géométrie & calcul",
-  bureau: "Coupe & bureau",
-  arts: "Arts plastiques",
-  sacs: "Sacs & vie scolaire",
-};
-
 export type Product = {
   slug: string;
   name: string;
@@ -60,114 +39,10 @@ export type Product = {
   images: string[];
   badge?: string;
   categorie: Categorie;
-  /** Sous-famille, utilisée pour filtrer à l'intérieur d'une catégorie. */
-  famille?: Famille;
   amazon?: AmazonData;
 };
 
 export const products: Product[] = [
-  {
-    slug: "surligneurs-fluo-pastel-6",
-    name: "Surligneurs fluo pastel (lot de 6)",
-    price: 9.90,
-    tagline: "Six teintes douces pour des notes claires",
-    description:
-      "Lot de 6 surligneurs aux couleurs pastel, à pointe biseautée pour tracer des traits fins ou larges. Encre à séchage rapide qui ne traverse pas le papier et ne bave pas sur les stylos.",
-    specs: [
-      { label: "Contenu", value: "6 surligneurs" },
-      { label: "Coloris", value: "Jaune, rose, orange, vert, bleu, violet pastel" },
-      { label: "Pointe", value: "Biseautée, traits de 1 à 5 mm" },
-      { label: "Encre", value: "Séchage rapide, sans transpercer le papier" },
-    ],
-    images: ["https://images.unsplash.com/photo-1568205612837-017257d2310a?w=800"],
-    categorie: "scolaire",
-    badge: "Rentrée",
-  },
-  {
-    slug: "stylos-gel-couleurs-10",
-    name: "Stylos gel colorés (lot de 10)",
-    price: 12.90,
-    tagline: "Écriture fluide, dix couleurs vives",
-    description:
-      "Lot de 10 stylos à encre gel de 0,5 mm, pour une écriture fluide sans accroc. Idéaux pour la prise de notes en couleur, les fiches de révision et le bullet journal.",
-    specs: [
-      { label: "Contenu", value: "10 stylos" },
-      { label: "Pointe", value: "0,5 mm" },
-      { label: "Encre", value: "Gel, séchage rapide" },
-      { label: "Usage", value: "Prise de notes, fiches, dessin" },
-    ],
-    images: ["https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?w=800"],
-    categorie: "scolaire",
-    badge: "Rentrée",
-  },
-  {
-    slug: "crayons-couleur-24",
-    name: "Crayons de couleur (lot de 24)",
-    price: 14.90,
-    tagline: "Vingt-quatre teintes, mine résistante",
-    description:
-      "Boîte de 24 crayons de couleur à mine tendre et résistante, qui ne casse pas au taille-crayon. Couleurs vives et bonne couvrance sur papier blanc comme sur papier coloré.",
-    specs: [
-      { label: "Contenu", value: "24 crayons" },
-      { label: "Mine", value: "3 mm, tendre et résistante" },
-      { label: "Bois", value: "Facile à tailler" },
-      { label: "Usage", value: "École primaire, collège, loisirs créatifs" },
-    ],
-    images: ["https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=800"],
-    categorie: "scolaire",
-    badge: "Rentrée",
-  },
-  {
-    slug: "trousse-scolaire-grande-capacite",
-    name: "Trousse scolaire grande capacité",
-    price: 15.90,
-    tagline: "Jusqu'à 40 stylos, tout reste à sa place",
-    description:
-      "Trousse à double compartiment qui sépare les stylos du petit matériel, pour retrouver ce qu'on cherche immédiatement. Tissu résistant et fermeture éclair renforcée, conçue pour tenir une année scolaire complète.",
-    specs: [
-      { label: "Capacité", value: "Jusqu'à 40 stylos" },
-      { label: "Compartiments", value: "2 compartiments séparés" },
-      { label: "Matière", value: "Tissu résistant, fermeture éclair renforcée" },
-      { label: "Usage", value: "Collège, lycée, université, bureau" },
-    ],
-    images: ["https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800"],
-    categorie: "scolaire",
-    badge: "Rentrée",
-  },
-  {
-    slug: "lampe-bureau-led-usb",
-    name: "Lampe de bureau LED USB",
-    price: 29.90,
-    tagline: "Trois lumières, zéro fatigue oculaire",
-    description:
-      "Lampe de bureau LED à 3 températures de couleur et luminosité réglable. Lumière diffuse sans scintillement, pensée pour les longues sessions de révision. Bras pliable et alimentation USB, sans prise secteur nécessaire.",
-    specs: [
-      { label: "Modes", value: "3 températures : blanc froid, neutre, chaud" },
-      { label: "Luminosité", value: "Réglable en continu" },
-      { label: "Alimentation", value: "USB (PC, chargeur ou batterie externe)" },
-      { label: "Format", value: "Bras pliable, orientable" },
-    ],
-    images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800"],
-    categorie: "scolaire",
-    badge: "Rentrée",
-  },
-  {
-    slug: "bouteille-isotherme-500ml",
-    name: "Bouteille isotherme inox 500 ml",
-    price: 19.90,
-    tagline: "12h chaud, 24h froid, zéro fuite",
-    description:
-      "Gourde en inox à double paroi isolée sous vide, qui garde les boissons chaudes 12 heures et froides 24 heures. Bouchon vissé totalement hermétique : elle peut être posée à plat dans un cartable sans risque de fuite.",
-    specs: [
-      { label: "Contenance", value: "500 ml" },
-      { label: "Isolation", value: "12h chaud / 24h froid" },
-      { label: "Matière", value: "Acier inoxydable alimentaire, sans BPA" },
-      { label: "Étanchéité", value: "Bouchon vissé hermétique" },
-    ],
-    images: ["https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800"],
-    categorie: "scolaire",
-    badge: "Rentrée",
-  },
   {
     slug: "montre-connectee-hosgubo",
     name: "Montre connectée Hosgubo",
@@ -410,7 +285,7 @@ export const products: Product[] = [
     price: 54.00,
     tagline: "Prêt pour la rentrée, toujours chargé",
     description:
-      "Sac à dos grande capacité en toile, port de charge USB extérieur avec câble intégré, poches latérales pour bouteille et parapluie. Idéal pour la rentrée scolaire.",
+      "Sac à dos grande capacité en toile, port de charge USB extérieur avec câble intégré, poches latérales pour bouteille et parapluie.",
     specs: [
       { label: "Matière", value: "Toile" },
       { label: "Port USB", value: "Externe, câble intégré (batterie non incluse)" },
