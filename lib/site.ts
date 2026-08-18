@@ -7,9 +7,13 @@
  * hébergeur. Sans elle, c'est le domaine ci-dessous qui s'applique — il ne
  * doit exister qu'à cet endroit : le coder en dur ailleurs a déjà conduit à
  * ce que sitemap et JSON-LD désignent un autre domaine que le site réel.
+ *
+ * Le sous-domaine www est la forme canonique : serviotek.com y redirige.
+ * Annoncer la forme sans www ferait pointer sitemap, données structurées et
+ * liens de facture vers des adresses qui redirigent toutes.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://serviotek.com"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.serviotek.com"
 ).replace(/\/$/, "");
 
 /** Construit une URL absolue à partir d'un chemin interne. */
