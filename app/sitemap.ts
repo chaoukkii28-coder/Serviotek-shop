@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/lib/products";
-
-const SITE_URL = "https://serviotek-shop.vercel.app";
+import { SITE_URL } from "@/lib/site";
 
 /** Pages fixes : informatives, elles bougent peu mais doivent être indexées. */
 const PAGES_FIXES = [

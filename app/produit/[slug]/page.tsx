@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProduct, products, type Product } from "@/lib/products";
+import { urlAbsolue } from "@/lib/site";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
@@ -52,7 +53,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       priceCurrency: "EUR",
       price: product.price.toFixed(2),
       availability: "https://schema.org/InStock",
-      url: `https://serviotek-shop.vercel.app/produit/${product.slug}`,
+      url: urlAbsolue(`/produit/${product.slug}`),
     },
   };
 
@@ -77,7 +78,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         <p className="mt-2 text-lg font-bold text-graphite">{product.tagline}</p>
         <p className="font-mono text-volt text-2xl mt-6">{product.price.toFixed(2)} €</p>
 
-        <p className="mt-6 text-base font-semibold leading-relaxed text-graphite">{product.description}</p>
+        <p className="mt-6 text-lg font-bold leading-relaxed text-graphite">{product.description}</p>
 
         <div className="mt-8">
           <p className="mb-3 font-mono text-xs font-bold uppercase tracking-wider text-graphite">

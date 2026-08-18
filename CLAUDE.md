@@ -6,23 +6,15 @@ Dépôt : `chaoukkii28-coder/Serviotek-shop`.
 Société éditrice : **Service**, SASU au capital de 50 €, RCS Paris 104 280 516,
 siège Bureau 326, 59 rue de Ponthieu, 75008 Paris.
 
-## ⚠️ Point à trancher : le domaine
+## Le domaine
 
-Le domaine est **codé en dur** à `https://serviotek-shop.vercel.app` dans sept
-fichiers. Si le site tourne en réalité sur **serviotek.com**, ces URLs sont
-fausses et il faut toutes les changer :
+Une seule source : `SITE_URL` dans `lib/site.ts`, alimentée par la variable
+d'environnement `NEXT_PUBLIC_SITE_URL` et repliée sur `https://serviotek.com`
+par défaut. Elle sert au sitemap, à robots.txt, aux données structurées, aux
+liens de la facture Stripe et aux URLs absolues envoyées à Amazon.
 
-| Fichier | Ce que l'URL alimente |
-| --- | --- |
-| `app/sitemap.ts` | toutes les URLs du sitemap |
-| `app/robots.ts` | l'adresse du sitemap |
-| `app/layout.tsx` | `metadataBase` et le JSON-LD du site |
-| `app/produit/[slug]/page.tsx` | l'URL de l'offre dans le JSON-LD produit |
-| `app/api/checkout/route.ts` | les liens CGV et rétractation sur la facture |
-| `lib/amazon.ts` | l'URL absolue des images envoyées à Amazon |
-
-Conséquences si c'est faux : Google indexe le mauvais domaine, et Amazon ne
-peut pas télécharger les photos des produits.
+Ne jamais réécrire un domaine en dur ailleurs : il l'était dans sept fichiers,
+et le sitemap désignait alors un autre domaine que le site.
 
 ## Conventions
 
