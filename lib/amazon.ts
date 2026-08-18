@@ -1,4 +1,5 @@
 import { products as catalogue, type Categorie, type Product } from "@/lib/products";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * Génération du fichier d'inventaire Amazon Seller Central à partir du
@@ -6,8 +7,6 @@ import { products as catalogue, type Categorie, type Product } from "@/lib/produ
  * Amazon : ils se recopient tels quels dans le modèle téléchargé depuis
  * Seller Central (le jeu de colonnes exact dépend de la catégorie choisie).
  */
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://serviotek-shop.vercel.app";
 
 /** Préfixe des SKU vendeur. Doit rester stable : c'est la clé d'Amazon. */
 const SKU_PREFIX = "SVT-";

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/components/CartContext";
@@ -20,7 +21,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://serviotek-shop.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Serviotek — Petits gadgets, grande utilité",
     template: "%s | Serviotek",
@@ -41,7 +42,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "OnlineStore",
   name: "Serviotek",
-  url: "https://serviotek-shop.vercel.app",
+  url: SITE_URL,
   description:
     "Serviotek vend des petits gadgets électriques du quotidien, au juste prix.",
 };

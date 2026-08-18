@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { QUANTITE_MAX, getProduct } from "@/lib/products";
+import { urlAbsolue } from "@/lib/site";
 
 export async function POST(req: NextRequest) {
   if (!process.env.STRIPE_SECRET_KEY) {
@@ -77,9 +78,9 @@ export async function POST(req: NextRequest) {
             "Livraison sous 5 jours ouvrés maximum. Un e-mail contenant votre",
             "numéro de suivi vous sera adressé dès l'expédition du colis.",
             "Droit de rétractation : 14 jours à compter de la réception, sans justification.",
-            "Formulaire de rétractation : https://serviotek-shop.vercel.app/retractation",
+            `Formulaire de rétractation : ${urlAbsolue("/retractation")}`,
             "Garantie légale de conformité de 2 ans et garantie des vices cachés.",
-            "Conditions générales de vente : https://serviotek-shop.vercel.app/cgv",
+            `Conditions générales de vente : ${urlAbsolue("/cgv")}`,
           ].join("\n"),
           custom_fields: [
             { name: "Livraison", value: "5 jours ouvrés max" },
