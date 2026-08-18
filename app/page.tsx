@@ -13,8 +13,6 @@ const MESSAGES = [
 ];
 
 export default function Home() {
-  const produitsScolaires = products.filter((p) => p.categorie === "scolaire").length;
-
   return (
     <div>
       <section className="relative overflow-hidden bg-white">
@@ -24,9 +22,8 @@ export default function Home() {
             Tous connectés
           </h1>
           <p className="mt-4 max-w-xl font-bold text-green-800">
-            Serviotek sélectionne les fournitures de la rentrée et des gadgets
-            électriques utiles pour la maison, l'audio et le bricolage — au juste
-            prix, livraison en France.
+            Serviotek sélectionne des gadgets électriques utiles pour la maison,
+            l'audio, le bricolage et le quotidien — au juste prix, livraison en France.
           </p>
 
           <div className="flex flex-wrap gap-2 mt-6">
@@ -41,20 +38,6 @@ export default function Home() {
             ))}
           </div>
 
-          <Link
-            href={lienCategorie("scolaire")}
-            className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-wire bg-panel px-5 py-4 transition hover:border-neutral-400"
-          >
-            <span className="rounded-full bg-red-600 px-2 py-0.5 text-xs font-bold text-white">
-              Rentrée
-            </span>
-            <span className="font-display font-bold">
-              {produitsScolaires} références pour la rentrée
-            </span>
-            <span className="text-sm text-mist">
-              Cahiers, stylos, classeurs, calculatrices, cartables →
-            </span>
-          </Link>
         </div>
       </section>
 

@@ -1,4 +1,3 @@
-import { produitsScolaires } from "@/lib/products-scolaire";
 
 export type Categorie =
   | "audio"
@@ -66,7 +65,7 @@ export type Product = {
   amazon?: AmazonData;
 };
 
-const produitsBase: Product[] = [
+export const products: Product[] = [
   {
     slug: "surligneurs-fluo-pastel-6",
     name: "Surligneurs fluo pastel (lot de 6)",
@@ -495,7 +494,6 @@ const produitsBase: Product[] = [
   },
 ];
 
-export const products: Product[] = [...produitsBase, ...produitsScolaires];
 
 /** Quantité maximale d'une même référence par commande. */
 export const QUANTITE_MAX = 20;

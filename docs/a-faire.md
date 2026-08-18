@@ -49,8 +49,10 @@ par `sk_live_` et refais l'étape b) avec.
 
 ## 2. Les photos des produits — c'est le plus important
 
-Les 100 produits scolaires ont des **photos d'illustration**, pas les vrais
-produits. Sur ta boutique c'est déjà gênant. Sur Amazon, ça fait suspendre le
+Les sept produits réellement sourcés ont de vraies photos, désormais recadrées
+au format Amazon (1600 px, fond blanc) dans `public/images-amazon`. Les six
+articles de rentrée d'origine, eux, tournent encore sur des visuels
+d'illustration : sur la boutique c'est gênant, sur Amazon ça fait suspendre le
 compte.
 
 Ce qu'il te faut, pour chaque produit que tu veux vraiment vendre :
@@ -141,11 +143,10 @@ confiance. Une conversation n'est pas un coffre-fort.
 
 ## Avant d'ouvrir les ventes — le point à ne pas oublier
 
-Les 100 références scolaires sont des fiches produits **prêtes à vendre, mais
-sans fournisseur attitré**. Avant d'activer le paiement en mode Live, assure-toi
-d'avoir une source d'approvisionnement pour chaque produit affiché. Sinon, une
-commande arrive et tu ne peux pas la livrer — ce qui coûte un remboursement, un
-avis négatif, et sur Amazon, le compte.
+Avant d'activer le paiement en mode Live, assure-toi d'avoir une source
+d'approvisionnement pour chaque produit affiché. Sinon, une commande arrive et
+tu ne peux pas la livrer — ce qui coûte un remboursement, un avis négatif, et
+sur Amazon, le compte.
 
 Le plus prudent : ne garder en ligne que les produits que tu peux réellement
 expédier, et masquer les autres en attendant.
