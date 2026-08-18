@@ -280,28 +280,6 @@ export const products: Product[] = [
     categorie: "detection",
   },
   {
-    slug: "sac-a-dos-usb-scolaire",
-    name: "Sac à dos étudiant avec port de charge USB",
-    price: 54.00,
-    tagline: "Prêt pour la rentrée, toujours chargé",
-    description:
-      "Sac à dos grande capacité en toile, port de charge USB extérieur avec câble intégré, poches latérales pour bouteille et parapluie.",
-    specs: [
-      { label: "Matière", value: "Toile" },
-      { label: "Port USB", value: "Externe, câble intégré (batterie non incluse)" },
-      { label: "Dimensions", value: "43 x 30 x 15 cm" },
-      { label: "Coloris disponibles", value: "Noir, Gris, Bleu, Rose, Rouge, Crème" },
-    ],
-    images: [
-      "https://cf.cjdropshipping.com/20200301/1339906006201.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
-      "https://cf.cjdropshipping.com/20200301/2680199660260.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
-      "https://cf.cjdropshipping.com/20200301/836553023551.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
-      "https://cf.cjdropshipping.com/20200301/2900764033849.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
-      "https://cf.cjdropshipping.com/20200301/1438272440247.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
-    ],
-    categorie: "accessoires",
-  },
-  {
     slug: "visseuse-sans-fil-usb",
     name: "Perceuse-visseuse sans fil rechargeable USB",
     price: 40.00,
