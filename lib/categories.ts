@@ -6,7 +6,6 @@ import type { Categorie } from "@/lib/products";
  * est un composant client, et importer le catalogue entier l'alourdirait.
  */
 export const CATEGORIES: { id: Categorie; label: string; couleur: string }[] = [
-  { id: "scolaire", label: "Rentrée scolaire", couleur: "bg-red-600" },
   { id: "audio", label: "Audio & Écouteurs", couleur: "bg-sky-500" },
   { id: "maison", label: "Maison connectée", couleur: "bg-lime-500" },
   { id: "bricolage", label: "Bricolage & Outils", couleur: "bg-amber-500" },

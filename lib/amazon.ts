@@ -14,7 +14,7 @@ const SKU_PREFIX = "SVT-";
 
 /**
  * Valeurs appliquées aux produits qui ne définissent pas leur propre bloc
- * `amazon`. Elles évitent d'avoir à répéter la même information 120 fois.
+ * `amazon`. Elles évitent d'avoir à répéter la même information sur chaque fiche.
  *
  * Restent volontairement vides parce qu'elles ne se devinent pas :
  * - l'EAN, propre à chaque référence ;
@@ -85,7 +85,6 @@ export const MODELE_CONSEILLE: Record<Categorie, string> = {
   detection: "Électronique grand public",
   "bien-etre": "Santé et soins du corps",
   accessoires: "Électronique grand public",
-  scolaire: "Fournitures de bureau",
 };
 
 const LIBELLE_CATEGORIE: Record<Categorie, string> = {
@@ -95,7 +94,6 @@ const LIBELLE_CATEGORIE: Record<Categorie, string> = {
   detection: "détection surveillance",
   "bien-etre": "bien-être",
   accessoires: "accessoires",
-  scolaire: "scolaire fournitures",
 };
 
 /** Remplace tabulations et retours à la ligne : ils casseraient le TSV. */
@@ -194,12 +192,10 @@ function motsCles(product: Product): string {
 /**
  * Sélection de lancement : les seules références réellement publiables
  * aujourd'hui, parce qu'elles ont de vraies photos produit (4 à 8 chacune,
- * hébergées dans public/images) et qu'elles correspondent à des articles
- * effectivement sourcés.
+ * hébergées dans public/images) et recadrées au format Amazon.
  *
- * Le reste du catalogue attend : les 100 références scolaires n'ont que des
- * vignettes générées, qu'Amazon refuse. Mieux vaut ouvrir sept offres
- * défendables que cent qui se feront suspendre.
+ * Le reste du catalogue attend : ses visuels viennent du fournisseur ou de
+ * banques d'images, qu'Amazon refuse.
  */
 export const SELECTION_LANCEMENT: readonly string[] = [
   "montre-connectee-hosgubo",

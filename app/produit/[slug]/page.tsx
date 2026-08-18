@@ -26,17 +26,13 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   };
 }
 
-/** Suggestions : même sous-famille en priorité, puis même rayon. */
+/** Suggestions : même rayon d'abord, complété par le reste du catalogue. */
 function produitsSimilaires(product: Product) {
   const candidats = products.filter((p) => p.slug !== product.slug);
-  const memeFamille = product.famille
-    ? candidats.filter((p) => p.famille === product.famille)
-    : [];
-  const memeRayon = candidats.filter(
-    (p) => p.categorie === product.categorie && !memeFamille.includes(p)
-  );
+  const memeRayon = candidats.filter((p) => p.categorie === product.categorie);
+  const autres = candidats.filter((p) => p.categorie !== product.categorie);
 
-  return [...memeFamille, ...memeRayon].slice(0, 5);
+  return [...memeRayon, ...autres].slice(0, 5);
 }
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
