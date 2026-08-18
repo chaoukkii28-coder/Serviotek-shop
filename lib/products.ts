@@ -275,7 +275,7 @@ export const products: Product[] = [
   {
     slug: "barre-de-son-saiyin-40w",
     name: "Barre de son Saiyin 40W",
-    price: 189.96,
+    price: 120.00,
     tagline: "Un son puissant pour votre salon",
     description:
       "Barre de son 40W avec 2 haut-parleurs à pavillon carré, offrant un rendu sonore riche jusqu'à 98dB. Murale et facile à installer, connexions multiples (Bluetooth, optique, subwoofer, AUX), livrée avec télécommande.",
