@@ -27,7 +27,7 @@ export default function Home() {
             {MESSAGES.map((m) => (
               <span
                 key={m.label}
-                className="inline-flex items-center gap-2 rounded-full border border-wire bg-panel px-3 py-1.5 text-xs font-medium text-mist shadow-sm"
+                className="inline-flex items-center gap-2 rounded-full border border-wire bg-panel px-3 py-1.5 text-xs font-bold text-graphite shadow-sm"
               >
                 <span aria-hidden="true">{m.icon}</span>
                 {m.label}
@@ -54,11 +54,11 @@ export default function Home() {
                 href={lienCategorie(cat.id)}
                 className="group flex items-center justify-between gap-3 rounded-xl border border-wire px-4 py-3 transition hover:border-neutral-400"
               >
-                <span className="flex items-center gap-2 text-sm font-medium">
+                <span className="flex items-center gap-2 text-sm font-bold text-graphite">
                   <span className={`h-2 w-2 shrink-0 rounded-full ${cat.couleur}`} />
                   {cat.label}
                 </span>
-                <span className="font-mono text-xs text-mist">{total}</span>
+                <span className="font-mono text-xs font-bold text-graphite">{total}</span>
               </Link>
             );
           })}
@@ -71,7 +71,7 @@ export default function Home() {
             <span className="w-2 h-2 rounded-full bg-volt" />
             <h2 className="font-display font-bold text-xl">Catalogue</h2>
           </div>
-          <span className="font-mono text-xs text-mist">{products.length} produits</span>
+          <span className="font-mono text-xs font-bold text-graphite">{products.length} produits</span>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
           {products.map((p) => (

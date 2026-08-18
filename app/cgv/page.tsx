@@ -12,11 +12,11 @@ export default function CGV() {
       <h1 className="font-display font-bold text-2xl mb-6">Conditions générales de vente</h1>
       <div className="space-y-5 text-sm text-mist leading-relaxed">
         <section>
-          <h2 className="text-white font-medium mb-1">1. Identité du vendeur</h2>
+          <h2 className="font-bold text-graphite mb-1">1. Identité du vendeur</h2>
           <p>Service, SASU au capital de 50 €, RCS Paris 104 280 516, siège social : Bureau 326, 59 rue de Ponthieu, 75008 Paris. Contact : contact@serviotek.com</p>
         </section>
         <section>
-          <h2 className="text-white font-medium mb-1">2. Produits et origine</h2>
+          <h2 className="font-bold text-graphite mb-1">2. Produits et origine</h2>
           <p>
             Les produits vendus sur ce site peuvent être expédiés directement depuis nos
             fournisseurs, y compris depuis l&apos;étranger. Les délais de livraison indiqués
@@ -24,15 +24,15 @@ export default function CGV() {
           </p>
         </section>
         <section>
-          <h2 className="text-white font-medium mb-1">3. Prix et paiement</h2>
+          <h2 className="font-bold text-graphite mb-1">3. Prix et paiement</h2>
           <p>Les prix sont indiqués en euros, toutes taxes comprises. Le paiement est sécurisé via Stripe.</p>
         </section>
         <section>
-          <h2 className="text-white font-medium mb-1">4. Livraison</h2>
+          <h2 className="font-bold text-graphite mb-1">4. Livraison</h2>
           <p>Délai de livraison : 5 jours ouvrés maximum selon le produit et le fournisseur. En cas de retard important, le client peut contacter le service client pour connaître l&apos;état de sa commande.</p>
         </section>
         <section>
-          <h2 className="text-white font-medium mb-1">5. Droit de rétractation</h2>
+          <h2 className="font-bold text-graphite mb-1">5. Droit de rétractation</h2>
           <p>
             Conformément aux articles L221-18 et suivants du Code de la consommation, le client dispose
             d&apos;un délai de 14 jours à compter de la réception du produit pour exercer son droit de
@@ -54,7 +54,7 @@ export default function CGV() {
           </p>
           <p className="mt-2">
             Un{" "}
-            <a href="/retractation" className="underline hover:text-white">
+            <a href="/retractation" className="underline hover:opacity-70">
               formulaire type de rétractation
             </a>{" "}
             est mis à disposition. Son usage n&apos;est pas obligatoire : toute déclaration dénuée
@@ -62,7 +62,7 @@ export default function CGV() {
           </p>
         </section>
         <section>
-          <h2 className="text-white font-medium mb-1">6. Garantie légale de conformité</h2>
+          <h2 className="font-bold text-graphite mb-1">6. Garantie légale de conformité</h2>
           <p>
             Conformément aux articles L217-3 et suivants du Code de la consommation, tout produit
             bénéficie de la garantie légale de conformité pendant 2 ans à compter de la délivrance
@@ -75,11 +75,11 @@ export default function CGV() {
           </p>
         </section>
         <section>
-          <h2 className="text-white font-medium mb-1">7. Service client</h2>
+          <h2 className="font-bold text-graphite mb-1">7. Service client</h2>
           <p>Pour toute question, contacter contact@serviotek.com. Nous nous engageons à répondre sous 48h ouvrées.</p>
         </section>
         <section>
-          <h2 className="text-white font-medium mb-1">8. Droit applicable et litiges</h2>
+          <h2 className="font-bold text-graphite mb-1">8. Droit applicable et litiges</h2>
           <p>
             Les présentes CGV sont soumises au droit français. En cas de litige, le client peut
             recourir gratuitement à un médiateur de la consommation, conformément à l&apos;article
