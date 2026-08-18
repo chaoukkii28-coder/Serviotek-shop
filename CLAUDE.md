@@ -9,8 +9,8 @@ siège Bureau 326, 59 rue de Ponthieu, 75008 Paris.
 ## Le domaine
 
 Une seule source : `SITE_URL` dans `lib/site.ts`, alimentée par la variable
-d'environnement `NEXT_PUBLIC_SITE_URL` et repliée sur `https://serviotek.com`
-par défaut. Elle sert au sitemap, à robots.txt, aux données structurées, aux
+d'environnement `NEXT_PUBLIC_SITE_URL` et repliée sur `https://www.serviotek.com`
+par défaut — **le `www` est la forme canonique**, `serviotek.com` y redirige. Elle sert au sitemap, à robots.txt, aux données structurées, aux
 liens de la facture Stripe et aux URLs absolues envoyées à Amazon.
 
 Ne jamais réécrire un domaine en dur ailleurs : il l'était dans sept fichiers,
