@@ -321,7 +321,7 @@ export const products: Product[] = [
   {
     slug: "xiaomi-redmi-buds-8-active",
     name: "Xiaomi Redmi Buds 8 Active",
-    price: 101.94,
+    price: 30.00,
     tagline: "Jusqu'à 37h d'autonomie",
     description:
       "Écouteurs sans fil Semi-Intra avec transducteur titane 14,2mm, basses puissantes et réduction de bruit IA lors des appels.",
