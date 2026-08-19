@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { QUANTITE_MAX, getProduct, type Product } from "@/lib/products";
 
 type CartItem = { product: Product; qty: number };
@@ -48,11 +48,15 @@ function lireStockage(brut: string): LigneStockee[] {
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [lignes, setLignes] = useState<LigneStockee[]>([]);
   const [hydrated, setHydrated] = useState(false);
+  // React exécute les effets des enfants avant ceux du parent : la page de
+  // confirmation vide le panier avant que la relecture du stockage ait eu
+  // lieu, et celle-ci le ressuscitait aussitôt.
+  const videManuellement = useRef(false);
 
   useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) setLignes(lireStockage(raw));
+      if (raw && !videManuellement.current) setLignes(lireStockage(raw));
     } catch {}
     setHydrated(true);
   }, []);
@@ -98,7 +102,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }
 
   function clear() {
+    videManuellement.current = true;
     setLignes([]);
+    // Effacé tout de suite, sans attendre l'effet d'écriture : sinon une
+    // relecture du stockage peut encore trouver l'ancien panier.
+    try {
+      window.localStorage.removeItem(STORAGE_KEY);
+    } catch {}
   }
 
   const total = useMemo(
