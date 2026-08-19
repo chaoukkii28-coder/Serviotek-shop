@@ -21,6 +21,7 @@ export async function POST(req: NextRequest) {
   // La quantité vient du navigateur : elle est revalidée ici, sinon un panier
   // trafiqué peut demander 10 000 unités ou une quantité nulle.
   const line_items = [];
+  const slugsAchetes: string[] = [];
   for (const i of items as { slug?: unknown; qty?: unknown }[]) {
     const product = typeof i?.slug === "string" ? getProduct(i.slug) : undefined;
     if (!product) {
@@ -38,6 +39,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    slugsAchetes.push(product.slug);
     line_items.push({
       quantity: qty,
       price_data: {
@@ -57,6 +59,9 @@ export async function POST(req: NextRequest) {
       success_url: `${origin}/commande-confirmee?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/panier`,
       shipping_address_collection: { allowed_countries: ["FR", "BE", "CH", "LU"] },
+      // Références achetées : permet de vérifier qu'un avis émane bien d'un
+      // acheteur de ce produit précis.
+      metadata: { slugs: slugsAchetes.join(",") },
       // Le site n'envoie pas d'e-mail lui-même. Stripe établit la facture et
       // l'adresse au client : c'est la confirmation sur support durable
       // qu'impose l'article L221-13 du Code de la consommation.
