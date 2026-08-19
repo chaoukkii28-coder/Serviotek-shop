@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProduct, products, type Product } from "@/lib/products";
 import { urlAbsolue } from "@/lib/site";
+import Etoiles from "@/components/Etoiles";
+import { avisDuProduit, resumeDuProduit } from "@/lib/avis-db";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
@@ -36,11 +38,15 @@ function produitsSimilaires(product: Product) {
   return [...memeRayon, ...autres].slice(0, 5);
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
+export default async function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProduct(params.slug);
   if (!product) return notFound();
 
   const similaires = produitsSimilaires(product);
+  const [avis, resume] = await Promise.all([
+    avisDuProduit(product.slug),
+    resumeDuProduit(product.slug),
+  ]);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -55,6 +61,17 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       availability: "https://schema.org/InStock",
       url: urlAbsolue(`/produit/${product.slug}`),
     },
+    // Déclarée seulement si des avis réels sont affichés sur la page :
+    // annoncer une note sans avis derrière viole les règles de Google.
+    ...(resume
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: resume.moyenne,
+            reviewCount: resume.total,
+          },
+        }
+      : {}),
   };
 
   return (
@@ -76,6 +93,15 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       <div>
         <h1 className="font-display font-bold text-3xl">{product.name}</h1>
         <p className="mt-2 text-lg font-bold text-graphite">{product.tagline}</p>
+        {resume && (
+          <p className="mt-2 flex items-center gap-2 text-sm font-bold text-graphite">
+            <Etoiles note={resume.moyenne} />
+            {resume.moyenne.toFixed(1)} / 5
+            <span className="font-medium">
+              ({resume.total} avis client{resume.total > 1 ? "s" : ""})
+            </span>
+          </p>
+        )}
         <p className="font-mono text-volt text-2xl mt-6">{product.price.toFixed(2)} €</p>
 
         <p className="mt-6 text-lg font-bold leading-relaxed text-graphite">{product.description}</p>
@@ -106,6 +132,33 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </div>
       </div>
     </div>
+
+    {avis.length > 0 && (
+      <section className="max-w-6xl mx-auto px-5 pb-14">
+        <div className="flex items-center gap-3 mb-6">
+          <span className="w-2 h-2 rounded-full bg-volt" />
+          <h2 className="font-display font-bold text-xl">
+            Avis clients ({avis.length})
+          </h2>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {avis.map((a) => (
+            <article key={a.id} className="rounded-xl border border-wire bg-panel p-5">
+              <div className="mb-2 flex items-center justify-between gap-3">
+                <span className="font-bold text-graphite">{a.auteur}</span>
+                <Etoiles note={a.note} taille="text-sm" />
+              </div>
+              {a.commentaire && (
+                <p className="font-medium leading-relaxed text-graphite">{a.commentaire}</p>
+              )}
+              <p className="mt-3 text-xs font-medium text-graphite/70">
+                Achat vérifié — {new Date(a.publieLe).toLocaleDateString("fr-FR")}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
+    )}
 
     {similaires.length > 0 && (
       <section className="max-w-6xl mx-auto px-5 pb-20">

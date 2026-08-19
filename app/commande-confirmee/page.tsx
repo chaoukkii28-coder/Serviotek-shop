@@ -2,7 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Stripe from "stripe";
 import ViderPanier from "@/components/ViderPanier";
-import { LIEN_AVIS, NOM_SERVICE_AVIS, avisActif } from "@/lib/avis";
+import FormulaireAvis from "@/components/FormulaireAvis";
+import { avisDisponibles } from "@/lib/avis-db";
+import { getProduct } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Commande confirmée",
@@ -14,6 +16,7 @@ type Recap = {
   total: string;
   email: string | null;
   lienFacture: string | null;
+  produits: { slug: string; nom: string }[];
 };
 
 /**
@@ -49,6 +52,10 @@ async function lireCommande(sessionId: string): Promise<Recap | null> {
       })),
       total: format(session.amount_total),
       email: session.customer_details?.email ?? null,
+      produits: (session.metadata?.slugs ?? "")
+        .split(",")
+        .filter(Boolean)
+        .map((slug) => ({ slug, nom: getProduct(slug)?.name ?? slug })),
       lienFacture:
         facture?.hosted_invoice_url ?? facture?.invoice_pdf ?? charge?.receipt_url ?? null,
     };
@@ -119,23 +126,11 @@ export default async function ConfirmationPage({
         </a>
       )}
 
-      {avisActif && (
-        <div className="mb-10 rounded-xl border border-wire bg-panel px-6 py-6">
-          <p className="mb-2 font-display font-bold">Un avis, et on te laisse tranquille</p>
-          <p className="mb-5 text-sm font-medium text-graphite">
-            Serviotek est une jeune boutique : chaque avis compte énormément pour
-            nous, et aide les prochains clients à se décider. Trente secondes
-            suffisent.
-          </p>
-          <a
-            href={LIEN_AVIS}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block rounded-full border border-graphite px-5 py-2.5 text-sm font-bold text-graphite transition hover:opacity-70"
-          >
-            Laisser un avis sur {NOM_SERVICE_AVIS}
-          </a>
-        </div>
+      {avisDisponibles && commande && commande.produits.length > 0 && searchParams.session_id && (
+        <FormulaireAvis
+          sessionId={searchParams.session_id}
+          produits={commande.produits}
+        />
       )}
 
       <p className="text-center">
