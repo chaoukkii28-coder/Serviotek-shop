@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Search, ShoppingCart, Menu, X } from "lucide-react";
+import { Search, ShoppingCart, Menu, X, User } from "lucide-react";
 import { useCart } from "@/components/CartContext";
 import { CATEGORIES, lienCategorie } from "@/lib/categories";
 
@@ -60,6 +60,15 @@ export default function Header() {
             </button>
           </div>
         </form>
+
+        {/* Compte client */}
+        <Link
+          href="/compte"
+          aria-label="Mon compte"
+          className="flex shrink-0 items-center justify-center rounded-full border border-neutral-200 p-2 text-neutral-900 transition hover:border-neutral-400"
+        >
+          <User size={20} />
+        </Link>
 
         {/* Panier */}
         <Link
