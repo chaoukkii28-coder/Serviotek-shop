@@ -6,6 +6,7 @@ import { NOMS_CATEGORIES, COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
 import { useCart } from "@/components/CartContext";
 import Vignette from "@/components/accueil/Vignette";
 import PrixAmazon from "@/components/accueil/PrixAmazon";
+import { animerVersPanier } from "@/lib/animationPanier";
 
 export default function GrilleProduits({
   id,
@@ -62,6 +63,7 @@ export default function GrilleProduits({
                 e.preventDefault();
                 e.stopPropagation();
                 add(p);
+                animerVersPanier(e.currentTarget);
               }}
               className="mt-auto w-fit rounded-full font-bold text-white transition hover:bg-encre"
               style={{
