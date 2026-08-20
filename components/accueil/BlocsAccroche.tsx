@@ -1,14 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getProduct, products } from "@/lib/products";
-import { lienCategorie } from "@/lib/categories";
+import { getProduct, products, type Categorie } from "@/lib/products";
+import { lienCategorie, COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
 import { produitsMoinsDe, formaterPrix } from "@/lib/vitrine";
 import Vignette from "@/components/accueil/Vignette";
 
-const HERO_TUILES: { label: string; produit: ReturnType<typeof getProduct> }[] = [
-  { label: "Audio & Écouteurs", produit: products.find((p) => p.categorie === "audio") },
-  { label: "Maison connectée", produit: products.find((p) => p.categorie === "maison") },
-  { label: "Bricolage & Outils", produit: products.find((p) => p.categorie === "bricolage") },
+const HERO_TUILES: { label: string; categorie: Categorie; produit: ReturnType<typeof getProduct> }[] = [
+  { label: "Audio & Écouteurs", categorie: "audio", produit: products.find((p) => p.categorie === "audio") },
+  { label: "Maison connectée", categorie: "maison", produit: products.find((p) => p.categorie === "maison") },
+  { label: "Bricolage & Outils", categorie: "bricolage", produit: products.find((p) => p.categorie === "bricolage") },
 ];
 
 /** Choix éditorial : produit à vraies photos, prix d'appel. Pas un calcul de ventes réelles. */
@@ -42,7 +42,12 @@ export default function BlocsAccroche() {
             t.produit ? (
               <div key={t.label} className="flex flex-col gap-2">
                 <Vignette src={t.produit.images[0]} alt={t.label} sizes="96px" className="max-w-[96px]" />
-                <span className="text-[12.5px] leading-[1.3] text-grisTexte">{t.label}</span>
+                <span
+                  className="text-[12.5px] font-bold leading-[1.3]"
+                  style={{ color: COULEUR_CLAIRE_CATEGORIE[t.categorie] }}
+                >
+                  {t.label}
+                </span>
               </div>
             ) : null
           )}
@@ -54,7 +59,7 @@ export default function BlocsAccroche() {
           href={`/produit/${MEILLEURE_VENTE.slug}`}
           className="order-3 flex min-h-[250px] min-w-0 flex-col justify-between gap-6 rounded bg-vert p-[22px] text-vertTexteSombre"
         >
-          <span className="font-mono text-[11.5px] tracking-[0.1em]">MEILLEURE VENTE</span>
+          <span className="font-mono text-[11.5px] font-bold tracking-[0.1em] text-violet">MEILLEURE VENTE</span>
           <div className="relative aspect-video overflow-hidden rounded-[3px] bg-white/35">
             <Image
               src={MEILLEURE_VENTE.images[0]}

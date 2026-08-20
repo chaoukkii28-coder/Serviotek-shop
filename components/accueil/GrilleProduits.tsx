@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/lib/products";
-import { NOMS_CATEGORIES } from "@/lib/categories";
+import { NOMS_CATEGORIES, COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
 import { formaterPrix } from "@/lib/vitrine";
 import Vignette from "@/components/accueil/Vignette";
 
@@ -37,7 +37,10 @@ export default function GrilleProduits({
           <Link key={p.slug} href={`/produit/${p.slug}`} className="flex min-w-0 flex-col gap-[7px]">
             <Vignette src={p.images[0]} alt={p.name} sizes={`${minWidth}px`} />
             {afficherCategorie && (
-              <span className="font-mono text-[9.5px] tracking-[0.05em] text-grisLabel">
+              <span
+                className="font-mono text-[9.5px] font-bold tracking-[0.05em]"
+                style={{ color: COULEUR_CLAIRE_CATEGORIE[p.categorie] }}
+              >
                 {NOMS_CATEGORIES[p.categorie].toUpperCase()}
               </span>
             )}
