@@ -49,7 +49,7 @@ export default function Header() {
         <Link
           id="icone-panier"
           href="/panier"
-          className="shrink-0 rounded-[3px] bg-creme px-3.5 py-[9px] font-mono text-[13px] font-bold text-encre"
+          className="shrink-0 rounded-[3px] bg-violet px-3.5 py-[9px] font-mono text-[13px] font-bold text-white"
         >
           PANIER {count}
         </Link>
