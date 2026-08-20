@@ -2,8 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { CATEGORIES, NOMS_CATEGORIES, lienCategorie } from "@/lib/categories";
 import { products, type Categorie } from "@/lib/products";
-import { formaterPrix } from "@/lib/vitrine";
-import Vignette from "@/components/accueil/Vignette";
+import CarteCatalogue from "@/components/CarteCatalogue";
 
 function normaliser(texte: string) {
   return texte
@@ -169,23 +168,7 @@ export default function ProduitListPage({
             ) : (
               <div className="grid gap-3.5 [grid-template-columns:repeat(auto-fill,minmax(150px,1fr))]">
                 {affiches.map((p) => (
-                  <Link
-                    key={p.slug}
-                    href={`/produit/${p.slug}`}
-                    className="flex min-w-0 flex-col gap-2 rounded bg-white p-3.5"
-                  >
-                    <Vignette src={p.images[0]} alt={p.name} sizes="150px" />
-                    <p className="text-[14.5px] font-medium leading-[1.3] text-encre">{p.name}</p>
-                    <p className="flex-1 text-[12.5px] text-grisDiscret">{p.tagline}</p>
-                    <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1">
-                      <span className="font-mono text-[16px] font-bold text-encre">
-                        {formaterPrix(p.price)}
-                      </span>
-                      <span className="whitespace-nowrap font-mono text-[11px] text-violet">
-                        AJOUTER +
-                      </span>
-                    </div>
-                  </Link>
+                  <CarteCatalogue key={p.slug} produit={p} />
                 ))}
               </div>
             )}

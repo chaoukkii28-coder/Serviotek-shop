@@ -5,6 +5,7 @@ import { useCart } from "@/components/CartContext";
 import { formaterPrix } from "@/lib/vitrine";
 import type { Product } from "@/lib/products";
 import SequencePhotos from "@/components/accueil/SequencePhotos";
+import { animerVersPanier } from "@/lib/animationPanier";
 
 const SEQUENCE_COLLIER = [
   "/images/collier-chat-airtag/1-produit-hero.jpg",
@@ -46,6 +47,7 @@ export default function MeilleureVente({ produit }: { produit: Product }) {
             e.preventDefault();
             e.stopPropagation();
             add(produit);
+            animerVersPanier(e.currentTarget);
           }}
           className="shrink-0 rounded-full font-bold text-white transition hover:bg-encre"
           style={{ backgroundColor: "oklch(0.48 0.17 295)", fontSize: 11, padding: "5px 9px" }}
