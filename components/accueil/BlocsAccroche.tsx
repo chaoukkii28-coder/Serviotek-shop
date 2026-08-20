@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getProduct, products, type Categorie } from "@/lib/products";
 import { COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
 import { produitsMoinsDe } from "@/lib/vitrine";
@@ -14,7 +15,7 @@ const HERO_TUILES: { label: string; categorie: Categorie; produit: ReturnType<ty
 const MEILLEURE_VENTE = getProduct("collier-chat-airtag");
 
 export default function BlocsAccroche() {
-  const petitsPrix = produitsMoinsDe(20, 4);
+  const petitsPrix = produitsMoinsDe(25, 6);
 
   return (
     <section className="grid items-stretch gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(250px,1fr))]">
@@ -60,18 +61,29 @@ export default function BlocsAccroche() {
 
       <Link
         href="/#catalogue"
-        className="order-2 flex min-h-[250px] min-w-0 flex-col justify-between gap-5 rounded bg-white p-[22px]"
+        className="order-2 flex min-h-[250px] min-w-0 flex-col gap-3"
+        style={{ borderRadius: 4, backgroundColor: "#fff", padding: 16 }}
       >
         <p className="font-mono text-[11.5px] tracking-[0.1em]" style={{ color: "#b02a22" }}>
           PETITS PRIX
         </p>
-        <div className="grid grid-cols-2 gap-2 [grid-template-columns:repeat(2,minmax(0,88px))]">
+        <div
+          className="flex-1"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gridAutoRows: "1fr",
+            gap: 6,
+          }}
+        >
           {petitsPrix.map((p) => (
-            <Vignette key={p.slug} src={p.images[0]} alt={p.name} sizes="88px" />
+            <div key={p.slug} className="relative overflow-hidden rounded-[3px] border border-violet">
+              <Image src={p.images[0]} alt={p.name} fill sizes="90px" className="object-cover" />
+            </div>
           ))}
         </div>
         <p className="text-[17px] font-bold tracking-[-0.02em]">
-          Moins de 20 €
+          Moins de 25 €
           <span className="mt-1 block text-[13px] font-normal text-grisTexte">
             Voir les bonnes affaires →
           </span>
