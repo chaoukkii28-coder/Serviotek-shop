@@ -30,34 +30,38 @@ export default function FormulaireCompte({ mode }: { mode: "inscription" | "conn
         setErreur(data.error ?? "Une erreur est survenue.");
       }
     } catch {
-      setErreur("Connexion impossible. Réessaie dans un instant.");
+      setErreur("Connexion impossible. Réessayez dans un instant.");
     } finally {
       setEnvoi(false);
     }
   }
 
   return (
-    <form onSubmit={soumettre} className="rounded-xl border border-wire bg-panel px-6 py-6">
-      <label className="mb-1 block text-sm font-bold text-graphite">E-mail</label>
+    <form onSubmit={soumettre} className="rounded bg-white px-6 py-6">
+      <label className="mb-1.5 block font-mono text-[10.5px] tracking-[0.05em] text-grisLabel">
+        E-MAIL
+      </label>
       <input
         type="email"
         required
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="mb-4 w-full rounded-lg border border-wire bg-panel px-3 py-2 text-sm font-medium text-graphite"
+        className="mb-4 w-full rounded-[3px] border border-bordureChamp p-3 text-[14.5px] text-encre outline-none"
       />
 
-      <label className="mb-1 block text-sm font-bold text-graphite">Mot de passe</label>
+      <label className="mb-1.5 block font-mono text-[10.5px] tracking-[0.05em] text-grisLabel">
+        MOT DE PASSE
+      </label>
       <input
         type="password"
         required
         minLength={mode === "inscription" ? 8 : undefined}
         value={motDePasse}
         onChange={(e) => setMotDePasse(e.target.value)}
-        className="mb-4 w-full rounded-lg border border-wire bg-panel px-3 py-2 text-sm font-medium text-graphite"
+        className="mb-4 w-full rounded-[3px] border border-bordureChamp p-3 text-[14.5px] text-encre outline-none"
       />
       {mode === "inscription" && (
-        <p className="mb-4 -mt-2 text-xs font-medium text-graphite/70">8 caractères minimum.</p>
+        <p className="mb-4 -mt-2 text-[12.5px] text-grisDiscret">8 caractères minimum.</p>
       )}
 
       {erreur && <p className="mb-3 text-sm font-bold text-red-600">{erreur}</p>}
@@ -65,7 +69,7 @@ export default function FormulaireCompte({ mode }: { mode: "inscription" | "conn
       <button
         type="submit"
         disabled={envoi}
-        className="w-full rounded-full bg-volt px-5 py-3 font-bold text-graphite transition hover:opacity-90 disabled:opacity-50"
+        className="w-full rounded-[3px] bg-vert py-3 font-bold text-vertTexteSombre transition hover:bg-encre hover:text-creme disabled:opacity-50"
       >
         {envoi ? "…" : mode === "inscription" ? "Créer mon compte" : "Se connecter"}
       </button>

@@ -23,8 +23,8 @@ export default function FormulaireAvis({
     e.preventDefault();
     setErreur(null);
 
-    if (note < 1) return setErreur("Choisis une note en cliquant sur les étoiles.");
-    if (auteur.trim().length < 2) return setErreur("Indique ton prénom.");
+    if (note < 1) return setErreur("Choisissez une note en cliquant sur les étoiles.");
+    if (auteur.trim().length < 2) return setErreur("Indiquez votre prénom.");
 
     setEnvoi(true);
     try {
@@ -37,7 +37,7 @@ export default function FormulaireAvis({
       if (res.ok) setEnvoye(true);
       else setErreur(data.error ?? "L'avis n'a pas pu être envoyé.");
     } catch {
-      setErreur("Connexion impossible. Réessaie dans un instant.");
+      setErreur("Connexion impossible. Réessayez dans un instant.");
     } finally {
       setEnvoi(false);
     }
@@ -45,9 +45,9 @@ export default function FormulaireAvis({
 
   if (envoye) {
     return (
-      <div className="mb-10 rounded-xl border border-wire bg-panel px-6 py-6 text-center">
-        <p className="font-display text-lg font-bold text-graphite">Merci pour ton avis !</p>
-        <p className="mt-2 text-sm font-medium text-graphite">
+      <div className="mb-8 rounded bg-white px-6 py-6 text-center">
+        <p className="text-lg font-bold text-encre">Merci pour votre avis !</p>
+        <p className="mt-2 text-[14.5px] text-grisTexte">
           Il apparaît dès maintenant sur la fiche du produit.
         </p>
       </div>
@@ -55,10 +55,10 @@ export default function FormulaireAvis({
   }
 
   return (
-    <form onSubmit={soumettre} className="mb-10 rounded-xl border border-wire bg-panel px-6 py-6">
-      <p className="mb-1 font-display font-bold text-graphite">Ton avis compte</p>
-      <p className="mb-5 text-sm font-medium text-graphite">
-        Serviotek est une jeune boutique. Ton retour aide les prochains clients à
+    <form onSubmit={soumettre} className="mb-8 rounded bg-white px-6 py-6">
+      <p className="mb-1 font-bold text-encre">Votre avis compte</p>
+      <p className="mb-5 text-[14.5px] text-grisTexte">
+        Serviotek est une jeune boutique. Votre retour aide les prochains clients à
         se décider — trente secondes suffisent.
       </p>
 
@@ -66,7 +66,7 @@ export default function FormulaireAvis({
         <select
           value={slug}
           onChange={(e) => setSlug(e.target.value)}
-          className="mb-4 w-full rounded-lg border border-wire bg-panel px-3 py-2 text-sm font-bold text-graphite"
+          className="mb-4 w-full rounded-[3px] border border-bordureChamp p-3 text-[14.5px] text-encre"
         >
           {produits.map((p) => (
             <option key={p.slug} value={p.slug}>
@@ -96,17 +96,17 @@ export default function FormulaireAvis({
       <input
         value={auteur}
         onChange={(e) => setAuteur(e.target.value)}
-        placeholder="Ton prénom"
+        placeholder="Votre prénom"
         maxLength={40}
-        className="mb-3 w-full rounded-lg border border-wire bg-panel px-3 py-2 text-sm font-medium text-graphite"
+        className="mb-3 w-full rounded-[3px] border border-bordureChamp p-3 text-[14.5px] text-encre outline-none"
       />
       <textarea
         value={commentaire}
         onChange={(e) => setCommentaire(e.target.value)}
-        placeholder="Ce que tu en penses (facultatif)"
+        placeholder="Ce que vous en pensez (facultatif)"
         rows={3}
         maxLength={1000}
-        className="mb-4 w-full rounded-lg border border-wire bg-panel px-3 py-2 text-sm font-medium text-graphite"
+        className="mb-4 w-full resize-y rounded-[3px] border border-bordureChamp p-3 text-[14.5px] text-encre outline-none"
       />
 
       {erreur && <p className="mb-3 text-sm font-bold text-red-600">{erreur}</p>}
@@ -114,7 +114,7 @@ export default function FormulaireAvis({
       <button
         type="submit"
         disabled={envoi}
-        className="w-full rounded-full bg-volt px-5 py-3 font-bold text-graphite transition hover:opacity-90 disabled:opacity-50"
+        className="w-full rounded-[3px] bg-vert py-3 font-bold text-vertTexteSombre transition hover:bg-encre hover:text-creme disabled:opacity-50"
       >
         {envoi ? "Envoi…" : "Publier mon avis"}
       </button>
