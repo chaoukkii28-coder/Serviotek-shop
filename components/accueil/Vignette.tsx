@@ -22,7 +22,7 @@ export default function Vignette({
     : "bg-[repeating-linear-gradient(135deg,#e7e5df_0_6px,#f1efe9_6px_12px)]";
 
   return (
-    <div className={`relative aspect-square overflow-hidden rounded-[3px] ${fond} ${className}`}>
+    <div className={`relative aspect-square overflow-hidden rounded-[3px] border border-violet ${fond} ${className}`}>
       <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />
     </div>
   );
