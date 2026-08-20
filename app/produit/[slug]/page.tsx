@@ -1,12 +1,15 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getProduct, products, type Product } from "@/lib/products";
 import { urlAbsolue } from "@/lib/site";
+import { NOMS_CATEGORIES, lienCategorie } from "@/lib/categories";
+import { formaterPrix } from "@/lib/vitrine";
 import Etoiles from "@/components/Etoiles";
 import { avisDuProduit, resumeDuProduit } from "@/lib/avis-db";
 import AddToCartButton from "@/components/AddToCartButton";
-import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
+import GrilleProduits from "@/components/accueil/GrilleProduits";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -75,104 +78,115 @@ export default async function ProductPage({ params }: { params: { slug: string }
   };
 
   return (
-    <>
-    <div className="max-w-6xl mx-auto px-5 py-10 grid sm:grid-cols-2 gap-10">
+    <div className="bg-fond">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="relative">
-        <ProductGallery images={product.images} alt={product.name} />
-        {product.badge && (
-          <span className="absolute top-4 left-4 bg-volt text-graphite text-xs font-bold px-2 py-1 rounded-full">
-            {product.badge}
-          </span>
-        )}
-      </div>
 
-      <div>
-        <h1 className="font-display font-bold text-3xl">{product.name}</h1>
-        <p className="mt-2 text-lg font-bold text-graphite">{product.tagline}</p>
-        {resume && (
-          <p className="mt-2 flex items-center gap-2 text-sm font-bold text-graphite">
-            <Etoiles note={resume.moyenne} />
-            {resume.moyenne.toFixed(1)} / 5
-            <span className="font-medium">
-              ({resume.total} avis client{resume.total > 1 ? "s" : ""})
-            </span>
-          </p>
-        )}
-        <p className="font-mono text-volt text-2xl mt-6">{product.price.toFixed(2)} €</p>
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-3.5 px-[clamp(12px,2.5vw,22px)] py-3.5">
+        <nav className="font-mono text-[11.5px] text-grisDiscret">
+          <Link href="/" className="hover:text-violet">ACCUEIL</Link>
+          {" / "}
+          <Link href={lienCategorie(product.categorie)} className="hover:text-violet">
+            {NOMS_CATEGORIES[product.categorie].toUpperCase()}
+          </Link>
+          {" / "}
+          <span className="text-encre">{product.name.toUpperCase()}</span>
+        </nav>
 
-        <p className="mt-6 text-lg font-bold leading-relaxed text-graphite">{product.description}</p>
+        <div className="grid items-start gap-4 [grid-template-columns:repeat(auto-fit,minmax(320px,1fr))]">
+          <div className="min-w-0 rounded bg-white p-4">
+            <ProductGallery images={product.images} alt={product.name} />
+          </div>
 
-        <div className="mt-8">
-          <p className="mb-3 text-sm font-bold uppercase tracking-wider text-graphite">
-            Fiche technique
-          </p>
-          <dl className="border border-wire rounded-xl divide-y divide-wire">
-            {product.specs.map((s) => (
-              <div key={s.label} className="flex justify-between gap-4 px-4 py-3 text-sm">
-                <dt className="shrink-0 font-bold text-graphite">{s.label}</dt>
-                <dd className="text-right font-bold text-graphite">{s.value}</dd>
+          <div className="flex min-w-0 flex-col gap-4">
+            <div className="rounded bg-white p-[22px]">
+              <p className="mb-2 font-mono text-[11.5px] tracking-[0.1em] text-violet">
+                {NOMS_CATEGORIES[product.categorie].toUpperCase()}
+              </p>
+              <h1 className="text-2xl font-bold tracking-[-0.03em] sm:text-[32px]">{product.name}</h1>
+              <p className="mt-2 text-[15px] text-grisTexte">{product.tagline}</p>
+
+              {resume && (
+                <p className="mt-3 flex items-center gap-2 text-sm text-grisTexte">
+                  <Etoiles note={resume.moyenne} />
+                  {resume.moyenne.toFixed(1)} / 5
+                  <span>({resume.total} avis client{resume.total > 1 ? "s" : ""})</span>
+                </p>
+              )}
+
+              <p className="mt-4 font-mono text-[30px] font-bold text-encre">
+                {formaterPrix(product.price)}
+                <span className="ml-2 align-middle font-mono text-[11.5px] font-normal text-grisDiscret">
+                  TTC · livraison incluse
+                </span>
+              </p>
+
+              <p className="mt-4 text-[14.5px] leading-[1.6] text-grisTexte">{product.description}</p>
+
+              <div className="mt-5">
+                <AddToCartButton product={product} />
               </div>
-            ))}
-          </dl>
+
+              <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11.5px] text-grisDiscret">
+                <span>LIVRAISON FR · BE · CH · LU</span>
+                <span>RETOUR 14 JOURS</span>
+                <span>PAIEMENT SÉCURISÉ</span>
+              </div>
+              <p className="mt-2 text-[13px] text-grisTexte">
+                Livraison sous 5 jours ouvrés maximum. Voir{" "}
+                <Link href="/livraison" className="underline hover:text-violet">
+                  Livraison &amp; délais
+                </Link>
+                .
+              </p>
+            </div>
+
+            <div className="rounded bg-bordureGrille p-px">
+              <p className="bg-white px-4 py-3 text-[16px] font-bold">Fiche technique</p>
+              <div className="grid gap-px [grid-template-columns:repeat(auto-fit,minmax(210px,1fr))]">
+                {product.specs.map((s) => (
+                  <div key={s.label} className="bg-white px-4 py-3">
+                    <p className="font-mono text-[10.5px] tracking-[0.05em] text-grisLabel">
+                      {s.label.toUpperCase()}
+                    </p>
+                    <p className="mt-1 text-[13.5px] text-encre">{s.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <p className="mt-6 text-sm font-semibold text-graphite">
-          Livraison sous 5 jours ouvrés maximum. Voir la page{" "}
-          <a href="/livraison" className="underline hover:opacity-70">
-            Livraison &amp; délais
-          </a>.
-        </p>
+        {avis.length > 0 && (
+          <section className="rounded bg-white p-5 sm:p-[22px]">
+            <h2 className="mb-4 text-xl font-bold tracking-[-0.025em]">
+              Avis clients ({avis.length})
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {avis.map((a) => (
+                <article key={a.id} className="rounded border border-bordureSep p-4">
+                  <div className="mb-2 flex items-center justify-between gap-3">
+                    <span className="font-bold text-encre">{a.auteur}</span>
+                    <Etoiles note={a.note} taille="text-sm" />
+                  </div>
+                  {a.commentaire && (
+                    <p className="text-[14.5px] leading-[1.5] text-grisTexte">{a.commentaire}</p>
+                  )}
+                  <p className="mt-2 font-mono text-[11px] text-grisLabel">
+                    Achat vérifié — {new Date(a.publieLe).toLocaleDateString("fr-FR")}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
 
-        <div className="mt-6">
-          <AddToCartButton product={product} />
-        </div>
+        {similaires.length > 0 && (
+          <GrilleProduits titre="Dans le même rayon" produits={similaires} minWidth={140} />
+        )}
       </div>
     </div>
-
-    {avis.length > 0 && (
-      <section className="max-w-6xl mx-auto px-5 pb-14">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-volt" />
-          <h2 className="font-display font-bold text-xl">
-            Avis clients ({avis.length})
-          </h2>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {avis.map((a) => (
-            <article key={a.id} className="rounded-xl border border-wire bg-panel p-5">
-              <div className="mb-2 flex items-center justify-between gap-3">
-                <span className="font-bold text-graphite">{a.auteur}</span>
-                <Etoiles note={a.note} taille="text-sm" />
-              </div>
-              {a.commentaire && (
-                <p className="font-medium leading-relaxed text-graphite">{a.commentaire}</p>
-              )}
-              <p className="mt-3 text-xs font-medium text-graphite/70">
-                Achat vérifié — {new Date(a.publieLe).toLocaleDateString("fr-FR")}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-    )}
-
-    {similaires.length > 0 && (
-      <section className="max-w-6xl mx-auto px-5 pb-20">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-volt" />
-          <h2 className="font-display font-bold text-xl">Dans le même rayon</h2>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
-          {similaires.map((p) => (
-            <ProductCard key={p.slug} product={p} />
-          ))}
-        </div>
-      </section>
-    )}
-    </>
   );
 }

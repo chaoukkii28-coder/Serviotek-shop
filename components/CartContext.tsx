@@ -15,7 +15,7 @@ type LigneStockee = { slug: string; qty: number };
 
 type CartContextType = {
   items: CartItem[];
-  add: (product: Product) => void;
+  add: (product: Product, qty?: number) => void;
   remove: (slug: string) => void;
   setQty: (slug: string, qty: number) => void;
   clear: () => void;
@@ -79,15 +79,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     [lignes]
   );
 
-  function add(product: Product) {
+  function add(product: Product, qty: number = 1) {
     setLignes((prev) => {
       const existante = prev.find((l) => l.slug === product.slug);
       if (existante) {
         return prev.map((l) =>
-          l.slug === product.slug ? { ...l, qty: borner(l.qty + 1) } : l
+          l.slug === product.slug ? { ...l, qty: borner(l.qty + qty) } : l
         );
       }
-      return [...prev, { slug: product.slug, qty: 1 }];
+      return [...prev, { slug: product.slug, qty: borner(qty) }];
     });
   }
 

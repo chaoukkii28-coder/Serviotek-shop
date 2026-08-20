@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-fond text-encre">
       <div className="bg-violet px-[clamp(12px,2.5vw,22px)] py-2.5 text-center font-mono text-[12.5px] tracking-[0.06em] text-white">
-        LIVRAISON DANS LE MONDE ENTIER · RETOURS 14 JOURS
+        LIVRAISON FRANCE · BELGIQUE · SUISSE · LUXEMBOURG · RETOURS 14 JOURS
       </div>
 
       <div className="mx-auto flex max-w-[1400px] flex-col gap-3.5 px-[clamp(12px,2.5vw,22px)] pb-[60px] pt-3.5">
