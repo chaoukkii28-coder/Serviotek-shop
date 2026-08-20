@@ -8,11 +8,12 @@ export const metadata: Metadata = {
 
 export default function Confidentialite() {
   return (
-    <div className="max-w-2xl mx-auto px-5 py-16">
-      <h1 className="font-display font-bold text-2xl mb-6">Politique de confidentialité</h1>
-      <div className="space-y-5 text-sm text-mist leading-relaxed">
+    <div className="min-h-screen bg-fond px-[clamp(12px,2.5vw,22px)] py-16">
+      <div className="mx-auto max-w-2xl rounded bg-white p-[clamp(24px,4vw,40px)]">
+      <h1 className="mb-6 text-2xl font-bold tracking-[-0.03em]">Politique de confidentialité</h1>
+      <div className="space-y-5 text-[14.5px] leading-[1.6] text-grisTexte">
         <section>
-          <h2 className="font-bold text-graphite mb-1">1. Responsable du traitement</h2>
+          <h2 className="font-bold text-encre mb-1">1. Responsable du traitement</h2>
           <p>
             Le responsable du traitement des données à caractère personnel collectées sur ce site est
             Service, SASU au capital de 50 €, RCS Paris 104 280 516, siège social : Bureau 326, 59 rue
@@ -20,7 +21,7 @@ export default function Confidentialite() {
           </p>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">2. Données collectées</h2>
+          <h2 className="font-bold text-encre mb-1">2. Données collectées</h2>
           <p>Dans le cadre de l&apos;utilisation du site et de la passation de commandes, nous collectons :</p>
           <ul className="list-disc list-inside mt-2 space-y-1">
             <li>Identité : nom, prénom, adresse email</li>
@@ -31,7 +32,7 @@ export default function Confidentialite() {
           </ul>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">3. Finalités du traitement</h2>
+          <h2 className="font-bold text-encre mb-1">3. Finalités du traitement</h2>
           <p>Ces données sont collectées pour :</p>
           <ul className="list-disc list-inside mt-2 space-y-1">
             <li>Traiter et livrer les commandes</li>
@@ -41,7 +42,7 @@ export default function Confidentialite() {
           </ul>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">4. Base légale</h2>
+          <h2 className="font-bold text-encre mb-1">4. Base légale</h2>
           <p>
             Le traitement de vos données repose sur l&apos;exécution du contrat de vente (article 6.1.b du RGPD)
             pour la gestion des commandes, ainsi que sur le respect d&apos;obligations légales (article 6.1.c
@@ -49,7 +50,7 @@ export default function Confidentialite() {
           </p>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">5. Destinataires des données</h2>
+          <h2 className="font-bold text-encre mb-1">5. Destinataires des données</h2>
           <p>
             Vos données sont destinées à Service et à ses prestataires techniques strictement nécessaires
             au fonctionnement du site : Stripe (paiement), Vercel (hébergement), et le ou les transporteurs
@@ -57,7 +58,7 @@ export default function Confidentialite() {
           </p>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">6. Durée de conservation</h2>
+          <h2 className="font-bold text-encre mb-1">6. Durée de conservation</h2>
           <p>
             Les données relatives aux commandes sont conservées pendant la durée nécessaire à la gestion
             de la relation commerciale, puis archivées pendant 10 ans conformément aux obligations
@@ -66,7 +67,7 @@ export default function Confidentialite() {
           </p>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">7. Cookies</h2>
+          <h2 className="font-bold text-encre mb-1">7. Cookies</h2>
           <p>
             Ce site utilise des cookies strictement nécessaires à son fonctionnement (panier, session
             de navigation) qui ne requièrent pas de consentement préalable. Aucun cookie de mesure
@@ -75,7 +76,7 @@ export default function Confidentialite() {
           </p>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">8. Vos droits</h2>
+          <h2 className="font-bold text-encre mb-1">8. Vos droits</h2>
           <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants :</p>
           <ul className="list-disc list-inside mt-2 space-y-1">
             <li>Droit d&apos;accès à vos données personnelles</li>
@@ -91,20 +92,21 @@ export default function Confidentialite() {
           </p>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">9. Réclamation</h2>
+          <h2 className="font-bold text-encre mb-1">9. Réclamation</h2>
           <p>
             Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation
             auprès de la Commission Nationale de l&apos;Informatique et des Libertés (CNIL) : www.cnil.fr
           </p>
         </section>
         <section>
-          <h2 className="font-bold text-graphite mb-1">10. Sécurité</h2>
+          <h2 className="font-bold text-encre mb-1">10. Sécurité</h2>
           <p>
             Service met en œuvre des mesures techniques et organisationnelles appropriées pour protéger
             vos données contre tout accès, modification, divulgation ou destruction non autorisés,
             notamment via le chiffrement des paiements par Stripe et l&apos;hébergement sécurisé chez Vercel.
           </p>
         </section>
+      </div>
       </div>
     </div>
   );
