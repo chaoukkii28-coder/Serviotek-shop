@@ -40,6 +40,11 @@ export type Product = {
   badge?: string;
   categorie: Categorie;
   amazon?: AmazonData;
+  /**
+   * Remise temporaire pour le bandeau « Offres du jour » de l'accueil.
+   * Le prix barré se calcule depuis `price`, pas stocké en dur ici.
+   */
+  promo?: { pct: number; until: string };
 };
 
 export const products: Product[] = [
@@ -70,6 +75,7 @@ export const products: Product[] = [
       "/images/montre-connectee-hosgubo/6-appels-bluetooth.jpg",
     ],
     categorie: "bien-etre",
+    promo: { pct: 22, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "montre-connectee-cillso",
@@ -118,6 +124,7 @@ export const products: Product[] = [
       "/images/ecouteurs-xulinse/4-son-sans-distorsion.jpg",
     ],
     categorie: "audio",
+    promo: { pct: 18, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "collier-chat-airtag",
@@ -146,6 +153,7 @@ export const products: Product[] = [
       "/images/collier-chat-airtag/8-specs-icones.jpg",
     ],
     categorie: "detection",
+    promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "barre-de-son-saiyin-40w",
@@ -172,6 +180,7 @@ export const products: Product[] = [
       "/images/barre-de-son-saiyin-40w/6-package-contents.jpg",
     ],
     categorie: "audio",
+    promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "chargeur-induction-iniu-15w",
@@ -192,6 +201,7 @@ export const products: Product[] = [
       "/images/chargeur-induction-iniu-15w/4-photo-reelle.jpeg",
     ],
     categorie: "accessoires",
+    promo: { pct: 21, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "xiaomi-redmi-buds-8-active",
@@ -208,6 +218,7 @@ export const products: Product[] = [
     ],
     categorie: "audio",
     images: ["https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800"],
+    promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "ecouteurs-anc-reduction-bruit",
@@ -234,6 +245,7 @@ export const products: Product[] = [
       "/images/ecouteurs-anc-reduction-bruit/6-bluetooth-5-4-blanc.jpg",
     ],
     categorie: "audio",
+    promo: { pct: 23, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "prise-connectee-wifi-eu",
@@ -255,6 +267,7 @@ export const products: Product[] = [
       "https://oss-cf.cjdropshipping.com/product/2025/02/28/05/d9adb896-b478-4621-a52b-4eabb638bfe5_trans.jpeg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
     ],
     categorie: "maison",
+    promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "camera-solaire-exterieure-wifi",
@@ -278,6 +291,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/1e80a6fd-0fb7-4e63-a204-69297867deb4.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
     ],
     categorie: "detection",
+    promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "visseuse-sans-fil-usb",
@@ -299,6 +313,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/8ff94b1f-82e9-4346-98d0-56bb9c886eee.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
     ],
     categorie: "bricolage",
+    promo: { pct: 15, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "masseur-nuque-ems-chauffant",
@@ -322,6 +337,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/91b57a83-17d5-4af5-a6f5-718a849ebbfe.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
     ],
     categorie: "bien-etre",
+    promo: { pct: 24, until: "2026-08-31T23:59:59+02:00" },
   },
   {
     slug: "calculatrice-tablette-ecriture-2en1",
@@ -344,6 +360,7 @@ export const products: Product[] = [
       "https://cf.cjdropshipping.com/17085600/2402220659380328700.jpg?x-oss-process=image/resize,m_fill,m_pad,w_1200,h_1200",
     ],
     categorie: "accessoires",
+    promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
   },
 ];
 

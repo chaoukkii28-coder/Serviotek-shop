@@ -27,6 +27,11 @@ body {
   height: 1px;
 }
 
+@keyframes marquee-defilement {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 @keyframes pulse-slow {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
