@@ -17,7 +17,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-encre text-creme">
+    <header className="sticky top-0 z-40 bg-encre text-creme">
       <div className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-3.5 px-[clamp(12px,2.5vw,22px)] py-3">
         <Link
           href="/"
