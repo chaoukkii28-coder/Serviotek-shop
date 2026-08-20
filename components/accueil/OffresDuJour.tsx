@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { produitsEnPromo, prixRemise, formaterPrix } from "@/lib/vitrine";
+import { produitsEnPromo, prixRemise, formaterPrix, finDesOffresDuJour } from "@/lib/vitrine";
 import Vignette from "@/components/accueil/Vignette";
 
 const PAR_PAGE = 6;
@@ -23,7 +23,6 @@ function formaterCompteARebours(msRestantes: number) {
 export default function OffresDuJour() {
   const offres = produitsEnPromo();
   const pages = Math.max(1, Math.ceil(offres.length / PAR_PAGE));
-  const echeance = offres[0]?.promo.until;
 
   const [page, setPage] = useState(0);
   // null tant que le composant n'est pas monté : évite un écart entre le
@@ -51,8 +50,10 @@ export default function OffresDuJour() {
 
   if (offres.length === 0) return null;
 
-  const msRestantes =
-    echeance && maintenant !== null ? new Date(echeance).getTime() - maintenant : null;
+  // Recalculée depuis l'heure courante à chaque rendu (pas décrémentée) :
+  // un onglet resté en veille ne dérive pas, et le passage de minuit se
+  // corrige tout seul au tick suivant, sans recharger la page.
+  const msRestantes = maintenant !== null ? finDesOffresDuJour(maintenant) - maintenant : null;
 
   return (
     <section className="overflow-hidden rounded bg-encre px-[clamp(10px,1.6vw,16px)] pb-3.5 pt-3 text-creme">
