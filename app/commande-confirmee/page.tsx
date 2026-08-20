@@ -75,69 +75,71 @@ export default async function ConfirmationPage({
     : null;
 
   return (
-    <div className="mx-auto max-w-xl px-5 py-20">
-      <ViderPanier />
+    <div className="min-h-screen bg-fond px-5 py-20">
+      <div className="mx-auto max-w-xl">
+        <ViderPanier />
 
-      <p className="mb-3 text-center font-mono text-sm font-bold text-volt">
-        // paiement confirmé
-      </p>
-      <h1 className="mb-4 text-center font-display text-3xl font-bold">
-        Merci pour ta commande !
-      </h1>
-      <p className="mb-10 text-center font-medium text-graphite">
-        {commande?.email
-          ? `Un e-mail de confirmation part vers ${commande.email}. `
-          : "Tu vas recevoir un e-mail de confirmation. "}
-        La livraison intervient sous 5 jours ouvrés maximum, et le numéro de suivi
-        te sera envoyé dès l&apos;expédition.
-      </p>
+        <p className="mb-3 text-center font-mono text-[11.5px] tracking-[0.1em] text-violet">
+          PAIEMENT CONFIRMÉ
+        </p>
+        <h1 className="mb-4 text-center text-3xl font-bold tracking-[-0.03em]">
+          Merci pour votre commande !
+        </h1>
+        <p className="mb-8 text-center text-[14.5px] text-grisTexte">
+          {commande?.email
+            ? `Un e-mail de confirmation part vers ${commande.email}. `
+            : "Vous allez recevoir un e-mail de confirmation. "}
+          La livraison intervient sous 5 jours ouvrés maximum, et le numéro de suivi
+          vous sera envoyé dès l&apos;expédition.
+        </p>
 
-      {commande && commande.lignes.length > 0 && (
-        <div className="mb-8 rounded-xl border border-wire bg-panel px-5 py-5">
-          <p className="mb-4 text-sm font-bold uppercase tracking-wider text-graphite">
-            Ta commande
-          </p>
-          <dl className="divide-y divide-wire">
-            {commande.lignes.map((l) => (
-              <div key={l.nom} className="flex justify-between gap-4 py-3 text-sm">
-                <dt className="font-bold text-graphite">
-                  {l.nom}
-                  {l.quantite > 1 && ` × ${l.quantite}`}
-                </dt>
-                <dd className="shrink-0 font-bold text-graphite">{l.montant}</dd>
-              </div>
-            ))}
-          </dl>
-          <div className="mt-3 flex justify-between border-t border-wire pt-3">
-            <span className="font-bold text-graphite">Total</span>
-            <span className="font-bold text-graphite">{commande.total}</span>
+        {commande && commande.lignes.length > 0 && (
+          <div className="mb-6 rounded bg-white p-5">
+            <p className="mb-4 font-mono text-[11px] tracking-[0.1em] text-grisLabel">
+              VOTRE COMMANDE
+            </p>
+            <dl className="divide-y divide-bordureSep">
+              {commande.lignes.map((l) => (
+                <div key={l.nom} className="flex justify-between gap-4 py-3 text-[14.5px]">
+                  <dt className="text-encre">
+                    {l.nom}
+                    {l.quantite > 1 && ` × ${l.quantite}`}
+                  </dt>
+                  <dd className="shrink-0 font-mono font-bold text-encre">{l.montant}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className="mt-3 flex justify-between border-t border-bordureSep pt-3">
+              <span className="font-bold text-encre">Total</span>
+              <span className="font-mono font-bold text-encre">{commande.total}</span>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {commande?.lienFacture && (
-        <a
-          href={commande.lienFacture}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mb-10 block rounded-full bg-volt px-5 py-3 text-center font-bold text-graphite transition hover:opacity-90"
-        >
-          Voir et télécharger ma facture
-        </a>
-      )}
+        {commande?.lienFacture && (
+          <a
+            href={commande.lienFacture}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-8 block rounded-[3px] bg-vert px-5 py-3 text-center font-bold text-vertTexteSombre transition hover:bg-encre hover:text-creme"
+          >
+            Voir et télécharger ma facture
+          </a>
+        )}
 
-      {avisDisponibles && commande && commande.produits.length > 0 && searchParams.session_id && (
-        <FormulaireAvis
-          sessionId={searchParams.session_id}
-          produits={commande.produits}
-        />
-      )}
+        {avisDisponibles && commande && commande.produits.length > 0 && searchParams.session_id && (
+          <FormulaireAvis
+            sessionId={searchParams.session_id}
+            produits={commande.produits}
+          />
+        )}
 
-      <p className="text-center">
-        <Link href="/#catalogue" className="font-bold underline hover:opacity-70">
-          Continuer mes achats
-        </Link>
-      </p>
+        <p className="text-center">
+          <Link href="/#catalogue" className="font-bold text-violet underline hover:opacity-70">
+            Continuer mes achats
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

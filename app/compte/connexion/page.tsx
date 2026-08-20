@@ -6,15 +6,17 @@ export const metadata: Metadata = { title: "Connexion" };
 
 export default function ConnexionPage() {
   return (
-    <div className="mx-auto max-w-md px-5 py-16">
-      <h1 className="mb-6 text-center font-display text-3xl font-bold">Connexion</h1>
-      <FormulaireCompte mode="connexion" />
-      <p className="mt-5 text-center text-sm font-medium text-graphite">
-        Pas encore de compte ?{" "}
-        <Link href="/compte/inscription" className="font-bold underline hover:opacity-70">
-          Créer un compte
-        </Link>
-      </p>
+    <div className="min-h-screen bg-fond px-5 py-16">
+      <div className="mx-auto max-w-md">
+        <h1 className="mb-6 text-center text-3xl font-bold tracking-[-0.03em]">Connexion</h1>
+        <FormulaireCompte mode="connexion" />
+        <p className="mt-5 text-center text-[14.5px] text-grisTexte">
+          Pas encore de compte ?{" "}
+          <Link href="/compte/inscription" className="font-bold text-violet underline hover:opacity-70">
+            Créer un compte
+          </Link>
+        </p>
+      </div>
     </div>
   );
 }

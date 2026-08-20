@@ -34,18 +34,15 @@ export default function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Consentement aux cookies"
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-teal-800/40 bg-neutral-900/95 backdrop-blur-sm text-neutral-100 px-4 py-5 sm:px-8"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-sepSombre bg-encre/95 px-4 py-5 text-creme backdrop-blur-sm sm:px-8"
     >
       <div className="mx-auto flex max-w-5xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm leading-relaxed text-neutral-300">
+        <p className="text-[13.5px] leading-relaxed text-clairMuted">
           Nous utilisons des cookies strictement nécessaires au fonctionnement
           du site (panier, connexion) ainsi que, si vous l&apos;acceptez, des
           cookies de mesure d&apos;audience. Vous pouvez accepter ou refuser
           les cookies non essentiels. Pour en savoir plus, consultez notre{" "}
-          <Link
-            href="/confidentialite"
-            className="underline decoration-teal-500 underline-offset-2 hover:text-teal-400"
-          >
+          <Link href="/confidentialite" className="text-vertClair underline hover:text-white">
             politique de confidentialité
           </Link>
           .
@@ -54,13 +51,13 @@ export default function CookieConsent() {
         <div className="flex shrink-0 gap-3">
           <button
             onClick={() => enregistrerChoix("refuse")}
-            className="rounded-md border border-neutral-600 px-4 py-2 text-sm font-medium text-neutral-200 transition hover:border-neutral-400"
+            className="rounded-[3px] border border-sepSombre px-4 py-2 text-sm font-medium text-clairMuted transition hover:border-clairMuted"
           >
             Refuser
           </button>
           <button
             onClick={() => enregistrerChoix("accepte")}
-            className="rounded-md bg-amber-500 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-amber-400"
+            className="rounded-[3px] bg-vert px-4 py-2 text-sm font-bold text-vertTexteSombre transition hover:bg-white"
           >
             Accepter
           </button>

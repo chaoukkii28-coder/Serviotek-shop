@@ -14,7 +14,7 @@ export default function DeconnexionBouton() {
   return (
     <button
       onClick={deconnecter}
-      className="text-sm font-bold underline hover:opacity-70"
+      className="font-mono text-[12.5px] text-violet hover:opacity-70"
     >
       Se déconnecter
     </button>
