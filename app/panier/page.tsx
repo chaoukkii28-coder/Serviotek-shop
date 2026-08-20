@@ -59,7 +59,7 @@ export default function PanierPage() {
                 key={product.slug}
                 className="grid grid-cols-[76px_1fr_auto] items-center gap-4 border-b border-bordureSep py-[18px] last:border-b-0"
               >
-                <div className="relative aspect-square overflow-hidden rounded-[3px] bg-[repeating-linear-gradient(135deg,#e7e5df_0_6px,#f1efe9_6px_12px)]">
+                <div className="relative aspect-square overflow-hidden rounded-[3px] border border-violet bg-[repeating-linear-gradient(135deg,#e7e5df_0_6px,#f1efe9_6px_12px)]">
                   <Image src={product.images[0]} alt={product.name} fill sizes="76px" className="object-cover" />
                 </div>
                 <div className="min-w-0">

@@ -16,7 +16,12 @@ export default function TuilesRayons() {
             href={lienCategorie(cat.id)}
             className="flex min-w-0 flex-col gap-3.5 rounded bg-white p-[18px]"
           >
-            <span className="text-[16.5px] font-bold tracking-[-0.02em]">{cat.label}</span>
+            <span
+              className="text-[16.5px] font-bold tracking-[-0.02em]"
+              style={{ color: cat.couleurClair }}
+            >
+              {cat.label}
+            </span>
             <span className="grid grid-cols-2 gap-2 [grid-template-columns:repeat(2,minmax(0,84px))]">
               {images.map((img, i) => (
                 <Vignette key={i} src={img} alt={cat.label} sizes="84px" />

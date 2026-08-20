@@ -55,9 +55,14 @@ export default function Header() {
       </div>
 
       <div className="border-t border-sepSombre">
-        <nav className="mx-auto flex max-w-[1400px] flex-wrap gap-5 px-[clamp(12px,2.5vw,22px)] py-[9px] text-[13.5px] text-clairMuted">
+        <nav className="mx-auto flex max-w-[1400px] flex-wrap gap-5 px-[clamp(12px,2.5vw,22px)] py-[9px] text-[13.5px] font-medium">
           {CATEGORIES.map((cat) => (
-            <Link key={cat.id} href={lienCategorie(cat.id)} className="hover:text-white">
+            <Link
+              key={cat.id}
+              href={lienCategorie(cat.id)}
+              style={{ color: cat.couleurSombre }}
+              className="hover:opacity-80"
+            >
               {cat.label}
             </Link>
           ))}

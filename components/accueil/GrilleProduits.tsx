@@ -1,8 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import type { Product } from "@/lib/products";
-import { NOMS_CATEGORIES } from "@/lib/categories";
-import { formaterPrix } from "@/lib/vitrine";
+import { NOMS_CATEGORIES, COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
+import { useCart } from "@/components/CartContext";
 import Vignette from "@/components/accueil/Vignette";
+import PrixAmazon from "@/components/accueil/PrixAmazon";
 
 export default function GrilleProduits({
   id,
@@ -19,6 +22,8 @@ export default function GrilleProduits({
   minWidth: number;
   afficherCategorie?: boolean;
 }) {
+  const { add } = useCart();
+
   return (
     <section id={id} className="rounded bg-white p-5 sm:p-[22px]">
       <div className="mb-4 flex flex-wrap items-baseline justify-between gap-4">
@@ -37,18 +42,39 @@ export default function GrilleProduits({
           <Link key={p.slug} href={`/produit/${p.slug}`} className="flex min-w-0 flex-col gap-[7px]">
             <Vignette src={p.images[0]} alt={p.name} sizes={`${minWidth}px`} />
             {afficherCategorie && (
-              <span className="font-mono text-[9.5px] tracking-[0.05em] text-grisLabel">
+              <span
+                className="font-mono text-[9.5px] font-bold tracking-[0.05em]"
+                style={{ color: COULEUR_CLAIRE_CATEGORIE[p.categorie] }}
+              >
                 {NOMS_CATEGORIES[p.categorie].toUpperCase()}
               </span>
             )}
+            <PrixAmazon
+              prix={p.price}
+              tailleSymbole={afficherCategorie ? 9 : 9.5}
+              tailleEuros={afficherCategorie ? 14 : 15}
+              tailleCentimes={afficherCategorie ? 9 : 9.5}
+            />
             <span className="text-[13px] leading-[1.3] text-encre">{p.name}</span>
-            <span
-              className={`mt-auto font-mono font-bold ${
-                afficherCategorie ? "text-sm text-encre" : "text-[15px] text-violet"
-              }`}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                add(p);
+              }}
+              className="mt-auto w-fit rounded-full font-bold text-white transition hover:bg-encre"
+              style={{
+                backgroundColor: "oklch(0.48 0.17 295)",
+                padding: "4px 8px",
+                fontSize: 10,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 5,
+              }}
             >
-              {formaterPrix(p.price)}
-            </span>
+              <span style={{ fontSize: 11 }}>⊕</span> Ajouter
+            </button>
           </Link>
         ))}
       </div>
