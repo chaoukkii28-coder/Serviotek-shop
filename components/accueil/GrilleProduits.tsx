@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import type { Product } from "@/lib/products";
 import { NOMS_CATEGORIES, COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
+import { useCart } from "@/components/CartContext";
 import Vignette from "@/components/accueil/Vignette";
 import PrixAmazon from "@/components/accueil/PrixAmazon";
 
@@ -19,6 +22,8 @@ export default function GrilleProduits({
   minWidth: number;
   afficherCategorie?: boolean;
 }) {
+  const { add } = useCart();
+
   return (
     <section id={id} className="rounded bg-white p-5 sm:p-[22px]">
       <div className="mb-4 flex flex-wrap items-baseline justify-between gap-4">
@@ -51,6 +56,25 @@ export default function GrilleProduits({
               tailleCentimes={afficherCategorie ? 9 : 9.5}
             />
             <span className="text-[13px] leading-[1.3] text-encre">{p.name}</span>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                add(p);
+              }}
+              className="mt-auto w-fit rounded-full font-bold text-white transition hover:bg-encre"
+              style={{
+                backgroundColor: "oklch(0.48 0.17 295)",
+                padding: "4px 8px",
+                fontSize: 10,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 5,
+              }}
+            >
+              <span style={{ fontSize: 11 }}>⊕</span> Ajouter
+            </button>
           </Link>
         ))}
       </div>
