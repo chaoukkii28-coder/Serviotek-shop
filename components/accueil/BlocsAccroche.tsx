@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { getProduct, products, type Categorie } from "@/lib/products";
-import { lienCategorie, COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
-import { produitsMoinsDe, formaterPrix } from "@/lib/vitrine";
+import { COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
+import { produitsMoinsDe } from "@/lib/vitrine";
 import Vignette from "@/components/accueil/Vignette";
+import MeilleureVente from "@/components/accueil/MeilleureVente";
 
 const HERO_TUILES: { label: string; categorie: Categorie; produit: ReturnType<typeof getProduct> }[] = [
   { label: "Audio & Écouteurs", categorie: "audio", produit: products.find((p) => p.categorie === "audio") },
@@ -11,8 +11,7 @@ const HERO_TUILES: { label: string; categorie: Categorie; produit: ReturnType<ty
   { label: "Bricolage & Outils", categorie: "bricolage", produit: products.find((p) => p.categorie === "bricolage") },
 ];
 
-/** Choix éditorial : produit à vraies photos, prix d'appel. Pas un calcul de ventes réelles. */
-const MEILLEURE_VENTE = getProduct("ecouteurs-anc-reduction-bruit");
+const MEILLEURE_VENTE = getProduct("collier-chat-airtag");
 
 export default function BlocsAccroche() {
   const petitsPrix = produitsMoinsDe(20, 4);
@@ -57,31 +56,7 @@ export default function BlocsAccroche() {
         </div>
       </Link>
 
-      {MEILLEURE_VENTE && (
-        <Link
-          href={`/produit/${MEILLEURE_VENTE.slug}`}
-          className="order-3 flex min-h-[250px] min-w-0 flex-col justify-between gap-6 rounded bg-vert p-[22px] text-vertTexteSombre"
-        >
-          <span className="font-mono text-[11.5px] font-bold tracking-[0.1em] text-violet">MEILLEURE VENTE</span>
-          <div className="relative aspect-video overflow-hidden rounded-[3px] bg-white/35">
-            <Image
-              src={MEILLEURE_VENTE.images[0]}
-              alt={MEILLEURE_VENTE.name}
-              fill
-              sizes="(max-width: 640px) 90vw, 420px"
-              className="object-cover"
-            />
-          </div>
-          <span>
-            <span className="block text-xl font-bold leading-[1.15] tracking-[-0.025em]">
-              {MEILLEURE_VENTE.name}
-            </span>
-            <span className="mt-1.5 block font-mono text-[19px] font-bold">
-              {formaterPrix(MEILLEURE_VENTE.price)}
-            </span>
-          </span>
-        </Link>
-      )}
+      {MEILLEURE_VENTE && <MeilleureVente produit={MEILLEURE_VENTE} />}
 
       <Link
         href="/#catalogue"
