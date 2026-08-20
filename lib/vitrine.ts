@@ -54,3 +54,10 @@ export function prixRemise(prix: number, pct: number): number {
 export function formaterPrix(valeur: number): string {
   return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(valeur);
 }
+
+/** Découpe un prix numérique en euros/centimes, pour un affichage façon Amazon. */
+export function decomposerPrix(valeur: number): { euros: number; centimes: string } {
+  const euros = Math.floor(valeur + 1e-9);
+  const centimes = Math.round((valeur - euros) * 100);
+  return { euros, centimes: String(centimes).padStart(2, "0") };
+}

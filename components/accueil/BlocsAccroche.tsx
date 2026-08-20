@@ -24,12 +24,15 @@ export default function BlocsAccroche() {
         className="flex min-h-[250px] min-w-0 flex-col justify-between gap-[18px] rounded bg-white p-[22px]"
       >
         <div>
-          <p className="mb-2.5 font-mono text-[11.5px] tracking-[0.1em] text-violet">
+          <p
+            className="mb-2.5 font-mono text-[11.5px] tracking-[0.1em]"
+            style={{ color: "oklch(0.72 0.16 78)" }}
+          >
             SÉLECTION DE LA SEMAINE
           </p>
           <p
             className="mb-2 text-balance font-bold leading-[1.05] tracking-[-0.035em]"
-            style={{ fontSize: "clamp(26px, 3.4vw, 38px)" }}
+            style={{ fontSize: "clamp(26px, 3.4vw, 38px)", color: "oklch(0.48 0.17 295)" }}
           >
             Tout pour le quotidien
           </p>
@@ -84,7 +87,9 @@ export default function BlocsAccroche() {
         href="/#catalogue"
         className="order-2 flex min-h-[250px] min-w-0 flex-col justify-between gap-5 rounded bg-white p-[22px]"
       >
-        <p className="font-mono text-[11.5px] tracking-[0.1em] text-violet">PETITS PRIX</p>
+        <p className="font-mono text-[11.5px] tracking-[0.1em]" style={{ color: "#b02a22" }}>
+          PETITS PRIX
+        </p>
         <div className="grid grid-cols-2 gap-2 [grid-template-columns:repeat(2,minmax(0,88px))]">
           {petitsPrix.map((p) => (
             <Vignette key={p.slug} src={p.images[0]} alt={p.name} sizes="88px" />

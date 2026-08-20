@@ -1,8 +1,8 @@
 import Link from "next/link";
 import type { Product } from "@/lib/products";
 import { NOMS_CATEGORIES, COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
-import { formaterPrix } from "@/lib/vitrine";
 import Vignette from "@/components/accueil/Vignette";
+import PrixAmazon from "@/components/accueil/PrixAmazon";
 
 export default function GrilleProduits({
   id,
@@ -44,14 +44,13 @@ export default function GrilleProduits({
                 {NOMS_CATEGORIES[p.categorie].toUpperCase()}
               </span>
             )}
+            <PrixAmazon
+              prix={p.price}
+              tailleSymbole={afficherCategorie ? 9 : 9.5}
+              tailleEuros={afficherCategorie ? 14 : 15}
+              tailleCentimes={afficherCategorie ? 9 : 9.5}
+            />
             <span className="text-[13px] leading-[1.3] text-encre">{p.name}</span>
-            <span
-              className={`mt-auto font-mono font-bold ${
-                afficherCategorie ? "text-sm text-encre" : "text-[15px] text-violet"
-              }`}
-            >
-              {formaterPrix(p.price)}
-            </span>
           </Link>
         ))}
       </div>
