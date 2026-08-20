@@ -2,31 +2,36 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-wire mt-24">
-      <div className="max-w-6xl mx-auto px-5 py-10 grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm font-semibold text-graphite">
+    <footer className="bg-encre text-creme">
+      <div className="mx-auto grid max-w-[1400px] gap-[34px] px-[clamp(12px,2.5vw,22px)] pb-[26px] pt-12 [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))]">
         <div>
-          <p className="font-display font-bold text-graphite mb-2">SERVIOTEK</p>
-          <p>Petits gadgets électriques du quotidien, au juste prix.</p>
+          <p className="mb-2.5 font-mono text-[17px] font-bold text-vertClair">SERVIOTEK</p>
+          <p className="max-w-[34ch] text-sm leading-[1.55] text-[#9a9d9f]">
+            Petits gadgets électriques du quotidien, au juste prix.
+          </p>
         </div>
-        <div>
-          <p className="mb-2 font-bold text-graphite">Infos</p>
-          <ul className="space-y-1">
-            <li><Link href="/livraison" className="hover:opacity-70">Livraison &amp; délais</Link></li>
-            <li><Link href="/retours" className="hover:opacity-70">Retours</Link></li>
-            <li><Link href="/retractation" className="hover:opacity-70">Formulaire de rétractation</Link></li>
-            <li><Link href="/cgv" className="hover:opacity-70">CGV</Link></li>
-            <li><Link href="/mentions-legales" className="hover:opacity-70">Mentions légales</Link></li>
-            <li><Link href="/confidentialite" className="hover:opacity-70">Confidentialité</Link></li>
-          </ul>
+
+        <div className="flex flex-col gap-2.5">
+          <p className="mb-1 font-mono text-[11px] tracking-[0.1em] text-[#74777a]">INFOS</p>
+          <Link href="/livraison" className="text-sm text-clairMuted hover:text-white">Livraison &amp; délais</Link>
+          <Link href="/retours" className="text-sm text-clairMuted hover:text-white">Retours</Link>
+          <Link href="/retractation" className="text-sm text-clairMuted hover:text-white">Formulaire de rétractation</Link>
+          <Link href="/cgv" className="text-sm text-clairMuted hover:text-white">CGV</Link>
         </div>
-        <div>
-          <p className="mb-2 font-bold text-graphite">Contact</p>
-          <p>contact@serviotek.com</p>
+
+        <div className="flex flex-col gap-2.5">
+          <p className="mb-1 font-mono text-[11px] tracking-[0.1em] text-[#74777a]">CONTACT</p>
+          <a href="mailto:contact@serviotek.com" className="text-sm text-clairMuted hover:text-white">
+            contact@serviotek.com
+          </a>
+          <Link href="/mentions-legales" className="text-sm text-clairMuted hover:text-white">Mentions légales</Link>
+          <Link href="/confidentialite" className="text-sm text-clairMuted hover:text-white">Confidentialité</Link>
         </div>
       </div>
-      <p className="pb-6 text-center text-xs font-semibold text-graphite/70">
-        © {new Date().getFullYear()} Serviotek — SASU
-      </p>
+
+      <div className="mx-auto max-w-[1400px] border-t border-sepSombre px-[clamp(12px,2.5vw,22px)] py-4 font-mono text-[11px] text-[#74777a]">
+        © {new Date().getFullYear()} SERVIOTEK — SASU
+      </div>
     </footer>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/site";
-import { Space_Grotesk, Inter, IBM_Plex_Mono } from "next/font/google";
+import { Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/components/CartContext";
 import Header from "@/components/Header";
@@ -10,14 +10,13 @@ import CookieConsent from "@/components/CookieConsent";
 const display = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "700"],
+  weight: ["400", "500", "700"],
 });
 
-const body = Inter({ subsets: ["latin"], variable: "--font-body" });
-const mono = IBM_Plex_Mono({
+const mono = Space_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "500"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -56,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
-      <body className={`${display.variable} ${body.variable} ${mono.variable} font-body`}>
+      <body className={`${display.variable} ${mono.variable} font-display`}>
         <CartProvider>
           <Header />
           <main>{children}</main>

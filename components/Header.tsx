@@ -2,154 +2,67 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Search, ShoppingCart, Menu, X, User } from "lucide-react";
 import { useCart } from "@/components/CartContext";
 import { CATEGORIES, lienCategorie } from "@/lib/categories";
 
 export default function Header() {
   const [query, setQuery] = useState("");
-  const [menuOuvert, setMenuOuvert] = useState(false);
+  const { count } = useCart();
 
-  // Si ton CartContext expose autre chose que "items", adapte cette ligne.
-  let nombreArticles = 0;
-  try {
-    const cart = useCart();
-    nombreArticles =
-      cart?.items?.reduce((total: number, item: any) => total + (item.quantity ?? 1), 0) ?? 0;
-  } catch {
-    nombreArticles = 0;
-  }
-
-  const handleSearch = (e: React.FormEvent) => {
+  function chercher(e: React.FormEvent) {
     e.preventDefault();
     if (query.trim()) {
       window.location.href = `/produit?recherche=${encodeURIComponent(query.trim())}`;
     }
-  };
+  }
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-neutral-200 bg-white">
-      {/* Barre principale */}
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6">
-        {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center gap-2">
-          <span className="text-xl font-bold tracking-tight text-neutral-900">
-            SERVIOTEK
-          </span>
-        </Link>
-
-        {/* Barre de recherche */}
-        <form
-          onSubmit={handleSearch}
-          className="hidden flex-1 items-center sm:flex"
-        >
-          <div className="flex w-full overflow-hidden rounded-full border border-neutral-300 focus-within:border-lime-500 focus-within:ring-2 focus-within:ring-lime-200">
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Rechercher un gadget, une catégorie..."
-              className="w-full bg-white px-4 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none"
-            />
-            <button
-              type="submit"
-              aria-label="Rechercher"
-              className="flex items-center justify-center bg-lime-400 px-4 text-neutral-900 transition hover:bg-lime-300"
-            >
-              <Search size={18} />
-            </button>
-          </div>
-        </form>
-
-        {/* Compte client */}
+    <header className="bg-encre text-creme">
+      <div className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-3.5 px-[clamp(12px,2.5vw,22px)] py-3">
         <Link
-          href="/compte"
-          aria-label="Mon compte"
-          className="flex shrink-0 items-center justify-center rounded-full border border-neutral-200 p-2 text-neutral-900 transition hover:border-neutral-400"
+          href="/"
+          className="shrink-0 rounded-[3px] bg-vert px-[11px] py-[7px] font-mono text-lg font-bold text-encre"
         >
-          <User size={20} />
+          SERVIOTEK
         </Link>
 
-        {/* Panier */}
-        <Link
-          href="/panier"
-          className="relative flex shrink-0 items-center gap-2 rounded-full border border-neutral-200 px-3 py-2 text-sm font-medium text-neutral-900 transition hover:border-neutral-400"
-        >
-          <ShoppingCart size={20} />
-          <span className="hidden sm:inline">Panier</span>
-          {nombreArticles > 0 && (
-            <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-lime-400 px-1 text-xs font-bold text-neutral-900">
-              {nombreArticles}
-            </span>
-          )}
-        </Link>
-
-        {/* Bouton menu mobile */}
-        <button
-          onClick={() => setMenuOuvert(!menuOuvert)}
-          className="flex shrink-0 items-center justify-center rounded-md p-2 text-neutral-900 sm:hidden"
-          aria-label="Menu"
-        >
-          {menuOuvert ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
-
-      {/* Recherche mobile */}
-      <form onSubmit={handleSearch} className="px-4 pb-3 sm:hidden">
-        <div className="flex overflow-hidden rounded-full border border-neutral-300">
+        <form onSubmit={chercher} className="flex min-w-[240px] flex-1 overflow-hidden rounded-[3px] bg-white">
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Rechercher..."
-            className="w-full bg-white px-4 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none"
+            placeholder="Rechercher un produit…"
+            className="flex-1 border-0 px-3.5 py-[11px] text-[14.5px] text-encre outline-none placeholder:text-grisDiscret"
           />
           <button
             type="submit"
             aria-label="Rechercher"
-            className="flex items-center justify-center bg-lime-400 px-4 text-neutral-900"
+            className="bg-vert px-[18px] font-mono text-[13px] font-bold text-encre"
           >
-            <Search size={18} />
+            OK
           </button>
-        </div>
-      </form>
+        </form>
 
-      {/* Catégories - desktop */}
-      <nav className="hidden border-t border-neutral-100 bg-neutral-50 sm:block">
-        <ul className="mx-auto flex max-w-7xl gap-6 overflow-x-auto px-4 py-2 text-sm font-medium text-neutral-700 sm:px-6">
+        <Link href="/compte" className="shrink-0 text-[13.5px] text-clairMuted hover:text-white">
+          Compte
+        </Link>
+        <Link
+          href="/panier"
+          className="shrink-0 rounded-[3px] bg-creme px-3.5 py-[9px] font-mono text-[13px] font-bold text-encre"
+        >
+          PANIER {count}
+        </Link>
+      </div>
+
+      <div className="border-t border-sepSombre">
+        <nav className="mx-auto flex max-w-[1400px] flex-wrap gap-5 px-[clamp(12px,2.5vw,22px)] py-[9px] text-[13.5px] text-clairMuted">
           {CATEGORIES.map((cat) => (
-            <li key={cat.id}>
-              <Link
-                href={lienCategorie(cat.id)}
-                className="flex items-center gap-2 whitespace-nowrap transition hover:text-neutral-900 hover:underline underline-offset-4"
-              >
-                <span className={`h-2 w-2 shrink-0 rounded-full ${cat.couleur}`} />
-                {cat.label}
-              </Link>
-            </li>
+            <Link key={cat.id} href={lienCategorie(cat.id)} className="hover:text-white">
+              {cat.label}
+            </Link>
           ))}
-        </ul>
-      </nav>
-
-      {/* Catégories - menu mobile déroulant */}
-      {menuOuvert && (
-        <nav className="border-t border-neutral-100 bg-neutral-50 sm:hidden">
-          <ul className="flex flex-col divide-y divide-neutral-200 px-4">
-            {CATEGORIES.map((cat) => (
-              <li key={cat.id}>
-                <Link
-                  href={lienCategorie(cat.id)}
-                  onClick={() => setMenuOuvert(false)}
-                  className="flex items-center gap-2 py-3 text-sm font-medium text-neutral-800"
-                >
-                  <span className={`h-2 w-2 shrink-0 rounded-full ${cat.couleur}`} />
-                  {cat.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </nav>
-      )}
+      </div>
     </header>
   );
 }
