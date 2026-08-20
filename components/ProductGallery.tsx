@@ -13,27 +13,26 @@ export default function ProductGallery({
   const [active, setActive] = useState(0);
 
   return (
-    <div>
-      <div className="relative aspect-square bg-panel border border-wire rounded-2xl overflow-hidden">
-        <Image src={images[active]} alt={alt} fill className="object-cover" priority />
-      </div>
-
+    <div className={images.length > 1 ? "grid grid-cols-[64px_1fr] gap-2.5" : ""}>
       {images.length > 1 && (
-        <div className="mt-3 grid grid-cols-5 gap-2">
+        <div className="flex flex-col gap-2">
           {images.map((src, i) => (
             <button
               key={src}
               onClick={() => setActive(i)}
-              className={`relative aspect-square rounded-lg overflow-hidden border-2 transition-colors ${
-                i === active ? "border-volt" : "border-wire hover:border-mist"
-              }`}
               aria-label={`Photo ${i + 1}`}
+              className={`relative aspect-square overflow-hidden rounded-[3px] border-2 transition-colors ${
+                i === active ? "border-violet" : "border-transparent hover:border-bordureChamp"
+              }`}
             >
-              <Image src={src} alt={`${alt} — photo ${i + 1}`} fill className="object-cover" />
+              <Image src={src} alt="" fill sizes="64px" className="object-cover" />
             </button>
           ))}
         </div>
       )}
+      <div className="relative aspect-square overflow-hidden rounded-[3px] bg-[repeating-linear-gradient(135deg,#e7e5df_0_6px,#f1efe9_6px_12px)]">
+        <Image src={images[active]} alt={alt} fill sizes="(max-width: 640px) 90vw, 480px" className="object-cover" priority />
+      </div>
     </div>
   );
 }
