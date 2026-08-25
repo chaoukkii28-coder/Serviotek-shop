@@ -35,6 +35,36 @@ Dans le tableau de bord Vercel :
 
 La table se crée d'elle-même au premier avis. Aucune migration à lancer.
 
+## Relance automatique par e-mail
+
+Un cron Vercel (`vercel.json`, tous les jours à 9h) déclenche
+`/api/cron/relance-avis` : il envoie un e-mail aux clients dont la commande a
+plus de 7 jours (délai de livraison annoncé : 5 jours ouvrés) et qui n'ont pas
+encore reçu de relance, avec un lien direct vers le formulaire d'avis de leur
+commande. Aucun avis n'est jamais généré automatiquement — seulement une
+invitation à en déposer un, envoyée à de vrais acheteurs.
+
+### ⚠️ Étape à faire : activer l'envoi d'e-mails
+
+Le code est prêt mais **rien ne s'envoie tant que deux variables
+d'environnement ne sont pas ajoutées sur Vercel** (Settings → Environment
+Variables, même procédé que `SESSION_SECRET`) :
+
+1. **Créer un compte sur [resend.com](https://resend.com)** — offre gratuite
+   largement suffisante (3 000 e-mails/mois).
+2. **Vérifier le domaine `serviotek.com`** dans Resend (Domains → Add Domain) :
+   Resend donne 2-3 enregistrements DNS (TXT/CNAME) à ajouter chez
+   l'hébergeur du domaine. Sans ce domaine vérifié, impossible d'envoyer
+   depuis `avis@serviotek.com` — seule une adresse de test très limitée
+   serait utilisable, à éviter en production.
+3. **Récupérer la clé API** (API Keys → Create API Key) et l'ajouter sur
+   Vercel : `RESEND_API_KEY`.
+4. **Choisir un secret** pour protéger la route cron contre un déclenchement
+   public, et l'ajouter sur Vercel : `CRON_SECRET` (Vercel l'envoie
+   automatiquement dans l'en-tête `Authorization` lors de l'exécution
+   programmée, aucune config supplémentaire nécessaire côté cron Vercel).
+5. **Redéployer.**
+
 ## Ce que la loi interdit
 
 Publier de faux avis ou en modifier le sens est une **pratique commerciale

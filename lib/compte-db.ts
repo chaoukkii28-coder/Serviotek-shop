@@ -31,8 +31,12 @@ function preparerTables(): Promise<void> {
           devise TEXT NOT NULL,
           produits JSONB NOT NULL,
           lien_facture TEXT,
-          creee_le TIMESTAMPTZ NOT NULL DEFAULT now()
+          creee_le TIMESTAMPTZ NOT NULL DEFAULT now(),
+          avis_relance_envoyee_le TIMESTAMPTZ
         )
+      `;
+      await sql`
+        ALTER TABLE commandes ADD COLUMN IF NOT EXISTS avis_relance_envoyee_le TIMESTAMPTZ
       `;
       await sql`CREATE INDEX IF NOT EXISTS commandes_email_idx ON commandes (lower(email))`;
     })();
@@ -134,5 +138,42 @@ export async function enregistrerCommande(entree: {
       ${entree.lienFacture}
     )
     ON CONFLICT (session_stripe) DO NOTHING
+  `;
+}
+
+export type CommandeARelancer = {
+  sessionStripe: string;
+  email: string;
+  produits: { nom: string; quantite: number }[];
+};
+
+/**
+ * Commandes livrées depuis au moins 7 jours (délai annoncé : 5 jours ouvrés)
+ * sans relance avis déjà envoyée. Fenêtre haute de 30 jours pour ne pas
+ * relancer une commande trop ancienne si le cron a été en panne un moment.
+ */
+export async function commandesARelancerPourAvis(): Promise<CommandeARelancer[]> {
+  if (!sql) return [];
+  await preparerTables();
+
+  const lignes = await sql`
+    SELECT session_stripe, email, produits
+    FROM commandes
+    WHERE avis_relance_envoyee_le IS NULL
+      AND creee_le <= now() - interval '7 days'
+      AND creee_le >= now() - interval '30 days'
+  `;
+
+  return lignes.map((l) => ({
+    sessionStripe: l.session_stripe,
+    email: l.email,
+    produits: l.produits,
+  }));
+}
+
+export async function marquerRelanceAvisEnvoyee(sessionStripe: string): Promise<void> {
+  if (!sql) return;
+  await sql`
+    UPDATE commandes SET avis_relance_envoyee_le = now() WHERE session_stripe = ${sessionStripe}
   `;
 }

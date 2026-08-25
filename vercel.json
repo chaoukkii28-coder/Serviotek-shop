@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/relance-avis",
+      "schedule": "0 9 * * *"
+    }
+  ]
+}
