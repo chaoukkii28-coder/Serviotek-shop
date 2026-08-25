@@ -82,10 +82,12 @@ export default function CGV() {
         <section>
           <h2 className="font-bold text-encre mb-1">8. Droit applicable et litiges</h2>
           <p>
-            Les présentes CGV sont soumises au droit français. En cas de litige, le client peut
-            recourir gratuitement à un médiateur de la consommation, conformément à l&apos;article
-            L616-1 du Code de la consommation, avant toute action judiciaire. À défaut de résolution
-            amiable, les tribunaux français seront seuls compétents.
+            Les présentes CGV sont soumises au droit français. Conformément à l&apos;article L616-1
+            du Code de la consommation, en cas de litige, le client peut recourir gratuitement, après
+            réclamation écrite préalable restée infructueuse, au médiateur de la consommation suivant :
+            CM2C — Centre de la Médiation de la Consommation de Conciliateurs de Justice, 49 rue de
+            Ponthieu, 75008 Paris, www.cm2c.net. À défaut de résolution amiable, les tribunaux
+            français seront seuls compétents.
           </p>
         </section>
       </div>
