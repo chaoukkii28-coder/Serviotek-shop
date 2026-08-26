@@ -5,6 +5,9 @@ import { avisDisponibles, enregistrerAvis } from "@/lib/avis-db";
 
 const MAX_AUTEUR = 40;
 const MAX_COMMENTAIRE = 1000;
+// ~2 Mo en base64 : suffisant pour une photo redimensionnée côté client,
+// sans laisser un client malveillant gonfler indéfiniment la ligne en base.
+const MAX_PHOTO_BASE64 = 2_800_000;
 
 /**
  * Dépose un avis. L'achat est vérifié auprès de Stripe : seule une commande
@@ -28,7 +31,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Requête illisible." }, { status: 400 });
   }
 
-  const { sessionId, slug, note, auteur, commentaire } = corps as Record<string, unknown>;
+  const { sessionId, slug, note, auteur, commentaire, photo } = corps as Record<
+    string,
+    unknown
+  >;
 
   if (typeof sessionId !== "string" || typeof slug !== "string" || !getProduct(slug)) {
     return NextResponse.json({ error: "Commande ou produit inconnu." }, { status: 400 });
@@ -48,6 +54,17 @@ export async function POST(req: NextRequest) {
     typeof commentaire === "string" && commentaire.trim()
       ? commentaire.trim().slice(0, MAX_COMMENTAIRE)
       : null;
+
+  let photoUrl: string | null = null;
+  if (typeof photo === "string" && photo) {
+    if (photo.length > MAX_PHOTO_BASE64) {
+      return NextResponse.json({ error: "Photo trop lourde." }, { status: 413 });
+    }
+    if (!/^data:image\/(jpeg|png|webp);base64,/.test(photo)) {
+      return NextResponse.json({ error: "Format de photo invalide." }, { status: 400 });
+    }
+    photoUrl = photo;
+  }
 
   // Vérification de l'achat
   try {
@@ -77,6 +94,7 @@ export async function POST(req: NextRequest) {
     note: noteNum,
     auteur: nom,
     commentaire: texte,
+    photo: photoUrl,
     sessionStripe: sessionId,
   });
 

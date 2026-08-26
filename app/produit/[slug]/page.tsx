@@ -171,6 +171,14 @@ export default async function ProductPage({ params }: { params: { slug: string }
                     <span className="font-bold text-encre">{a.auteur}</span>
                     <Etoiles note={a.note} taille="text-sm" />
                   </div>
+                  {a.photo && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={a.photo}
+                      alt={`Photo jointe par ${a.auteur}`}
+                      className="mb-2 h-32 w-32 rounded object-cover"
+                    />
+                  )}
                   {a.commentaire && (
                     <p className="text-[14.5px] leading-[1.5] text-grisTexte">{a.commentaire}</p>
                   )}

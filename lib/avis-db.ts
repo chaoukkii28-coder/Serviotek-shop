@@ -19,6 +19,7 @@ export type Avis = {
   note: number;
   auteur: string;
   commentaire: string | null;
+  photo: string | null;
   publieLe: string;
 };
 
@@ -48,6 +49,7 @@ function preparerTable() {
           UNIQUE (slug, session_stripe)
         )
       `;
+      await sql`ALTER TABLE avis ADD COLUMN IF NOT EXISTS photo TEXT`;
       await sql`CREATE INDEX IF NOT EXISTS avis_slug_idx ON avis (slug)`;
     })();
   }
@@ -61,7 +63,7 @@ export async function avisDuProduit(slug: string): Promise<Avis[]> {
     await preparerTable();
     const sql = connexion();
     const lignes = await sql`
-      SELECT id, slug, note, auteur, commentaire, publie_le
+      SELECT id, slug, note, auteur, commentaire, photo, publie_le
       FROM avis WHERE slug = ${slug}
       ORDER BY publie_le DESC LIMIT 50
     `;
@@ -71,6 +73,7 @@ export async function avisDuProduit(slug: string): Promise<Avis[]> {
       note: Number(l.note),
       auteur: String(l.auteur),
       commentaire: l.commentaire ? String(l.commentaire) : null,
+      photo: l.photo ? String(l.photo) : null,
       publieLe: new Date(l.publie_le as string).toISOString(),
     }));
   } catch {
@@ -108,6 +111,7 @@ export async function enregistrerAvis(entree: {
   note: number;
   auteur: string;
   commentaire: string | null;
+  photo: string | null;
   sessionStripe: string;
 }): Promise<{ ok: true } | { ok: false; raison: string }> {
   if (!avisDisponibles) {
@@ -117,9 +121,9 @@ export async function enregistrerAvis(entree: {
     await preparerTable();
     const sql = connexion();
     await sql`
-      INSERT INTO avis (slug, note, auteur, commentaire, session_stripe)
+      INSERT INTO avis (slug, note, auteur, commentaire, photo, session_stripe)
       VALUES (${entree.slug}, ${entree.note}, ${entree.auteur},
-              ${entree.commentaire}, ${entree.sessionStripe})
+              ${entree.commentaire}, ${entree.photo}, ${entree.sessionStripe})
       ON CONFLICT (slug, session_stripe) DO NOTHING
     `;
     return { ok: true };
