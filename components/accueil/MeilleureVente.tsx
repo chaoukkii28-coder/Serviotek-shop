@@ -7,15 +7,6 @@ import type { Product } from "@/lib/products";
 import SequencePhotos from "@/components/accueil/SequencePhotos";
 import { animerVersPanier } from "@/lib/animationPanier";
 
-const SEQUENCE_COLLIER = [
-  "/images/collier-chat-airtag/1-produit-hero.jpg",
-  "/images/collier-chat-airtag/2-gps-tracking.jpg",
-  "/images/collier-chat-airtag/7-taille-ajustable.jpg",
-  "/images/collier-chat-airtag/3-visibilite-nocturne.jpg",
-  "/images/collier-chat-airtag/5-poids-15g.jpg",
-];
-
-/** Choix éditorial : le collier chat, prix d'appel, vraies photos. Pas un calcul de ventes réelles. */
 export default function MeilleureVente({ produit }: { produit: Product }) {
   const { add } = useCart();
 
@@ -33,7 +24,7 @@ export default function MeilleureVente({ produit }: { produit: Product }) {
       </span>
 
       <div className="relative min-h-[165px] flex-1">
-        <SequencePhotos photos={SEQUENCE_COLLIER} alt={produit.name} />
+        <SequencePhotos photos={produit.images} alt={produit.name} />
       </div>
 
       <div className="flex items-center justify-between gap-2 bg-white" style={{ padding: "6px 9px" }}>
