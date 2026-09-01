@@ -16,8 +16,8 @@ export default function Confidentialite() {
           <h2 className="font-bold text-encre mb-1">1. Responsable du traitement</h2>
           <p>
             Le responsable du traitement des données à caractère personnel collectées sur ce site est
-            Service, SASU au capital de 50 €, RCS Paris 104 280 516, siège social : Bureau 326, 59 rue
-            de Ponthieu, 75008 Paris. Contact : contact@serviotek.com
+            Service, SASU au capital de 50 000 €, RCS Paris 104 280 516, siège social : Bureau 326, 59 rue
+            de Ponthieu, 75008 Paris. Contact : service@serviotek.com
           </p>
         </section>
         <section>
@@ -87,7 +87,7 @@ export default function Confidentialite() {
             <li>Droit d&apos;opposition au traitement</li>
           </ul>
           <p className="mt-2">
-            Pour exercer ces droits, contactez-nous à contact@serviotek.com. Nous nous engageons à
+            Pour exercer ces droits, contactez-nous à service@serviotek.com. Nous nous engageons à
             répondre dans un délai maximal d&apos;un mois.
           </p>
         </section>
