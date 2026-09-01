@@ -14,7 +14,7 @@ export default function CGV() {
       <div className="space-y-5 text-[14.5px] leading-[1.6] text-grisTexte">
         <section>
           <h2 className="font-bold text-encre mb-1">1. Identité du vendeur</h2>
-          <p>Service, SASU au capital de 50 €, RCS Paris 104 280 516, siège social : Bureau 326, 59 rue de Ponthieu, 75008 Paris. Contact : contact@serviotek.com</p>
+          <p>Service, SASU au capital de 50 000 €, RCS Paris 104 280 516, siège social : Bureau 326, 59 rue de Ponthieu, 75008 Paris. Contact : service@serviotek.com</p>
         </section>
         <section>
           <h2 className="font-bold text-encre mb-1">2. Produits et origine</h2>
@@ -40,7 +40,7 @@ export default function CGV() {
             rétractation, sans avoir à justifier de motif ni à payer de pénalité.
           </p>
           <p className="mt-2">
-            Pour exercer ce droit, le client doit notifier sa décision par email à contact@serviotek.com
+            Pour exercer ce droit, le client doit notifier sa décision par email à service@serviotek.com
             avant l&apos;expiration du délai de 14 jours, en précisant le numéro de commande. Le produit
             doit ensuite être retourné dans un délai de 14 jours suivant cette notification, dans son
             état d&apos;origine.
@@ -72,12 +72,12 @@ export default function CGV() {
           </p>
           <p className="mt-2">
             En cas de non-conformité, le client peut demander la réparation ou le remplacement du
-            produit sans frais. Pour toute demande, contacter contact@serviotek.com.
+            produit sans frais. Pour toute demande, contacter service@serviotek.com.
           </p>
         </section>
         <section>
           <h2 className="font-bold text-encre mb-1">7. Service client</h2>
-          <p>Pour toute question, contacter contact@serviotek.com. Nous nous engageons à répondre sous 48h ouvrées.</p>
+          <p>Pour toute question, contacter service@serviotek.com. Nous nous engageons à répondre sous 48h ouvrées.</p>
         </section>
         <section>
           <h2 className="font-bold text-encre mb-1">8. Droit applicable et litiges</h2>
