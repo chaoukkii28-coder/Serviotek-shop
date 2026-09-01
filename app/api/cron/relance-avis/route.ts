@@ -36,7 +36,7 @@ export async function GET(req: NextRequest) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Serviotek <avis@serviotek.com>",
+          from: "Serviotek <service@serviotek.com>",
           to: commande.email,
           subject: "Votre avis compte pour nous",
           text: `Bonjour,
