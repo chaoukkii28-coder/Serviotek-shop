@@ -12,7 +12,7 @@ const HERO_TUILES: { label: string; categorie: Categorie; produit: ReturnType<ty
   { label: "Bricolage & Outils", categorie: "bricolage", produit: products.find((p) => p.categorie === "bricolage") },
 ];
 
-const MEILLEURE_VENTE = getProduct("collier-chat-airtag");
+const MEILLEURE_VENTE = getProduct("chargeur-induction-iniu-15w");
 
 export default function BlocsAccroche() {
   const petitsPrix = produitsMoinsDe(25, 6);
