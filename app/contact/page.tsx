@@ -20,8 +20,8 @@ export default function ContactPage() {
         <div className="flex flex-col gap-3.5">
           <div className="rounded bg-white p-6">
             <p className="mb-3 font-mono text-[11px] tracking-[0.1em] text-grisLabel">CONTACT DIRECT</p>
-            <a href="mailto:contact@serviotek.com" className="text-[17px] font-medium text-encre hover:text-violet">
-              contact@serviotek.com
+            <a href="mailto:service@serviotek.com" className="text-[17px] font-medium text-encre hover:text-violet">
+              service@serviotek.com
             </a>
             <p className="mt-2 text-[14px] text-grisTexte">Du lundi au vendredi, 9h–18h.</p>
           </div>
