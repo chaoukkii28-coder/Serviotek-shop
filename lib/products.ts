@@ -362,6 +362,27 @@ export const products: Product[] = [
     categorie: "accessoires",
     promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
   },
+  {
+    slug: "projecteur-galaxie-etoiles-led",
+    name: "Projecteur Galaxie & Étoiles LED",
+    price: 33.00,
+    tagline: "Transformez votre plafond en ciel étoilé",
+    description:
+      "Projecteur d'ambiance galaxie et étoiles avec effet nébuleuse multicolore, rotation 360° et haut-parleur Bluetooth intégré. Télécommande incluse, minuterie automatique et 4 vitesses de rotation pour une ambiance chambre, salon ou soirée.",
+    specs: [
+      { label: "Couleurs projetées", value: "Bleu, violet, vert, rose (nébuleuse multicolore)" },
+      { label: "Coloris boîtier", value: "Noir, Blanc" },
+      { label: "Connexion", value: "Bluetooth (haut-parleur intégré), télécommande incluse" },
+      { label: "Rotation", value: "360°, 4 vitesses réglables" },
+      { label: "Minuterie", value: "Arrêt automatique programmable (1h / 2h / 4h)" },
+      { label: "Alimentation", value: "USB rechargeable" },
+      { label: "Usage", value: "Décoration d'ambiance, chambre, soirée, cadeau" },
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1595520519880-a86c48ea536c?w=1200&auto=format&fit=crop",
+    ],
+    categorie: "maison",
+  },
 ];
 
 
