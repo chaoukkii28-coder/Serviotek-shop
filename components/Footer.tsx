@@ -23,8 +23,8 @@ export default function Footer() {
         <div className="flex flex-col gap-2.5">
           <p className="mb-1 font-mono text-[11px] tracking-[0.1em] text-[#74777a]">CONTACT</p>
           <Link href="/contact" className="text-sm text-clairMuted hover:text-white">Nous écrire</Link>
-          <a href="mailto:contact@serviotek.com" className="text-sm text-clairMuted hover:text-white">
-            contact@serviotek.com
+          <a href="mailto:service@serviotek.com" className="text-sm text-clairMuted hover:text-white">
+            service@serviotek.com
           </a>
           <Link href="/mentions-legales" className="text-sm text-clairMuted hover:text-white">Mentions légales</Link>
           <Link href="/confidentialite" className="text-sm text-clairMuted hover:text-white">Confidentialité</Link>
