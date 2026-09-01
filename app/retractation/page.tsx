@@ -24,8 +24,8 @@ export default function Retractation() {
             Vous disposez de 14 jours à compter de la réception de votre commande pour
             vous rétracter, sans avoir à vous justifier. Complétez le formulaire
             ci-dessous et envoyez-le à{" "}
-            <a href="mailto:contact@serviotek.com" className="text-violet underline hover:opacity-70">
-              contact@serviotek.com
+            <a href="mailto:service@serviotek.com" className="text-violet underline hover:opacity-70">
+              service@serviotek.com
             </a>
             . L&apos;usage de ce formulaire n&apos;est pas obligatoire : toute
             déclaration dénuée d&apos;ambiguïté suffit.
@@ -34,7 +34,7 @@ export default function Retractation() {
           <div className="space-y-3 rounded border border-bordureSep bg-fond p-5">
             <p className="font-bold text-encre">
               À l&apos;attention de Service, SASU — Bureau 326, 59 rue de Ponthieu,
-              75008 Paris — contact@serviotek.com
+              75008 Paris — service@serviotek.com
             </p>
 
             <p>
