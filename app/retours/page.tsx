@@ -17,7 +17,7 @@ export default function Retours() {
             retour ou d&apos;échange, conformément à la loi.
           </p>
           <p>
-            Contacte-nous à contact@serviotek.com avec ton numéro de commande, on te
+            Contacte-nous à service@serviotek.com avec ton numéro de commande, on te
             guide pour la suite (le produit étant expédié par un fournisseur tiers, les
             modalités précises peuvent varier).
           </p>
