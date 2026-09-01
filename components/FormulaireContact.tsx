@@ -27,7 +27,7 @@ export default function FormulaireContact() {
       .filter(Boolean)
       .join("\n");
 
-    window.location.href = `mailto:contact@serviotek.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:service@serviotek.com?subject=${encodeURIComponent(
       sujet
     )}&body=${encodeURIComponent(corps)}`;
   }
@@ -86,7 +86,7 @@ export default function FormulaireContact() {
       </button>
       <p className="text-[12.5px] text-grisDiscret">
         Ouvre votre logiciel de messagerie avec le message prérempli, à destination de
-        contact@serviotek.com.
+        service@serviotek.com.
       </p>
     </form>
   );
