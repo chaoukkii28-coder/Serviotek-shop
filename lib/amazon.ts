@@ -197,13 +197,13 @@ function motsCles(product: Product): string {
  * banques d'images, qu'Amazon refuse.
  */
 export const SELECTION_LANCEMENT: readonly string[] = [
+  "chargeur-induction-iniu-15w",
   "montre-connectee-hosgubo",
   "montre-connectee-cillso",
   "ecouteurs-anc-reduction-bruit",
   "ecouteurs-xulinse",
   "barre-de-son-saiyin-40w",
   "collier-chat-airtag",
-  "chargeur-induction-iniu-15w",
 ];
 
 export type OptionsFlux = {
