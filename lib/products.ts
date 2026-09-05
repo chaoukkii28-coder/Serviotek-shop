@@ -365,16 +365,16 @@ export const products: Product[] = [
   {
     slug: "fontaine-eau-chat-automatique",
     name: "Fontaine à eau automatique pour chat en inox",
-    price: 49.90,
+    price: 39.90,
     tagline: "Une eau fraîche et filtrée, sans fil",
     description:
-      "Fontaine à eau automatique en acier inoxydable pour chat et chien, fonctionnant sur batterie rechargeable sans fil pour une installation libre, sans prise ni câble à proximité. Circulation d'eau qui encourage l'animal à boire davantage, pompe ultra-silencieuse, système de filtration multicouche et grande capacité pour une autonomie de plusieurs jours.",
+      "Fontaine à eau automatique en acier inoxydable pour chat et chien, sur batterie rechargeable via câble USB pour une installation libre, sans prise ni câble à proximité de la gamelle. Circulation d'eau qui encourage l'animal à boire davantage, pompe ultra-silencieuse, système de filtration multicouche et grande capacité pour une autonomie de plusieurs jours.",
     specs: [
       { label: "Matière", value: "Acier inoxydable, résistant et facile à nettoyer" },
-      { label: "Capacité", value: "Environ 2 L" },
+      { label: "Capacité", value: "Environ 2,6 L" },
       { label: "Pompe", value: "Circulation continue, fonctionnement ultra-silencieux" },
       { label: "Filtration", value: "Filtre multicouche remplaçable" },
-      { label: "Alimentation", value: "Batterie rechargeable, sans fil" },
+      { label: "Alimentation", value: "Batterie rechargeable, recharge par câble USB" },
       { label: "Usage", value: "Chats et petits chiens" },
     ],
     images: [
@@ -386,14 +386,14 @@ export const products: Product[] = [
   },
   {
     slug: "pistolet-a-clou-sans-fil",
-    name: "Pistolet à clou manuel 3 niveaux de puissance",
-    price: 49.90,
+    name: "Pistolet à clou manuel 5 niveaux de puissance",
+    price: 34.90,
     tagline: "Cloue vite, cloue sans effort, sans batterie à recharger",
     description:
-      "Pistolet à clou manuel en acier à mécanisme à ressort, pour travaux de menuiserie et bricolage courant. 3 niveaux de puissance réglables selon le matériau, poignée ergonomique antidérapante. Aucune batterie à recharger, aucun compresseur nécessaire : prêt à l'emploi immédiatement. Livré complet avec 110 clous ronds, mallette de transport, gants de protection et pièces de rechange.",
+      "Pistolet à clou manuel en acier à mécanisme à ressort, pour travaux de menuiserie et bricolage courant. 5 niveaux de puissance réglables selon le matériau, poignée ergonomique antidérapante. Aucune batterie à recharger, aucun compresseur nécessaire : prêt à l'emploi immédiatement. Livré complet avec 110 clous ronds, mallette de transport, gants de protection et pièces de rechange.",
     specs: [
       { label: "Type", value: "Manuel, mécanisme à ressort (sans batterie, sans compresseur)" },
-      { label: "Puissance", value: "3 niveaux réglables selon le matériau" },
+      { label: "Puissance", value: "5 niveaux réglables selon le matériau" },
       { label: "Usage", value: "Menuiserie, finitions, bricolage courant" },
       { label: "Poignée", value: "Ergonomique, prise antidérapante" },
       { label: "Contenu du kit", value: "110 clous ronds, mallette de transport, gants de protection, ressorts de rechange" },
