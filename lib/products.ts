@@ -366,15 +366,15 @@ export const products: Product[] = [
     slug: "fontaine-eau-chat-automatique",
     name: "Fontaine à eau automatique pour chat en inox",
     price: 27.90,
-    tagline: "Une eau fraîche et filtrée, en continu",
+    tagline: "Une eau fraîche et filtrée, sans fil",
     description:
-      "Fontaine à eau automatique en acier inoxydable pour chat et chien, avec circulation continue qui encourage l'animal à boire davantage. Pompe ultra-silencieuse, système de filtration multicouche et grande capacité pour une autonomie de plusieurs jours.",
+      "Fontaine à eau automatique en acier inoxydable pour chat et chien, fonctionnant sur batterie rechargeable sans fil pour une installation libre, sans prise ni câble à proximité. Circulation d'eau qui encourage l'animal à boire davantage, pompe ultra-silencieuse, système de filtration multicouche et grande capacité pour une autonomie de plusieurs jours.",
     specs: [
       { label: "Matière", value: "Acier inoxydable, résistant et facile à nettoyer" },
       { label: "Capacité", value: "Environ 2 L" },
       { label: "Pompe", value: "Circulation continue, fonctionnement ultra-silencieux" },
       { label: "Filtration", value: "Filtre multicouche remplaçable" },
-      { label: "Alimentation", value: "USB" },
+      { label: "Alimentation", value: "Batterie rechargeable, sans fil" },
       { label: "Usage", value: "Chats et petits chiens" },
     ],
     images: [
