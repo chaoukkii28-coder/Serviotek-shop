@@ -398,6 +398,7 @@ export const products: Product[] = [
     ],
     images: [
       "https://images.unsplash.com/photo-1773430273016-630960da6aa7?w=1200&auto=format&fit=crop",
+      "https://images.pexels.com/photos/12172496/pexels-photo-12172496.jpeg?cs=srgb&dl=pexels-sadie-burnell-234744502-12172496.jpg&fm=jpg",
     ],
     categorie: "bricolage",
     badge: "Nouveau",
