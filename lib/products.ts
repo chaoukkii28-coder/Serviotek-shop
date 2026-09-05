@@ -12,8 +12,45 @@ export type Categorie =
  * boutique classique. Tant qu'elles ne sont pas remplies, le produit sort
  * dans le rapport de /api/amazon-feed?rapport=1 comme non publiable.
  */
-export type AmazonData = {
-  /** EAN-13 (GS1 France) ou UPC. Sans lui : exemption GTIN à demander. */
+export type AmazonData = {slug: "fontaine-eau-chat-automatique",
+    name: "Fontaine à eau automatique pour chat en inox",
+    price: 27.90,
+    tagline: "Une eau fraîche et filtrée, en continu",
+    description:
+      "Fontaine à eau automatique en acier inoxydable pour chat et chien, avec circulation continue qui encourage l'animal à boire davantage. Pompe ultra-silencieuse, système de filtration multicouche et grande capacité pour une autonomie de plusieurs jours.",
+    specs: [
+      { label: "Matière", value: "Acier inoxydable, résistant et facile à nettoyer" },
+      { label: "Capacité", value: "Environ 2 L" },
+      { label: "Pompe", value: "Circulation continue, fonctionnement ultra-silencieux" },
+      { label: "Filtration", value: "Filtre multicouche remplaçable" },
+      { label: "Alimentation", value: "USB" },
+      { label: "Usage", value: "Chats et petits chiens" },
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1626803264630-6053d8672c23?w=1200&auto=format&fit=crop",
+    ],
+    categorie: "maison",
+    badge: "Nouveau",
+  },
+  {
+    slug: "pistolet-a-clou-sans-fil",
+    name: "Pistolet à clou sans fil",
+    price: 49.90,
+    tagline: "Cloue vite, cloue sans effort",
+    description:
+      "Pistolet à clou sans fil rechargeable pour travaux de menuiserie et bricolage courant. Poignée ergonomique antidérapante, déclenchement rapide et batterie longue durée pour enchaîner les finitions sans être relié à un compresseur.",
+    specs: [
+      { label: "Type", value: "Sans fil, sur batterie rechargeable" },
+      { label: "Usage", value: "Menuiserie, finitions, bricolage courant" },
+      { label: "Poignée", value: "Ergonomique, prise antidérapante" },
+      { label: "Alimentation", value: "Batterie rechargeable" },
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1773430273016-630960da6aa7?w=1200&auto=format&fit=crop",
+    ],
+    categorie: "bricolage",
+    badge: "Nouveau",
+  },  /** EAN-13 (GS1 France) ou UPC. Sans lui : exemption GTIN à demander. */
   ean?: string;
   /** Marque déposée telle qu'enregistrée chez Amazon. */
   brand?: string;
