@@ -365,7 +365,7 @@ export const products: Product[] = [
   {
     slug: "fontaine-eau-chat-automatique",
     name: "Fontaine à eau automatique pour chat en inox",
-    price: 27.90,
+    price: 49.90,
     tagline: "Une eau fraîche et filtrée, sans fil",
     description:
       "Fontaine à eau automatique en acier inoxydable pour chat et chien, fonctionnant sur batterie rechargeable sans fil pour une installation libre, sans prise ni câble à proximité. Circulation d'eau qui encourage l'animal à boire davantage, pompe ultra-silencieuse, système de filtration multicouche et grande capacité pour une autonomie de plusieurs jours.",
@@ -378,6 +378,7 @@ export const products: Product[] = [
       { label: "Usage", value: "Chats et petits chiens" },
     ],
     images: [
+      "/images/fontaine-eau-chat-automatique/fontaine-1-produit-hero.jpg",
       "https://images.unsplash.com/photo-1626803264630-6053d8672c23?w=1200&auto=format&fit=crop",
     ],
     categorie: "maison",
@@ -385,18 +386,20 @@ export const products: Product[] = [
   },
   {
     slug: "pistolet-a-clou-sans-fil",
-    name: "Pistolet à clou sans fil",
+    name: "Pistolet à clou manuel 3 niveaux de puissance",
     price: 49.90,
-    tagline: "Cloue vite, cloue sans effort",
+    tagline: "Cloue vite, cloue sans effort, sans batterie à recharger",
     description:
-      "Pistolet à clou sans fil rechargeable pour travaux de menuiserie et bricolage courant. Poignée ergonomique antidérapante, déclenchement rapide et batterie longue durée pour enchaîner les finitions sans être relié à un compresseur.",
+      "Pistolet à clou manuel en acier à mécanisme à ressort, pour travaux de menuiserie et bricolage courant. 3 niveaux de puissance réglables selon le matériau, poignée ergonomique antidérapante. Aucune batterie à recharger, aucun compresseur nécessaire : prêt à l'emploi immédiatement. Livré complet avec 110 clous ronds, mallette de transport, gants de protection et pièces de rechange.",
     specs: [
-      { label: "Type", value: "Sans fil, sur batterie rechargeable" },
+      { label: "Type", value: "Manuel, mécanisme à ressort (sans batterie, sans compresseur)" },
+      { label: "Puissance", value: "3 niveaux réglables selon le matériau" },
       { label: "Usage", value: "Menuiserie, finitions, bricolage courant" },
       { label: "Poignée", value: "Ergonomique, prise antidérapante" },
-      { label: "Alimentation", value: "Batterie rechargeable" },
+      { label: "Contenu du kit", value: "110 clous ronds, mallette de transport, gants de protection, ressorts de rechange" },
     ],
     images: [
+      "/images/pistolet-a-clou-sans-fil/pistolet-1-produit-hero.jpg",
       "https://images.unsplash.com/photo-1773430273016-630960da6aa7?w=1200&auto=format&fit=crop",
       "https://images.pexels.com/photos/12172496/pexels-photo-12172496.jpeg?cs=srgb&dl=pexels-sadie-burnell-234744502-12172496.jpg&fm=jpg",
     ],
