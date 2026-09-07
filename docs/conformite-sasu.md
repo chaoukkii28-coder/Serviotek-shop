@@ -84,28 +84,53 @@ cumulées (tous pays UE hors France) qui impose la TVA du pays de destination
 (régime OSS possible). Le stockage en FBA dans un pays UE impose en plus un
 numéro de TVA local dans **chaque pays de stockage**, sans condition de seuil.
 
-### 3. Documentation technique et marquage CE — le risque le plus élevé
+### 3. Sécurité générale des produits (GPSR) et documentation technique — le risque le plus élevé, et pas limité à l'électronique
 
-C'est le point le plus engageant : les produits sont sourcés hors UE et
-revendus sous le nom de la SASU. En droit européen, quand le fabricant chinois
-n'a **aucun représentant établi dans l'UE**, **l'importateur (Service SASU)
-est responsable du produit vis-à-vis des autorités**, au même titre qu'un
-fabricant — un marquage CE apposé en Chine n'a aucune valeur probante
-automatique (confusion fréquente avec le sigle « China Export », visuellement
-proche mais sans rapport avec la réglementation UE).
+**Recherche complémentaire du 2026-09-07** : au-delà du marquage CE et des
+déclarations propres à l'électronique (RED/DEEE/RoHS), le point le plus
+engageant est le **Règlement général sur la sécurité des produits (RGSP /
+GPSR, règlement UE 2023/988)**, en application depuis le **13 décembre 2024**.
+Il couvre **tous les produits vendus**, y compris non électroniques — le
+pistolet à clou est concerné autant que la fontaine à eau.
 
-Pour chaque référence vendue (écouteurs Bluetooth, montres connectées,
-chargeurs), il faut pouvoir produire sur demande DGCCRF/douanes :
-- la **déclaration UE de conformité** du fabricant (directives applicables :
-  RED 2014/53/UE pour le sans-fil, DEEE, RoHS) ;
-- un **dossier technique** minimal (notices, rapports d'essais) ;
-- conservés **10 ans** à partir de la mise sur le marché (durée à vérifier
-  précisément article par article de l'annexe RED concernée) ;
-- le produit/emballage doit porter le nom et l'adresse de contact de
-  l'importateur (obligation propre à l'importateur, distincte du fabricant).
+Vendre sous sa propre marque (Serviotek) des produits sourcés hors UE dont le
+fabricant n'a pas de représentant dans l'UE classe très probablement la SASU
+comme **« fabricant »** au sens de l'article 13 du règlement — pas simple
+distributeur — avec les obligations qui en découlent :
 
-À traiter **produit par produit**, pas de façon générique — c'est le point où
-un contrôle serait le plus pénalisant.
+1. **Désigner une personne responsable dans l'UE** (art. 16) : peut être la
+   SASU elle-même en tant qu'importateur.
+2. **Sur chaque fiche produit**, quatre blocs visibles directement (pas de
+   renvoi via QR code) : coordonnées du fabricant hors UE, coordonnées du
+   responsable UE, description claire du produit avec image, et avertissements
+   / informations de sécurité en français. Apposer un marquage CE est
+   **interdit** pour un produit qui n'en bénéficie pas légalement (confusion
+   fréquente avec le sigle « China Export », sans rapport avec la
+   réglementation UE).
+3. **Documentation technique conservée 10 ans** : analyse interne des
+   risques, fiches techniques, registre des réclamations/accidents, liste des
+   fournisseurs (amont 10 ans, aval 6 ans).
+4. **Procédure de rappel** : en cas de signalement d'accident, notification
+   via le Safety Business Gateway et contact des acheteurs concernés.
+
+**Sanctions** (en vigueur depuis avril 2024) : jusqu'à 5 ans d'emprisonnement
+et 600 000 € pour une personne physique, 3 000 000 € (ou 10 % du CA moyen
+annuel) pour une personne morale, en cas de manquement grave — rappel non
+effectué notamment.
+
+*Non confirmé sur source primaire officielle* : synthèse basée sur une source
+spécialisée (donneespersonnelles.fr/gpsr), à recouper avec le texte du
+règlement 2023/988 ou un professionnel avant mise en conformité complète.
+
+**Actionnable dès maintenant, sans attendre le fournisseur** : ajouter sur
+chaque fiche produit un bloc « Responsable de la mise sur le marché dans
+l'UE » avec les coordonnées de Service SASU (déjà connues), et un paragraphe
+d'avertissements de sécurité en français adapté au produit.
+
+**Nécessite une donnée externe, à récupérer produit par produit** : le nom et
+l'adresse du fabricant tel qu'il apparaît sur la fiche fournisseur (Temu / CJ
+Dropshipping) — impossible à deviner ou inventer, doit venir de la fiche
+fournisseur réelle.
 
 ### 4. Éco-organisme DEEE et éco-participation
 
@@ -181,9 +206,9 @@ vers cette plateforme sur un site marchand aujourd'hui pointerait dans le vide.
    rapide, seul point en infraction certaine dès aujourd'hui.
 2. **Statut TVA** — vérifier le CA réel vs seuil 85 000€/93 500€, afficher la
    bonne mention. Bloquant pour Amazon Marketplace/FBA.
-3. **Documentation technique par produit** (déclarations UE de conformité) —
-   risque le plus élevé en cas de contrôle, responsabilité non reportable sur
-   le fournisseur.
+3. **GPSR et documentation technique par produit** (déclarations UE de
+   conformité, blocs obligatoires sur chaque fiche produit) — risque le plus
+   élevé en cas de contrôle, responsabilité non reportable sur le fournisseur.
 4. **Éco-organisme DEEE** — obligation financière récurrente à intégrer aux
    marges.
 5. **SIREN sur mentions légales/factures** — correction rapide et gratuite.
