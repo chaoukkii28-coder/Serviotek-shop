@@ -49,7 +49,8 @@ export type Product = {
    * Informations exigées par le règlement européen GPSR (UE 2023/988) sur
    * chaque fiche produit : coordonnées du fabricant hors UE et avertissements
    * de sécurité en français. Le fabricant vient de la fiche fournisseur
-   * réelle (Temu « Informations sur le professionnel »), jamais inventé.
+   * réelle (Amazon Business « Informations sur le fabricant », ou Temu
+   * « Informations sur le professionnel »), jamais inventé.
    */
   conformite?: {
     fabricant: { nom: string; adresse: string };
@@ -86,6 +87,21 @@ export const products: Product[] = [
     ],
     categorie: "bien-etre",
     promo: { pct: 22, until: "2026-08-31T23:59:59+02:00" },
+    conformite: {
+      fabricant: {
+        nom: "Shenzhen Trusang Technology Co., Ltd.",
+        adresse:
+          "A315, Building A, Huafeng International Robot Industrial Park, Xi Xiang Street, Bao'an District, Shenzhen, Guangdong, Chine",
+      },
+      avertissements: [
+        "Étanchéité IP68 : ne pas utiliser pour la natation ou un bain chaud, ni immerger volontairement.",
+        "Tenir hors de portée des jeunes enfants (bracelet et petites pièces, risque d'ingestion).",
+        "Recharger uniquement avec un câble compatible, sans laisser l'appareil en charge sans surveillance prolongée.",
+        "Interrompre l'utilisation et consulter un médecin en cas d'irritation cutanée persistante.",
+        "Ne pas exposer à des chocs violents, à la poussière excessive ou à des températures extrêmes.",
+        "Les données de fréquence cardiaque et de santé sont indicatives et ne remplacent pas un avis médical.",
+      ],
+    },
   },
   {
     slug: "montre-connectee-cillso",
@@ -110,6 +126,20 @@ export const products: Product[] = [
       "/images/montre-connectee-cillso/4-multifonctions.jpg",
     ],
     categorie: "bien-etre",
+    conformite: {
+      fabricant: {
+        nom: "DG Senya Electronics Technology Co., Ltd.",
+        adresse: "NO.52 Nanshe Road Dongfeng, Humen Town, Dongguan, Guangdong, Chine",
+      },
+      avertissements: [
+        "Étanchéité IP68 : ne pas utiliser pour la natation ou un bain chaud, ni immerger volontairement.",
+        "Tenir hors de portée des jeunes enfants (bracelet et petites pièces, risque d'ingestion).",
+        "Recharger uniquement avec un câble compatible, sans laisser l'appareil en charge sans surveillance prolongée.",
+        "Interrompre l'utilisation et consulter un médecin en cas d'irritation cutanée persistante.",
+        "Ne pas exposer à des chocs violents ni à des températures extrêmes.",
+        "Les données de fréquence cardiaque et de santé sont indicatives et ne remplacent pas un avis médical.",
+      ],
+    },
   },
   {
     slug: "ecouteurs-xulinse",
@@ -135,6 +165,20 @@ export const products: Product[] = [
     ],
     categorie: "audio",
     promo: { pct: 18, until: "2026-08-31T23:59:59+02:00" },
+    conformite: {
+      fabricant: {
+        nom: "Shenzhenshimoshengchuangxinjishuyouxiangongsi",
+        adresse: "Bao'an Qu, Xixiang Jiedao, Tiezai Lu 60 Hao, Shenzhen, Guangdong, Chine",
+      },
+      avertissements: [
+        "Tenir hors de portée des jeunes enfants (petites pièces, risque d'ingestion ou d'étouffement).",
+        "Ne pas utiliser à volume élevé de façon prolongée : risque pour l'audition.",
+        "Étanchéité IPX6 : résiste à la transpiration et aux projections, mais ne pas immerger dans l'eau.",
+        "Ne pas utiliser les écouteurs pendant leur charge.",
+        "Interrompre l'utilisation en cas d'inconfort, de gêne auriculaire ou d'irritation.",
+        "Ne pas exposer le boîtier de charge à une source de chaleur ou à l'humidité excessive.",
+      ],
+    },
   },
   {
     slug: "collier-chat-airtag",
@@ -164,6 +208,19 @@ export const products: Product[] = [
     ],
     categorie: "detection",
     promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
+    conformite: {
+      fabricant: {
+        nom: "Huizhou City Huyang Qiuchang Town Shengfeng Feather Craft Factory",
+        adresse: "Quichang Street, Huizhou City, Guangdong, 516000, Chine",
+      },
+      avertissements: [
+        "Ne pas laisser à la portée des jeunes enfants (petites pièces, risque d'ingestion).",
+        "Surveiller l'animal lors des premières utilisations pour vérifier le bon ajustement du collier.",
+        "Vérifier régulièrement l'état du collier et le bon fonctionnement de la boucle de sécurité anti-étranglement.",
+        "Retirer le collier si l'animal montre des signes d'irritation cutanée ou d'inconfort.",
+        "Ne pas utiliser sur un animal dont le tour de cou ne correspond pas à la plage réglable (19-32 cm).",
+      ],
+    },
   },
   {
     slug: "barre-de-son-saiyin-40w",
@@ -191,6 +248,21 @@ export const products: Product[] = [
     ],
     categorie: "audio",
     promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
+    conformite: {
+      fabricant: {
+        nom: "Shenzhen Shi Saiyin Dianzi Youxiangongsi",
+        adresse:
+          "201, 145-5 No. Furui Road, Xintian Community, Fuhai Street, Bao'an District, Shenzhen, Guangdong, 518103, Chine",
+      },
+      avertissements: [
+        "Ne pas exposer l'appareil à l'humidité, aux projections d'eau ou à une chaleur excessive.",
+        "Débrancher l'alimentation avant tout nettoyage.",
+        "Ne pas obstruer les ouvertures de ventilation lors du montage mural.",
+        "Utiliser uniquement le câble et le bloc d'alimentation fournis ou compatibles.",
+        "Tenir hors de portée des jeunes enfants (petites pièces, cordons).",
+        "Ne pas utiliser à volume élevé de façon prolongée : risque pour l'audition.",
+      ],
+    },
   },
   {
     slug: "chargeur-induction-iniu-15w",
@@ -212,6 +284,21 @@ export const products: Product[] = [
     ],
     categorie: "accessoires",
     promo: { pct: 21, until: "2026-08-31T23:59:59+02:00" },
+    conformite: {
+      fabricant: {
+        nom: "Shenzhen Topstar Industry Co., Ltd.",
+        adresse:
+          "4011, Baoshan Times Building, Minqiang Community, Minzhi Street, Longhua District, Shenzhen, Guangdong, 518000, Chine",
+      },
+      avertissements: [
+        "Utiliser uniquement avec un adaptateur secteur compatible fournissant une puissance suffisante.",
+        "Ne pas placer d'objets métalliques (pièces, clés, cartes à bande magnétique) entre le téléphone et le chargeur.",
+        "Ne pas recouvrir l'appareil pendant la charge, pour éviter toute surchauffe.",
+        "Tenir hors de portée des jeunes enfants (petites pièces, cordon).",
+        "Ne pas utiliser si le câble ou le boîtier est endommagé.",
+        "Ne pas exposer à l'humidité ou immerger dans l'eau.",
+      ],
+    },
   },
   {
     slug: "xiaomi-redmi-buds-8-active",
@@ -229,6 +316,20 @@ export const products: Product[] = [
     categorie: "audio",
     images: ["https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=800"],
     promo: { pct: 20, until: "2026-08-31T23:59:59+02:00" },
+    conformite: {
+      fabricant: {
+        nom: "Xiaomi Technology Netherlands B.V.",
+        adresse: "Prinses Beatrixlaan 582, 2595BM Den Haag, Pays-Bas",
+      },
+      avertissements: [
+        "Tenir hors de portée des jeunes enfants (petites pièces, risque d'ingestion ou d'étouffement).",
+        "Ne pas utiliser à volume élevé de façon prolongée : risque pour l'audition.",
+        "Étanchéité IP54 : résiste aux projections et à la transpiration, mais ne pas immerger dans l'eau.",
+        "Ne pas utiliser les écouteurs pendant leur charge.",
+        "Interrompre l'utilisation en cas d'inconfort ou d'irritation auriculaire.",
+        "Ne pas exposer le boîtier de charge à une chaleur excessive ou à l'humidité.",
+      ],
+    },
   },
   {
     slug: "ecouteurs-anc-reduction-bruit",
@@ -256,6 +357,21 @@ export const products: Product[] = [
     ],
     categorie: "audio",
     promo: { pct: 23, until: "2026-08-31T23:59:59+02:00" },
+    conformite: {
+      fabricant: {
+        nom: "Zhengzhou Jiangxu Electronic Commerce Co., Ltd.",
+        adresse:
+          "4e étage, unité 1, bâtiment 3 Guanjing Junyue, no. 27 rue Longteng 4, Nouveau district de Zhengdong, Zhengzhou, Henan, 450008, Chine",
+      },
+      avertissements: [
+        "Tenir hors de portée des jeunes enfants (petites pièces, risque d'ingestion ou d'étouffement).",
+        "Ne pas utiliser à volume élevé de façon prolongée : risque pour l'audition.",
+        "Étanchéité IPX7 : résiste à la pluie, à la transpiration et aux éclaboussures, mais ne pas immerger durablement dans l'eau.",
+        "Ne pas utiliser les écouteurs pendant leur charge.",
+        "Interrompre l'utilisation en cas d'inconfort ou d'irritation auriculaire.",
+        "Ne pas exposer le boîtier de charge à une chaleur excessive ou à l'humidité.",
+      ],
+    },
   },
   {
     slug: "prise-connectee-wifi-eu",
