@@ -156,6 +156,26 @@ export default async function ProductPage({ params }: { params: { slug: string }
                 ))}
               </div>
             </div>
+
+            {product.conformite && (
+              <div className="rounded bg-white p-[22px]">
+                <p className="mb-2 text-[16px] font-bold">Sécurité et conformité</p>
+                <p className="text-[13.5px] leading-[1.6] text-grisTexte">
+                  <span className="font-bold text-encre">Responsable de la mise sur le marché dans l&apos;UE : </span>
+                  Service, SASU, Bureau 326, 59 rue de Ponthieu, 75008 Paris — service@serviotek.com
+                </p>
+                <p className="mt-2 text-[13.5px] leading-[1.6] text-grisTexte">
+                  <span className="font-bold text-encre">Fabricant : </span>
+                  {product.conformite.fabricant.nom}, {product.conformite.fabricant.adresse}
+                </p>
+                <p className="mt-3 text-[13.5px] font-bold text-encre">Avertissements et informations de sécurité</p>
+                <ul className="mt-1 list-disc space-y-1 pl-5 text-[13.5px] leading-[1.6] text-grisTexte">
+                  {product.conformite.avertissements.map((a) => (
+                    <li key={a}>{a}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
 
