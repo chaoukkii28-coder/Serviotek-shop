@@ -2,29 +2,29 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { CLE_CONSENTEMENT, EVENEMENT_CONSENTEMENT } from "@/components/consentement";
 
 type Choix = "accepte" | "refuse";
-
-const CLE_STOCKAGE = "serviotek_cookie_consent";
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const choixExistant = localStorage.getItem(CLE_STOCKAGE);
+    const choixExistant = localStorage.getItem(CLE_CONSENTEMENT);
     if (!choixExistant) {
       setVisible(true);
     }
   }, []);
 
   const enregistrerChoix = (choix: Choix) => {
-    localStorage.setItem(CLE_STOCKAGE, choix);
-    localStorage.setItem(CLE_STOCKAGE + "_date", new Date().toISOString());
+    localStorage.setItem(CLE_CONSENTEMENT, choix);
+    localStorage.setItem(CLE_CONSENTEMENT + "_date", new Date().toISOString());
     setVisible(false);
 
-    // Si tu ajoutes plus tard Google Analytics, Meta Pixel, etc.,
-    // c'est ici qu'il faut activer/désactiver leur chargement
-    // en fonction de "choix".
+    // Prévient les composants de mesure d'audience (Pixels.tsx,
+    // PurchaseTracking.tsx) que le choix vient de changer, sans recharger
+    // la page. Les pixels Meta et TikTok ne se chargent que si "accepte".
+    window.dispatchEvent(new Event(EVENEMENT_CONSENTEMENT));
   };
 
   if (!visible) return null;
