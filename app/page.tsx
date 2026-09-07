@@ -5,8 +5,9 @@ import OffresDuJour from "@/components/accueil/OffresDuJour";
 import BandeauDefilant from "@/components/accueil/BandeauDefilant";
 import GrilleProduits from "@/components/accueil/GrilleProduits";
 import TuilesRayons from "@/components/accueil/TuilesRayons";
+import AvisClients from "@/components/accueil/AvisClients";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="min-h-screen bg-fond text-encre">
       <div className="bg-violet px-[clamp(12px,2.5vw,22px)] py-2.5 text-center font-mono text-[12.5px] tracking-[0.06em] text-white">
@@ -30,6 +31,7 @@ export default function Home() {
           minWidth={120}
           afficherCategorie
         />
+        <AvisClients />
       </div>
     </div>
   );
