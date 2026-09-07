@@ -187,8 +187,13 @@ un simple frais administratif — en pratique surtout le minimum annuel de
 
 **Ce que je ne peux pas faire à ta place** : l'adhésion à Ecosystem crée un
 compte et implique un paiement — comme pour CM2C, c'est à toi de la faire.
-Je peux en revanche préparer les informations à remplir et guider le
-remplissage du formulaire en direct si tu veux t'y mettre.
+
+**État au 2026-09-07 : demande envoyée.** Formulaire de contact rempli sur
+pro.ecosystem.eco (catégories cochées : Batteries + EEE des particuliers,
+description générale du type de produits pour couvrir les futurs ajouts au
+catalogue, pas un seul produit nommé). Confirmation reçue : réponse de
+l'équipe ecosystem sous 2 à 3 jours ouvrés, puis contrat d'adhésion à signer
+via DocuSign, puis IDU généré — **à ajouter dans les CGV une fois reçu**.
 
 ### 5. Numéro SIREN — ✅ déjà en place
 
