@@ -45,6 +45,16 @@ export type Product = {
    * Le prix barré se calcule depuis `price`, pas stocké en dur ici.
    */
   promo?: { pct: number; until: string };
+  /**
+   * Informations exigées par le règlement européen GPSR (UE 2023/988) sur
+   * chaque fiche produit : coordonnées du fabricant hors UE et avertissements
+   * de sécurité en français. Le fabricant vient de la fiche fournisseur
+   * réelle (Temu « Informations sur le professionnel »), jamais inventé.
+   */
+  conformite?: {
+    fabricant: { nom: string; adresse: string };
+    avertissements: string[];
+  };
 };
 
 export const products: Product[] = [
@@ -383,6 +393,21 @@ export const products: Product[] = [
     ],
     categorie: "maison",
     badge: "Nouveau",
+    conformite: {
+      fabricant: {
+        nom: "Shenzhenshilanpaimaoyi Co., Ltd.",
+        adresse:
+          "Floor A, Building C, New Plant, Area A, Fuyuan Factory, Minzhu Jiujiu Industrial Zone, Shatou Community, Shajing Street, Bao'an District, 518101, Guangdong Province, Shenzhen, Chine",
+      },
+      avertissements: [
+        "Tenir hors de portée des jeunes enfants (petites pièces, risque d'ingestion).",
+        "Ne pas immerger le boîtier de charge dans l'eau : seul le bac est prévu pour être rempli.",
+        "Débrancher avant nettoyage ou remplacement du filtre.",
+        "Ne pas utiliser si le câble ou le boîtier est endommagé.",
+        "Nettoyer régulièrement pour éviter la prolifération bactérienne.",
+        "Surveiller l'animal lors des premières utilisations.",
+      ],
+    },
   },
   {
     slug: "pistolet-a-clou-sans-fil",
@@ -405,6 +430,21 @@ export const products: Product[] = [
     ],
     categorie: "bricolage",
     badge: "Nouveau",
+    conformite: {
+      fabricant: {
+        nom: "Wangxiaoling",
+        adresse:
+          "No. 012, Yimin Street, Zhoucun, Yuanzhuang Town, Wenshang County, 272501, Shandong Province, Jining City, Chine",
+      },
+      avertissements: [
+        "Port de lunettes de protection recommandé lors de l'utilisation.",
+        "Tenir hors de portée des enfants.",
+        "Ne jamais diriger l'appareil vers une personne, un animal ou soi-même.",
+        "Utiliser uniquement les clous fournis ou compatibles avec l'appareil.",
+        "Ne pas utiliser sur des matériaux inadaptés (métal dur, béton, etc.).",
+        "Lire la notice avant la première utilisation.",
+      ],
+    },
   },
   {
     slug: "projecteur-galaxie-etoiles-led",
