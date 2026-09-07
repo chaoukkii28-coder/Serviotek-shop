@@ -82,6 +82,35 @@ export async function avisDuProduit(slug: string): Promise<Avis[]> {
 }
 
 /**
+ * Derniers avis, tous produits confondus, du plus récent au plus ancien.
+ * Sert à les mettre en avant en page d'accueil : dès qu'un nouvel avis est
+ * publié sur n'importe quelle fiche produit, il apparaît ici automatiquement.
+ */
+export async function derniersAvis(limite = 12): Promise<Avis[]> {
+  if (!avisDisponibles) return [];
+  try {
+    await preparerTable();
+    const sql = connexion();
+    const lignes = await sql`
+      SELECT id, slug, note, auteur, commentaire, photo, publie_le
+      FROM avis
+      ORDER BY publie_le DESC LIMIT ${limite}
+    `;
+    return lignes.map((l) => ({
+      id: Number(l.id),
+      slug: String(l.slug),
+      note: Number(l.note),
+      auteur: String(l.auteur),
+      commentaire: l.commentaire ? String(l.commentaire) : null,
+      photo: l.photo ? String(l.photo) : null,
+      publieLe: new Date(l.publie_le as string).toISOString(),
+    }));
+  } catch {
+    return [];
+  }
+}
+
+/**
  * Moyenne et nombre d'avis. Sert aussi aux données structurées : Google exige
  * que la note déclarée corresponde à des avis réellement visibles sur la page.
  */
