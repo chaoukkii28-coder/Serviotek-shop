@@ -26,7 +26,7 @@ export default function CGV() {
         </section>
         <section>
           <h2 className="font-bold text-encre mb-1">3. Prix et paiement</h2>
-          <p>Les prix sont indiqués en euros, toutes taxes comprises. Le paiement est sécurisé via Stripe.</p>
+          <p>Les prix sont indiqués en euros. TVA non applicable, article 293 B du Code général des impôts. Le paiement est sécurisé via Stripe.</p>
         </section>
         <section>
           <h2 className="font-bold text-encre mb-1">4. Livraison</h2>
