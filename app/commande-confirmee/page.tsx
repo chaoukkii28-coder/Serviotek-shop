@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Stripe from "stripe";
 import ViderPanier from "@/components/ViderPanier";
 import FormulaireAvis from "@/components/FormulaireAvis";
+import PurchaseTracking from "@/components/PurchaseTracking";
 import { avisDisponibles } from "@/lib/avis-db";
 import { getProduct } from "@/lib/products";
 
@@ -14,6 +15,8 @@ export const metadata: Metadata = {
 type Recap = {
   lignes: { nom: string; quantite: number; montant: string }[];
   total: string;
+  totalNombre: number;
+  devise: string;
   email: string | null;
   lienFacture: string | null;
   produits: { slug: string; nom: string }[];
@@ -51,6 +54,8 @@ async function lireCommande(sessionId: string): Promise<Recap | null> {
         montant: format(l.amount_total),
       })),
       total: format(session.amount_total),
+      totalNombre: (session.amount_total ?? 0) / 100,
+      devise,
       email: session.customer_details?.email ?? null,
       produits: (session.metadata?.slugs ?? "")
         .split(",")
@@ -78,6 +83,13 @@ export default async function ConfirmationPage({
     <div className="min-h-screen bg-fond px-5 py-20">
       <div className="mx-auto max-w-xl">
         <ViderPanier />
+        {commande && searchParams.session_id && (
+          <PurchaseTracking
+            idCommande={searchParams.session_id}
+            valeur={commande.totalNombre}
+            devise={commande.devise}
+          />
+        )}
 
         <p className="mb-3 text-center font-mono text-[11.5px] tracking-[0.1em] text-violet">
           PAIEMENT CONFIRMÉ
