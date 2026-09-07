@@ -132,28 +132,63 @@ l'adresse du fabricant tel qu'il apparaît sur la fiche fournisseur (Temu / CJ
 Dropshipping) — impossible à deviner ou inventer, doit venir de la fiche
 fournisseur réelle.
 
-### 4. Éco-organisme DEEE et éco-participation
+### 4. Éco-organisme DEEE, batteries, et éco-participation
 
-Au sens de l'**article R543-174 du Code de l'environnement**, une entreprise
-qui « met sur le marché national, à titre professionnel, des équipements en
-provenance d'un pays tiers » est un **« producteur »** DEEE (le terme légal
-exact, pas « importateur »). Obligations :
+**Recherche complémentaire du 2026-09-07.** Au sens de l'**article R543-174
+du Code de l'environnement**, une entreprise qui « met sur le marché
+national, à titre professionnel, des équipements en provenance d'un pays
+tiers » est un **« producteur »** DEEE (le terme légal exact, pas
+« importateur »). Concerne la fontaine à eau (électrique, batterie
+rechargeable) — **pas** le pistolet à clou (manuel, ni électronique ni
+batterie).
 
-1. Inscription au **registre national des producteurs** (ADEME, plateforme
-   SYDEREP) → identifiant unique (IDU) à afficher dans les CGV.
-2. Adhésion à un éco-organisme agréé — deux options principales, **distinctes
-   l'une de l'autre** (pas de fusion) : **Ecosystem** ou **Ecologic**.
-3. **Éco-participation** : montant par barème annuel de l'éco-organisme choisi
-   (barèmes publiés en PDF, ex. celui d'Ecologic) — *montants unitaires pour
-   écouteurs/montres/chargeurs non récupérés, à consulter directement sur le
-   barème avant calcul de marge*. Doit être **affichée séparément du prix**
-   sur la fiche produit et au tunnel d'achat. Déclaration périodique
-   (généralement trimestrielle) des quantités vendues.
-4. Marquage physique du produit : symbole de la **poubelle barrée**.
+**Ordre réel de la procédure** (contrairement à une idée reçue, on ne
+s'inscrit pas directement sur SYDEREP) :
+
+1. **Adhérer d'abord à un éco-organisme agréé** pour la filière DEEE
+   ménagers — **Ecosystem** ou **Ecologic**, deux options distinctes, pas de
+   fusion.
+2. **L'éco-organisme transmet lui-même vos informations à l'ADEME.** L'ADEME
+   vérifie (recoupement avec le SIRENE de l'INSEE) et génère l'**identifiant
+   unique (IDU)** sous 1 à 2 semaines — à afficher ensuite dans les CGV.
+3. **Éco-participation** : barème par tranche de poids pour les petits
+   appareils, très faible à l'unité (de l'ordre de quelques centimes à
+   quelques euros pour un appareil de moins de 2 kg) — montant exact à
+   vérifier sur le barème réel une fois inscrit. Doit être **affichée
+   séparément du prix** sur la fiche produit et au tunnel d'achat.
+   Déclaration périodique des quantités vendues.
+4. **Minimum de facturation annuel ≈ 200 € HT**, appliqué une fois — le coût
+   réel pour un petit volume est donc porté par ce minimum, pas par
+   l'éco-participation unitaire elle-même.
+5. Marquage physique du produit : symbole de la **poubelle barrée**.
+
+**Point nouveau, absent de la version précédente de ce document** : la
+fontaine contient une **batterie rechargeable**, ce qui déclenche en plus une
+filière séparée et distincte — **REP Piles et accumulateurs portables**
+(éco-organismes agréés : **Corepile** ou **Screlec**, arrêtés du 16/12/2021
+et 20/12/2024) — avec sa propre déclaration et son propre IDU. Une entreprise
+relevant de plusieurs filières a un IDU par filière.
+
+**Simplification pratique repérée** : **Ecosystem** couvre à la fois la
+filière DEEE ménagers *et* la filière batteries portables
+(pro.ecosystem.eco), ce qui permet de tout gérer chez un seul éco-organisme
+pour la fontaine plutôt que de cumuler Ecologic (DEEE) + Corepile/Screlec
+(batteries) séparément — probablement l'option la plus simple ici.
+
+*Non confirmé sur source primaire officielle* : synthèse basée sur des
+sources spécialisées (auditrep.fr, packdeclare.com), montants d'éco-
+participation à vérifier directement sur le barème Ecosystem au moment de
+l'adhésion.
 
 À intégrer dans le calcul des marges (voir la règle de prix mémorisée : coût
 fournisseur × 2, marge Amazon 35 %) comme un coût direct supplémentaire, pas
-un simple frais administratif.
+un simple frais administratif — en pratique surtout le minimum annuel de
+≈200 € HT pour un faible volume.
+
+**Ce que je ne peux pas faire à ta place** : l'adhésion à Ecosystem crée un
+compte et implique un paiement — comme pour CM2C, c'est à toi de la faire.
+Je peux en revanche préparer les informations à remplir et guider le
+remplissage du formulaire en direct si tu veux t'y mettre.
 
 ### 5. Numéro SIREN — ✅ déjà en place
 
