@@ -119,7 +119,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
               <p className="mt-4 font-mono text-[30px] font-bold text-encre">
                 {formaterPrix(product.price)}
                 <span className="ml-2 align-middle font-mono text-[11.5px] font-normal text-grisDiscret">
-                  TTC · livraison incluse
+                  livraison incluse
                 </span>
               </p>
 
