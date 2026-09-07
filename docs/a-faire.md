@@ -6,48 +6,51 @@ Elles sont classées de la plus rapide à la plus longue.
 
 ---
 
-## 1. Encaisser de l'argent sur ta boutique — 20 minutes
+## 1. Encaisser de l'argent sur ta boutique — ✅ fait
 
-Aujourd'hui, si quelqu'un veut acheter sur ton site, **le paiement échoue**. Il
-manque une clé. Voilà comment la mettre.
+La clé Stripe est en place et en mode Live : les paiements fonctionnent
+réellement (plusieurs vraies commandes payées). Rien à faire ici.
 
-### a) Récupérer la clé chez Stripe
+## 2. Suivre tes ventes publicitaires (Meta / TikTok) — 15 minutes par régie
 
-1. Va sur **dashboard.stripe.com** et connecte-toi (ou crée le compte).
-2. En haut à droite, vérifie que tu es en **mode Test** pour commencer.
-3. Dans le menu de gauche : **Développeurs** → **Clés API**.
-4. Copie la ligne **« Clé secrète »**. Elle commence par `sk_test_`.
+Le site est maintenant prêt à recevoir les pixels Meta (Facebook/Instagram) et
+TikTok : le code est en place, respecte le bandeau cookies (rien ne se charge
+tant que le visiteur n'a pas accepté), et enverra l'événement d'achat avec le
+bon montant à chaque commande payée. Il ne manque que **les identifiants**,
+que seul toi peux récupérer (comptes publicitaires personnels).
 
-> ⚠️ Cette clé, c'est comme le code de ta carte bancaire. Ne la colle nulle
-> part d'autre que dans l'étape suivante. Ne l'envoie à personne, moi compris.
+### a) Pixel Meta (Facebook/Instagram)
 
-### b) Coller la clé chez Vercel
+1. Va sur **business.facebook.com/events_manager**, connecte-toi ou crée un
+   compte Meta Business.
+2. Crée un pixel (« Connecter des sources de données » → **Web**).
+3. Copie l'**ID du pixel** (une suite de chiffres, ex. `1234567890123456`).
+4. Sur **vercel.com**, projet **serviotek-shop** → **Settings** →
+   **Environment Variables**, crée :
+   - Name : `NEXT_PUBLIC_META_PIXEL_ID`
+   - Value : l'ID copié
+5. Onglet **Deployments** → **Redeploy** sur le dernier déploiement.
 
-1. Va sur **vercel.com**, connecte-toi, ouvre le projet **serviotek-shop**.
-2. Onglet **Settings** → **Environment Variables**.
-3. Crée une variable :
-   - Name : `STRIPE_SECRET_KEY`
-   - Value : colle la clé copiée à l'étape a)
-4. Crée une deuxième variable :
-   - Name : `NEXT_PUBLIC_SITE_URL`
-   - Value : l'adresse de ton site, par exemple `https://serviotek-shop.vercel.app`
-5. Clique **Save**.
-6. Onglet **Deployments** → sur le déploiement le plus récent, menu `…` →
-   **Redeploy**. Sans cette étape, la clé n'est pas prise en compte.
+### b) Pixel TikTok
 
-### c) Tester
+1. Va sur **ads.tiktok.com**, section **Ressources** → **Gestionnaire
+   d'événements** → **Web** → créer un pixel.
+2. Copie l'**ID du pixel** (ex. `CXXXXXXXXXXXXXXXXXXX`).
+3. Sur Vercel, crée une variable :
+   - Name : `NEXT_PUBLIC_TIKTOK_PIXEL_ID`
+   - Value : l'ID copié
+4. **Redeploy** à nouveau.
 
-Va sur ton site, ajoute un produit au panier, va jusqu'au paiement. En mode
-test, utilise le numéro de carte `4242 4242 4242 4242`, une date future et
-n'importe quel code à 3 chiffres. Si tu arrives sur la page de confirmation,
-**ça marche**.
+> Tu peux renseigner l'une, l'autre, ou les deux — chacune s'active
+> indépendamment dès que sa variable est remplie.
 
-Ensuite seulement, repasse Stripe en **mode Live**, récupère la clé qui commence
-par `sk_live_` et refais l'étape b) avec.
+Donne-moi les deux ID si tu préfères que je les colle moi-même dans Vercel
+avec toi en visio, ou fais-le directement — ce ne sont pas des identifiants
+sensibles comme la clé Stripe.
 
 ---
 
-## 2. Les photos des produits — c'est le plus important
+## 3. Les photos des produits — c'est le plus important
 
 Les sept produits réellement sourcés ont de vraies photos, désormais recadrées
 au format Amazon (1600 px, fond blanc) dans `public/images-amazon`. Les six
@@ -74,7 +77,7 @@ confidentiel) et je les intègre au site.
 
 ---
 
-## 3. Amazon — état réel du compte
+## 4. Amazon — état réel du compte
 
 Compte vendeur unique **« Xonto »**, avec plusieurs pays rattachés (un seul
 compte, plusieurs places de marché : aucun risque de suspension pour comptes
@@ -100,7 +103,7 @@ Luxembourg.
    manquait côté Australie ; à contrôler côté Europe.
 3. **Adresse de retour** — signalée à mettre à jour côté États-Unis.
 
-## 4. Les codes EAN pour Amazon — compte plusieurs semaines
+## 5. Les codes EAN pour Amazon — compte plusieurs semaines
 
 Amazon exige un code-barres unique par produit. Tu as deux voies.
 
