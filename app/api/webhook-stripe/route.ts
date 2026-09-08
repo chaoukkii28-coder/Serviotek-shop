@@ -1,12 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
-import { enregistrerCommande } from "@/lib/compte-db";
+import { commandeExiste, enregistrerCommande } from "@/lib/compte-db";
 
 /**
  * Les factures créées via invoice_creation lors du Checkout ne sont pas
  * envoyées par e-mail automatiquement par Stripe : il faut le déclencher
  * explicitement une fois la facture finalisée, d'où ce webhook. Il enregistre
  * aussi la commande en base pour l'historique du compte client.
+ *
+ * Stripe garantit une livraison "au moins une fois" : un même événement
+ * checkout.session.completed peut arriver plusieurs fois (retries
+ * automatiques, renvoi manuel depuis le Dashboard). Comme stripe.invoices.
+ * sendInvoice() n'est pas idempotent — chaque appel réenvoie réellement
+ * l'e-mail de facture au client —, on vérifie d'abord si la commande est
+ * déjà enregistrée pour ne traiter chaque session qu'une seule fois.
  */
 export async function POST(req: NextRequest) {
   if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
@@ -31,6 +38,13 @@ export async function POST(req: NextRequest) {
 
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
+
+    if (await commandeExiste(session.id)) {
+      // Redélivrance d'un événement déjà traité : on ne renvoie pas la
+      // facture par e-mail ni ne réécrit la commande.
+      return NextResponse.json({ received: true, dejaTraitee: true });
+    }
+
     const invoiceId =
       typeof session.invoice === "string" ? session.invoice : session.invoice?.id;
 
