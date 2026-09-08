@@ -116,6 +116,23 @@ export async function commandesDuCompte(email: string): Promise<CommandeResumee[
   }));
 }
 
+/**
+ * Permet au webhook Stripe de savoir si une session a déjà été traitée avant
+ * de renvoyer la facture par e-mail. Stripe peut redélivrer un même
+ * événement plusieurs fois (relances automatiques, renvois manuels) : sans
+ * cette vérification, chaque redélivrance déclenchait un nouvel envoi de
+ * facture au client, perçu à tort comme des rappels de paiement répétés.
+ */
+export async function commandeExiste(sessionStripe: string): Promise<boolean> {
+  if (!sql) return false;
+  await preparerTables();
+
+  const [ligne] = await sql`
+    SELECT 1 FROM commandes WHERE session_stripe = ${sessionStripe} LIMIT 1
+  `;
+  return Boolean(ligne);
+}
+
 export async function enregistrerCommande(entree: {
   sessionStripe: string;
   email: string;
