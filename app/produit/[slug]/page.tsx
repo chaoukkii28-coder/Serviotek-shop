@@ -51,6 +51,9 @@ export default async function ProductPage({ params }: { params: { slug: string }
     resumeDuProduit(product.slug),
   ]);
 
+  const moyenneAffichee =
+    resume?.moyenne ?? (avis.length > 0 ? avis.reduce((s, a) => s + a.note, 0) / avis.length : 0);
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -181,32 +184,83 @@ export default async function ProductPage({ params }: { params: { slug: string }
 
         {avis.length > 0 && (
           <section className="rounded bg-white p-5 sm:p-[22px]">
-            <h2 className="mb-4 text-xl font-bold tracking-[-0.025em]">
-              Avis clients ({avis.length})
-            </h2>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {avis.map((a) => (
-                <article key={a.id} className="rounded border border-bordureSep p-4">
-                  <div className="mb-2 flex items-center justify-between gap-3">
-                    <span className="font-bold text-encre">{a.auteur}</span>
-                    <Etoiles note={a.note} taille="text-sm" />
-                  </div>
-                  {a.photo && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={a.photo}
-                      alt={`Photo jointe par ${a.auteur}`}
-                      className="mb-2 h-32 w-32 rounded object-cover"
-                    />
-                  )}
-                  {a.commentaire && (
-                    <p className="text-[14.5px] leading-[1.5] text-grisTexte">{a.commentaire}</p>
-                  )}
-                  <p className="mt-2 font-mono text-[11px] text-grisLabel">
-                    Achat vérifié — {new Date(a.publieLe).toLocaleDateString("fr-FR")}
-                  </p>
-                </article>
-              ))}
+            <h2 className="mb-5 text-xl font-bold tracking-[-0.025em]">Avis clients</h2>
+
+            <div className="grid gap-6 sm:grid-cols-[220px_1fr] sm:gap-8">
+              {/* Résumé global, façon Amazon : note moyenne + répartition par étoile */}
+              <div className="sm:border-r sm:border-bordureSep sm:pr-6">
+                <div className="flex items-baseline gap-2">
+                  <span className="text-3xl font-bold text-encre">{moyenneAffichee.toFixed(1)}</span>
+                  <span className="text-sm text-grisDiscret">sur 5</span>
+                </div>
+                <Etoiles note={moyenneAffichee} taille="text-lg" />
+                <p className="mt-1 font-mono text-[11.5px] text-grisDiscret">
+                  {avis.length} avis client{avis.length > 1 ? "s" : ""}
+                </p>
+
+                <div className="mt-4 space-y-1.5">
+                  {[5, 4, 3, 2, 1].map((etoile) => {
+                    const nombre = avis.filter((a) => a.note === etoile).length;
+                    const pourcentage = Math.round((nombre / avis.length) * 100);
+                    return (
+                      <div key={etoile} className="flex items-center gap-2">
+                        <span className="w-3 shrink-0 font-mono text-[11px] text-grisDiscret">{etoile}</span>
+                        <span className="h-2.5 flex-1 overflow-hidden rounded-full bg-bordureGrille">
+                          <span
+                            className="block h-full rounded-full bg-amber-500"
+                            style={{ width: `${pourcentage}%` }}
+                          />
+                        </span>
+                        <span className="w-8 shrink-0 text-right font-mono text-[11px] text-grisDiscret">
+                          {pourcentage}%
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Avis individuels, regroupés en une seule liste continue (pas en grille éparpillée) */}
+              <div className="divide-y divide-bordureSep sm:pl-2">
+                {avis.map((a) => (
+                  <article key={a.id} className="py-4 first:pt-0">
+                    <div className="flex items-center gap-2">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-bordureGrille text-sm font-bold text-violet">
+                        {a.auteur.charAt(0).toUpperCase()}
+                      </span>
+                      <span className="font-bold text-encre">{a.auteur}</span>
+                    </div>
+
+                    <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <Etoiles note={a.note} taille="text-sm" />
+                      <span className="font-mono text-[10.5px] font-bold uppercase tracking-[0.05em] text-grisLabel">
+                        Achat vérifié
+                      </span>
+                    </div>
+
+                    <p className="mt-1 font-mono text-[11px] text-grisLabel">
+                      {new Date(a.publieLe).toLocaleDateString("fr-FR", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </p>
+
+                    {a.commentaire && (
+                      <p className="mt-2 text-[14.5px] leading-[1.5] text-grisTexte">{a.commentaire}</p>
+                    )}
+
+                    {a.photo && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={a.photo}
+                        alt={`Photo jointe par ${a.auteur}`}
+                        className="mt-2 h-32 w-32 rounded object-cover"
+                      />
+                    )}
+                  </article>
+                ))}
+              </div>
             </div>
           </section>
         )}
