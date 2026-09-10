@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Requête illisible." }, { status: 400 });
   }
 
-  const { sessionId, slug, note, auteur, commentaire, photo } = corps as Record
+  const { sessionId, slug, note, auteur, commentaire, photo } = corps as Record<
     string,
     unknown
   >;
