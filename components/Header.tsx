@@ -19,11 +19,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 bg-encre text-creme">
       <div className="mx-auto flex max-w-[1400px] flex-wrap items-center gap-3.5 px-[clamp(12px,2.5vw,22px)] py-3">
-        <Link
-          href="/"
-          className="shrink-0 rounded-[3px] bg-vert px-[11px] py-[7px] font-mono text-lg font-bold text-encre"
-        >
-          SERVIOTEK
+        <Link href="/" className="flex shrink-0 items-center rounded-[3px] bg-white px-2.5 py-1.5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/serviotek-logo.png" alt="Serviotek" className="h-8 w-auto" />
         </Link>
 
         <form onSubmit={chercher} className="flex min-w-[240px] flex-1 overflow-hidden rounded-[3px] bg-white">
