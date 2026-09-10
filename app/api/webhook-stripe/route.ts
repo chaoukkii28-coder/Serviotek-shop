@@ -25,7 +25,12 @@ export async function POST(req: NextRequest) {
   const payload = await req.text();
 
   let event: Stripe.Event;
-  
+  try {
+    event = stripe.webhooks.constructEvent(
+      payload,
+      signature ?? "",
+      process.env.STRIPE_WEBHOOK_SECRET
+    );
   } catch (err) {
     console.error("Signature webhook Stripe invalide", err);
     return NextResponse.json({ error: "Signature invalide." }, { status: 400 });
@@ -45,13 +50,6 @@ export async function POST(req: NextRequest) {
 
     let lienFacture: string | null = null;
     if (invoiceId) {
-      try {
-        await stripe.invoices.sendInvoice(invoiceId);
-      } catch (err) {
-        // La facture peut déjà avoir été envoyée ou n'être pas encore finalisée :
-        // ce n'est pas bloquant, le client garde de toute façon le lien depuis le site.
-        console.error("Échec de l'envoi de la facture par e-mail", err);
-      }
       try {
         const facture = await stripe.invoices.retrieve(invoiceId);
         lienFacture = facture.hosted_invoice_url ?? facture.invoice_pdf ?? null;
