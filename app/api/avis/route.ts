@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Requête illisible." }, { status: 400 });
   }
 
-  const { sessionId, slug, note, auteur, commentaire, photo } = corps as Record<
+  const { sessionId, slug, note, auteur, commentaire, photo } = corps as Record
     string,
     unknown
   >;
@@ -101,7 +101,8 @@ export async function POST(req: NextRequest) {
 
   if (!resultat.ok) {
     return NextResponse.json({ error: resultat.raison }, { status: 500 });
-    revalidatePath(`/produit/${slug}`);
   }
+
+  revalidatePath(`/produit/${slug}`);
   return NextResponse.json({ ok: true });
 }
