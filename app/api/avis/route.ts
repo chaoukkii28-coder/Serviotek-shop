@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import { revalidatePath } from "next/cache";
 import { getProduct } from "@/lib/products";
 import { avisDisponibles, enregistrerAvis } from "@/lib/avis-db";
 
@@ -100,6 +101,7 @@ export async function POST(req: NextRequest) {
 
   if (!resultat.ok) {
     return NextResponse.json({ error: resultat.raison }, { status: 500 });
+    revalidatePath(`/produit/${slug}`);
   }
   return NextResponse.json({ ok: true });
 }
