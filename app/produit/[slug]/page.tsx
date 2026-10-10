@@ -10,6 +10,7 @@ import { avisDuProduit, resumeDuProduit } from "@/lib/avis-db";
 import AddToCartButton from "@/components/AddToCartButton";
 import ProductGallery from "@/components/ProductGallery";
 import GrilleProduits from "@/components/accueil/GrilleProduits";
+import AssistanceExpress from "@/components/AssistanceExpress";
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -179,6 +180,8 @@ export default async function ProductPage({ params }: { params: { slug: string }
                 </ul>
               </div>
             )}
+
+            <AssistanceExpress />
           </div>
         </div>
 
