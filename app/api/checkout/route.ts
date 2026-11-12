@@ -3,6 +3,10 @@ import Stripe from "stripe";
 import { QUANTITE_MAX, getProduct } from "@/lib/products";
 import { urlAbsolue } from "@/lib/site";
 
+// Taux « TVA France 20 % incluse » créé dans Stripe (prix affichés TTC).
+// Un ID de taux n'est pas secret ; STRIPE_TAX_RATE_ID permet d'en changer sans toucher au code.
+const TVA_TAUX_ID = process.env.STRIPE_TAX_RATE_ID ?? "txr_1UY5H9V05P3K9MQqUmRzc24X";
+
 export async function POST(req: NextRequest) {
   if (!process.env.STRIPE_SECRET_KEY) {
     return NextResponse.json(
@@ -42,6 +46,7 @@ export async function POST(req: NextRequest) {
     slugsAchetes.push(product.slug);
     line_items.push({
       quantity: qty,
+      tax_rates: [TVA_TAUX_ID],
       price_data: {
         currency: "eur",
         unit_amount: Math.round(product.price * 100),
@@ -73,8 +78,8 @@ export async function POST(req: NextRequest) {
           // durable, en reprenant les informations de l'article L221-5 :
           // délai de livraison, droit de rétractation, garanties, contact.
           footer: [
-            "Serviotek — Service, SASU au capital de 50 000 €",
-            "Bureau 326, 59 rue de Ponthieu, 75008 Paris — RCS Paris 104 280 516",
+            "Serviotek — Service, SASU au capital de 50 €",
+            "Bureau 326, 59 rue de Ponthieu, 75008 Paris — RCS Paris 104 280 516 — TVA FR70104280516",
             "service@serviotek.com",
             "",
             "Votre commande est confirmée. Le détail des articles, les quantités",
