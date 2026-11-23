@@ -203,7 +203,6 @@ export const SELECTION_LANCEMENT: readonly string[] = [
   "ecouteurs-anc-reduction-bruit",
   "ecouteurs-xulinse",
   "barre-de-son-saiyin-40w",
-  "collier-chat-airtag",
 ];
 
 export type OptionsFlux = {

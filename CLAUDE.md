@@ -67,8 +67,14 @@ et le sitemap désignait alors un autre domaine que le site.
 
 ## État du site
 
-- **13 produits**, tous des gadgets électriques. La collection scolaire a été
-  retirée (récupérable : `git show 8fc9e36^:lib/products-scolaire.ts`).
+- **8 produits**, uniquement du stock propre (achats fournisseurs). En nov. 2026,
+  retrait du collier chat AirTag, des Xiaomi Redmi Buds 8 Active et des 6
+  références en dropshipping CJ (prise Wi-Fi, caméra solaire, visseuse USB,
+  masseur EMS, calculatrice-tablette, projecteur galaxie) — récupérables via
+  `git show HEAD~1:lib/products.ts` sur le commit de retrait. Le rayon
+  « Détection & Extérieur » est masqué dans `lib/categories.ts` (vide).
+  La collection scolaire a été retirée plus tôt (récupérable :
+  `git show 8fc9e36^:lib/products-scolaire.ts`).
 - **7 produits ont de vraies photos**, recadrées au format Amazon (1600 px,
   fond blanc) dans `public/images-amazon`. Les autres tournent sur des visuels
   d'illustration ou des URLs externes CJ Dropshipping/Unsplash (déjà
