@@ -42,6 +42,8 @@ function produitsSimilaires(product: Product) {
   return [...memeRayon, ...autres].slice(0, 5);
 }
 
+const PAYS_LIVRES = ["FR", "BE", "CH", "LU"];
+
 export default async function ProductPage({ params }: { params: { slug: string } }) {
   const product = getProduct(params.slug);
   if (!product) return notFound();
@@ -60,13 +62,42 @@ export default async function ProductPage({ params }: { params: { slug: string }
     "@type": "Product",
     name: product.name,
     description: product.description,
-    image: product.images,
+    image: product.images.map((i) => (i.startsWith("http") ? i : urlAbsolue(i))),
+    ...(product.marque ? { brand: { "@type": "Brand", name: product.marque } } : {}),
+    ...(product.amazon?.ean ? { gtin13: product.amazon.ean } : {}),
     offers: {
       "@type": "Offer",
       priceCurrency: "EUR",
       price: product.price.toFixed(2),
       availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/NewCondition",
       url: urlAbsolue(`/produit/${product.slug}`),
+      // Doit rester aligné sur /livraison et sur shipping_address_collection
+      // (app/api/checkout/route.ts) : livraison incluse, 5 jours ouvrés max,
+      // France, Belgique, Suisse, Luxembourg uniquement.
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: { "@type": "MonetaryAmount", value: 0, currency: "EUR" },
+        shippingDestination: PAYS_LIVRES.map((pays) => ({
+          "@type": "DefinedRegion",
+          addressCountry: pays,
+        })),
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
+          transitTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 4, unitCode: "DAY" },
+        },
+      },
+      // Aligné sur /retours et les CGV : 14 jours, retour par courrier,
+      // frais de retour à la charge du client.
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: PAYS_LIVRES,
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 14,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/ReturnShippingFees",
+      },
     },
     // Déclarée seulement si des avis réels sont affichés sur la page :
     // annoncer une note sans avis derrière viole les règles de Google.
@@ -77,6 +108,18 @@ export default async function ProductPage({ params }: { params: { slug: string }
             ratingValue: resume.moyenne,
             reviewCount: resume.total,
           },
+        }
+      : {}),
+    // Uniquement les vrais avis affichés plus bas sur la page.
+    ...(avis.length > 0
+      ? {
+          review: avis.slice(0, 5).map((a) => ({
+            "@type": "Review",
+            author: { "@type": "Person", name: a.auteur },
+            datePublished: a.publieLe.slice(0, 10),
+            reviewRating: { "@type": "Rating", ratingValue: a.note, bestRating: 5 },
+            ...(a.commentaire ? { reviewBody: a.commentaire } : {}),
+          })),
         }
       : {}),
   };

@@ -38,6 +38,8 @@ export type Product = {
   specs: { label: string; value: string }[];
   images: string[];
   badge?: string;
+  /** Marque réelle du produit (lue sur la fiche fournisseur), pour Google. */
+  marque?: string;
   categorie: Categorie;
   amazon?: AmazonData;
   /**
@@ -62,6 +64,7 @@ export const products: Product[] = [
   {
     slug: "montre-connectee-hosgubo",
     name: "Montre connectée Hosgubo",
+    marque: "Hosgubo",
     price: 31.98,
     tagline: "Élégance et suivi santé au poignet",
     description:
@@ -106,6 +109,7 @@ export const products: Product[] = [
   {
     slug: "montre-connectee-cillso",
     name: "Montre connectée Cillso",
+    marque: "Cillso",
     price: 31.98,
     tagline: "Style sobre, fonctions complètes",
     description:
@@ -144,6 +148,7 @@ export const products: Product[] = [
   {
     slug: "ecouteurs-xulinse",
     name: "Écouteurs sans fil BUGANI",
+    marque: "BUGANI",
     price: 13.32,
     tagline: "Le son sans les fils, à petit prix",
     description:
@@ -183,6 +188,7 @@ export const products: Product[] = [
   {
     slug: "barre-de-son-saiyin-40w",
     name: "Barre de son Saiyin 40W",
+    marque: "Saiyin",
     price: 80.00,
     tagline: "Un son puissant pour votre salon",
     description:
@@ -225,6 +231,7 @@ export const products: Product[] = [
   {
     slug: "chargeur-induction-iniu-15w",
     name: "Chargeur à induction INIU 15W",
+    marque: "INIU",
     price: 27.98,
     tagline: "Charge rapide, lumière nocturne adaptative",
     description:
