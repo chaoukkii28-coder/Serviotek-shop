@@ -51,7 +51,17 @@ export default function BandeauLivre() {
             </a>
           ))}
         </div>
-        <p className="font-mono text-[11px] text-clairMuted">Vendu et expédié par Amazon.</p>
+        <p className="font-mono text-[11px] text-clairMuted">
+          Vendu et expédié par Amazon ·{" "}
+          <a
+            href="https://www.amazon.fr/Chaouki/e/B0HSW64JTL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-white"
+          >
+            Page auteur
+          </a>
+        </p>
       </div>
     </section>
   );
