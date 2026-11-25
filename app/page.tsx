@@ -6,6 +6,7 @@ import BandeauDefilant from "@/components/accueil/BandeauDefilant";
 import GrilleProduits from "@/components/accueil/GrilleProduits";
 import TuilesRayons from "@/components/accueil/TuilesRayons";
 import AvisClients from "@/components/accueil/AvisClients";
+import BandeauLivre from "@/components/accueil/BandeauLivre";
 
 export default async function Home() {
   return (
@@ -16,6 +17,7 @@ export default async function Home() {
 
       <div className="mx-auto flex max-w-[1400px] flex-col gap-3.5 px-[clamp(12px,2.5vw,22px)] pb-[60px] pt-3.5">
         <BlocsAccroche />
+        <BandeauLivre />
         <OffresDuJour />
         <BandeauDefilant />
         <GrilleProduits
