@@ -3,7 +3,7 @@ import Image from "next/image";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Livres de survie et de préparation — Éditions Serviotek",
+  title: "Livres de survie et de préparation",
   description:
     "Le Guide de la Reconstruction et Le Mémo de la Reconstruction : coupure de courant, inondation, eau coupée, alerte. Les gestes essentiels pour protéger votre famille. Une idée de cadeau utile pour Noël.",
   alternates: { canonical: `${SITE_URL}/livres` },
