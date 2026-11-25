@@ -51,6 +51,18 @@ export default function BandeauLivre() {
             </a>
           ))}
         </div>
+        <p className="text-[14px] text-clairMuted">
+          Version poche :{" "}
+          <a
+            href="https://www.amazon.fr/dp/B0HSVYCW2M"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-bold text-white underline hover:opacity-90"
+          >
+            Le Mémo de la Reconstruction · <span className="font-mono">10,33 €</span>
+          </a>{" "}
+          — l'essentiel pour les 72 premières heures.
+        </p>
         <p className="font-mono text-[11px] text-clairMuted">
           Vendu et expédié par Amazon ·{" "}
           <a
