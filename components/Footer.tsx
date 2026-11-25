@@ -14,6 +14,7 @@ export default function Footer() {
         <div className="flex flex-col gap-2.5">
           <p className="mb-1 font-mono text-[11px] tracking-[0.1em] text-[#74777a]">INFOS</p>
           <Link href="/a-propos" className="text-sm text-clairMuted hover:text-white">À propos</Link>
+          <Link href="/livres" className="text-sm text-clairMuted hover:text-white">Nos livres</Link>
           <Link href="/livraison" className="text-sm text-clairMuted hover:text-white">Livraison &amp; délais</Link>
           <Link href="/retours" className="text-sm text-clairMuted hover:text-white">Retours</Link>
           <Link href="/retractation" className="text-sm text-clairMuted hover:text-white">Formulaire de rétractation</Link>

@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site";
 
 /** Pages fixes : informatives, elles bougent peu mais doivent être indexées. */
 const PAGES_FIXES = [
+  "/livres",
   "/livraison",
   "/retours",
   "/retractation",
