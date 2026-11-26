@@ -31,8 +31,8 @@ const LIVRES: Livre[] = [
     ],
     formats: [
       { label: "Kindle", prix: "9,99 €", url: "https://www.amazon.fr/dp/B0HNTSNJW1" },
-      { label: "Broché", prix: "23,60 €", url: "https://www.amazon.fr/dp/B0HSWQH7CM" },
-      { label: "Relié", prix: "33,08 €", url: "https://www.amazon.fr/dp/B0HSVWPYCR" },
+      { label: "Broché", prix: "24,90 €", url: "https://www.amazon.fr/dp/B0HSWQH7CM" },
+      { label: "Relié", prix: "34,90 €", url: "https://www.amazon.fr/dp/B0HSVWPYCR" },
     ],
   },
   {
@@ -43,7 +43,7 @@ const LIVRES: Livre[] = [
       "La version poche, à garder dans un sac d'évacuation, une boîte à gants ou un tiroir de cuisine.",
       "Les 72 premières heures d'une crise sont décisives : ce mémo rassemble l'essentiel, à lire en quelques minutes.",
     ],
-    formats: [{ label: "Broché", prix: "10,33 €", url: "https://www.amazon.fr/dp/B0HSVYCW2M" }],
+    formats: [{ label: "Broché", prix: "10,90 €", url: "https://www.amazon.fr/dp/B0HSVYCW2M" }],
   },
 ];
 

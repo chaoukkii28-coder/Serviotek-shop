@@ -3,8 +3,8 @@ import Image from "next/image";
 // Livre des Éditions Serviotek, vendu sur Amazon (pas dans le panier du site).
 const FORMATS = [
   { label: "Kindle", prix: "9,99 €", url: "https://www.amazon.fr/dp/B0HNTSNJW1" },
-  { label: "Broché", prix: "23,60 €", url: "https://www.amazon.fr/dp/B0HSWQH7CM" },
-  { label: "Relié", prix: "33,08 €", url: "https://www.amazon.fr/dp/B0HSVWPYCR" },
+  { label: "Broché", prix: "24,90 €", url: "https://www.amazon.fr/dp/B0HSWQH7CM" },
+  { label: "Relié", prix: "34,90 €", url: "https://www.amazon.fr/dp/B0HSVWPYCR" },
 ];
 
 export default function BandeauLivre() {
@@ -59,7 +59,7 @@ export default function BandeauLivre() {
             rel="noopener noreferrer"
             className="font-bold text-white underline hover:opacity-90"
           >
-            Le Mémo de la Reconstruction · <span className="font-mono">10,33 €</span>
+            Le Mémo de la Reconstruction · <span className="font-mono">10,90 €</span>
           </a>{" "}
           — l'essentiel pour les 72 premières heures.
         </p>
