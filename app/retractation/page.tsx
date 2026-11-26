@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/retractation" },
   title: "Formulaire de rétractation",
   description:
     "Formulaire type de rétractation à compléter et à renvoyer pour annuler une commande dans les 14 jours suivant sa réception.",

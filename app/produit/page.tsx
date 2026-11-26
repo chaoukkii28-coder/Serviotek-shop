@@ -26,6 +26,7 @@ const TRANCHES_PRIX = [
 const PAR_PAGE = 24;
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/produit" },
   title: "Catalogue",
   description:
     "Gadgets électriques utiles : audio, maison connectée, bricolage, détection, bien-être et accessoires de charge.",

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import FormulaireContact from "@/components/FormulaireContact";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact",
   description: "Contacter Serviotek par e-mail, réponse sous 24 h ouvrées.",
 };

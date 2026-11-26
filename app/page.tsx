@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { products } from "@/lib/products";
 import { produitsEnAvant } from "@/lib/vitrine";
 import BlocsAccroche from "@/components/accueil/BlocsAccroche";
@@ -7,6 +8,10 @@ import GrilleProduits from "@/components/accueil/GrilleProduits";
 import TuilesRayons from "@/components/accueil/TuilesRayons";
 import AvisClients from "@/components/accueil/AvisClients";
 import BandeauLivre from "@/components/accueil/BandeauLivre";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default async function Home() {
   return (

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/retours" },
   title: "Retours & échanges",
   description:
     "14 jours après réception pour demander un retour ou un échange, formulaire de rétractation à disposition.",

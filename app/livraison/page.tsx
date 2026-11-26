@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/livraison" },
   title: "Livraison & délais",
   description:
     "Livraison sous 5 jours ouvrés maximum en France, Belgique, Suisse et Luxembourg, avec numéro de suivi.",

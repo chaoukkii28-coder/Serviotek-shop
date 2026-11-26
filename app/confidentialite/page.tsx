@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/confidentialite" },
   title: "Politique de confidentialité",
   description:
     "Données collectées, finalités, durée de conservation et exercice de vos droits (RGPD).",

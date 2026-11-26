@@ -4,6 +4,7 @@ import { SELECTION_LANCEMENT } from "@/lib/amazon";
 import Vignette from "@/components/accueil/Vignette";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/a-propos" },
   title: "À propos",
   description: "Serviotek : treize produits choisis, testés, au juste prix.",
 };

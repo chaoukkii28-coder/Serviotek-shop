@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/mentions-legales" },
   title: "Mentions légales",
   description:
     "Éditeur du site, RCS, capital social, siège social, directeur de la publication et hébergeur.",

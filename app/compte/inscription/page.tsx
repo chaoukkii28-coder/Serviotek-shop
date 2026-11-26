@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import FormulaireCompte from "@/components/FormulaireCompte";
 
-export const metadata: Metadata = { title: "Créer un compte" };
+export const metadata: Metadata = { title: "Créer un compte", robots: { index: false } };
 
 export default function InscriptionPage() {
   return (

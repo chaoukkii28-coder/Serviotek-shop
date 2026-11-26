@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/cgv" },
   title: "Conditions générales de vente",
   description:
     "Identité du vendeur, prix, livraison, droit de rétractation de 14 jours et garantie légale de conformité de 2 ans.",

@@ -25,6 +25,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   return {
     title,
     description: product.tagline,
+    alternates: { canonical: `/produit/${product.slug}` },
     openGraph: {
       title,
       description: product.tagline,
@@ -96,7 +97,7 @@ export default async function ProductPage({ params }: { params: { slug: string }
         returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
         merchantReturnDays: 14,
         returnMethod: "https://schema.org/ReturnByMail",
-        returnFees: "https://schema.org/ReturnShippingFees",
+        returnFees: "https://schema.org/ReturnFeesCustomerResponsibility",
       },
     },
     // Déclarée seulement si des avis réels sont affichés sur la page :
