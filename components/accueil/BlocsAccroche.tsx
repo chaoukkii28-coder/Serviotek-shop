@@ -4,15 +4,13 @@ import { getProduct, products, type Categorie } from "@/lib/products";
 import { COULEUR_CLAIRE_CATEGORIE } from "@/lib/categories";
 import { produitsMoinsDe } from "@/lib/vitrine";
 import Vignette from "@/components/accueil/Vignette";
-import MeilleureVente from "@/components/accueil/MeilleureVente";
+import LivreEnAvant from "@/components/accueil/LivreEnAvant";
 
 const HERO_TUILES: { label: string; categorie: Categorie; produit: ReturnType<typeof getProduct> }[] = [
   { label: "Audio & Écouteurs", categorie: "audio", produit: products.find((p) => p.categorie === "audio") },
   { label: "Maison connectée", categorie: "maison", produit: products.find((p) => p.categorie === "maison") },
   { label: "Bricolage & Outils", categorie: "bricolage", produit: products.find((p) => p.categorie === "bricolage") },
 ];
-
-const MEILLEURE_VENTE = getProduct("chargeur-induction-iniu-15w");
 
 export default function BlocsAccroche() {
   const petitsPrix = produitsMoinsDe(25, 6);
@@ -57,7 +55,7 @@ export default function BlocsAccroche() {
         </div>
       </Link>
 
-      {MEILLEURE_VENTE && <MeilleureVente produit={MEILLEURE_VENTE} />}
+      <LivreEnAvant />
 
       <Link
         href="/#catalogue"
